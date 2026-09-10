@@ -29,7 +29,7 @@ export const ContactSection: React.FC = () => {
     <section
       id="contact"
       aria-label="Contact and Inquiries"
-      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0B0B]"
+      className="relative w-full py-16 sm:py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0B0B]"
     >
       {/* Subtle Crimson Red Chiaroscuro Glow */}
       <div className="pointer-events-none absolute top-1/3 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8B0D1A]/[0.08] blur-[160px]" />
@@ -47,7 +47,7 @@ export const ContactSection: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
             variants={fadeInUp}
-            className="rounded-xl border border-white/10 bg-[#121212] p-8 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(139,13,26,0.15)] relative overflow-hidden"
+            className="rounded-xl border border-white/10 bg-[#121212] p-5 sm:p-8 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(139,13,26,0.15)] relative overflow-hidden"
           >
             {/* Top Hairline Crimson Accent */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8B0D1A] to-transparent" />
@@ -85,9 +85,9 @@ export const ContactSection: React.FC = () => {
                 <motion.form
                   key="form"
                   onSubmit={handleSubmit}
-                  className="space-y-6"
+                  className="space-y-5 sm:space-y-6"
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <Input
                       label="Full Name"
                       placeholder="e.g. Liam Vance"
@@ -109,19 +109,19 @@ export const ContactSection: React.FC = () => {
                     <label className="mb-2 block font-mono text-[11px] font-semibold uppercase tracking-wider text-[#9E9B95]">
                       Target Deployment Horizon
                     </label>
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-3 gap-1.5 sm:gap-3">
                       {['Immediate', '1–3 Months', 'Exploring'].map((time) => (
                         <button
                           key={time}
                           type="button"
                           onClick={() => setFormData({ ...formData, timeline: time })}
-                          className={`rounded-[6px] border px-3 py-2.5 text-xs font-mono tracking-wider uppercase transition-all cursor-pointer ${
+                          className={`min-w-0 h-11 rounded-[6px] border px-1.5 sm:px-3 text-[10.5px] min-[380px]:text-[11.5px] sm:text-xs font-mono font-medium tracking-tight sm:tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center justify-center text-center select-none ${
                             formData.timeline === time
                               ? 'border-[#8B0D1A] bg-[#8B0D1A] text-[#F5F2ED] font-bold shadow-[0_0_15px_rgba(139,13,26,0.35)]'
                               : 'border-white/10 bg-[#171717] text-[#9E9B95] hover:border-white/20 hover:text-white'
                           }`}
                         >
-                          {time}
+                          <span className="truncate">{time}</span>
                         </button>
                       ))}
                     </div>
@@ -140,13 +140,13 @@ export const ContactSection: React.FC = () => {
                     type="submit"
                     variant="primary"
                     size="lg"
-                    className="w-full justify-center text-sm"
+                    className="w-full justify-center text-xs sm:text-sm py-3.5 sm:py-4"
                     icon={<ArrowUpRight className="h-4 w-4" />}
                   >
                     Transmit Inquiry
                   </Button>
 
-                  <p className="text-[11px] text-[#6E6B66] text-center leading-relaxed">
+                  <p className="text-[11px] text-[#6E6B66] text-center leading-relaxed px-1">
                     By transmitting an architectural inquiry, you agree to our{' '}
                     <a href="/terms" className="text-[#9E9B95] hover:text-[#F5F2ED] underline underline-offset-2 transition-colors">
                       Terms of Service
@@ -158,20 +158,20 @@ export const ContactSection: React.FC = () => {
                   </p>
 
                   {/* Trust Signals */}
-                  <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.06] text-xs text-[#6E6B66]">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="h-3.5 w-3.5 text-[#8B0D1A]" />
+                  <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2.5 sm:gap-4 pt-4 border-t border-white/[0.06] text-xs text-[#6E6B66] text-center sm:text-left">
+                    <span className="flex items-center justify-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5 text-[#8B0D1A] shrink-0" />
                       24h Direct Technical Response
                     </span>
-                    <span className="flex items-center gap-1.5">
-                      <ShieldCheck className="h-3.5 w-3.5 text-[#8B0D1A]" />
+                    <span className="flex items-center justify-center gap-1.5">
+                      <ShieldCheck className="h-3.5 w-3.5 text-[#8B0D1A] shrink-0" />
                       Mutual NDA Standard
                     </span>
                     <a
                       href="mailto:hello@bayleafx.com"
-                      className="flex items-center gap-1.5 hover:text-[#F5F2ED] transition-colors"
+                      className="flex items-center justify-center gap-1.5 hover:text-[#F5F2ED] transition-colors"
                     >
-                      <Mail className="h-3.5 w-3.5 text-[#8B0D1A]" />
+                      <Mail className="h-3.5 w-3.5 text-[#8B0D1A] shrink-0" />
                       hello@bayleafx.com
                     </a>
                   </div>
