@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { HeroSection } from '@/components/sections/hero';
+import { DoorRevealSection } from '@/components/sections/door-reveal';
 import { ServicesSection } from '@/components/sections/services';
 import { DifferentiatorsSection } from '@/components/sections/differentiators';
 import { MetricsSection } from '@/components/sections/metrics';
@@ -19,6 +20,9 @@ export default function HomePage() {
       <main id="main-content" className="flex flex-col">
         {/* Section 1: Hero */}
         <HeroSection />
+
+        {/* Section 1.5: Door Reveal Gateway ("Welcome to BayleafX") */}
+        <DoorRevealSection />
 
         {/* Section 2: 15 Services across 3 Core Pillars */}
         <ServicesSection />
