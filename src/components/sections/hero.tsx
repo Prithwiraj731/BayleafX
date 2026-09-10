@@ -266,9 +266,9 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.25, ease: transitionEase }}
               className="w-full max-w-[420px] xl:max-w-[460px] flex flex-col items-start"
             >
-              <span className="font-mono text-xs font-semibold tracking-[0.22em] uppercase text-[#9E9B95] mb-4">
+              {/* <span className="font-mono text-xs font-semibold tracking-[0.22em] uppercase text-[#9E9B95] mb-4">
                 BEYOND AUTOMATION. BEYOND EXPECTATIONS.
-              </span>
+              </span> */}
 
               <h1 className="font-display text-[3.2rem] xl:text-[3.6rem] font-black uppercase tracking-tight text-[#F5F2ED] leading-[1.02]">
                 THE INTELLIGENCE
