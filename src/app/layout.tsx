@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: '/tab-logo.png' },
+      { url: '/favicon.ico' },
+    ],
+    apple: '/tab-logo.png',
+    shortcut: '/tab-logo.png',
+  },
 };
 
 export const viewport: Viewport = {
