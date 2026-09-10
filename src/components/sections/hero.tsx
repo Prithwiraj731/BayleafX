@@ -232,7 +232,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.9, ease: transitionEase }}
             className="font-display text-[9.8vw] font-black uppercase tracking-[-0.01em] scale-y-110 leading-none text-white/[0.12] whitespace-nowrap text-center select-none"
           >
-            BAYLEAF X
+            SINGULARITY
           </motion.span>
         </div>
 
