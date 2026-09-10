@@ -48,22 +48,21 @@ export const ServicesSection: React.FC = () => {
   const [activePillar, setActivePillar] = useState<string>('All');
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Scroll tracking: As soon as user begins scrolling down from Hero into Services
+  // Scroll tracking: Starts when Services section approaches viewport from Hero
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start end', 'start 0.1'],
+    offset: ['start 0.85', 'start -0.35'],
   });
 
-  // Smooth side-by-side sliding of the two full-width doors
-  const leftDoorX = useTransform(scrollYProgress, [0.05, 0.75], ['0%', '-105%']);
-  const rightDoorX = useTransform(scrollYProgress, [0.05, 0.75], ['0%', '105%']);
+  // Slow, smooth side-by-side sliding of the two full-width doors
+  const leftDoorX = useTransform(scrollYProgress, [0.15, 0.82], ['0%', '-105%']);
+  const rightDoorX = useTransform(scrollYProgress, [0.15, 0.82], ['0%', '105%']);
 
-  // "WELCOME TO BAYLEAFX" fades out cleanly before doors open wide (preventing any overlap)
-  const textOpacity = useTransform(scrollYProgress, [0.03, 0.22], [1, 0]);
-  const textScale = useTransform(scrollYProgress, [0.03, 0.22], [1, 0.95]);
+  // Center vertical seam laser glow
+  const seamOpacity = useTransform(scrollYProgress, [0.12, 0.35], [1, 0]);
 
-  // Center vertical seam laser glow fades out early
-  const seamOpacity = useTransform(scrollYProgress, [0.03, 0.2], [1, 0]);
+  // Text on doors remains fully visible while doors are closed, then gently fades as doors slide off-screen
+  const doorTextOpacity = useTransform(scrollYProgress, [0.15, 0.72], [1, 0]);
 
   const filterOptions = ['All', ...SERVICE_PILLARS.map((p) => p.name)];
 
@@ -84,54 +83,64 @@ export const ServicesSection: React.FC = () => {
       className="relative w-full py-20 md:py-28 bg-[#0B0B0B] overflow-hidden"
     >
       {/* ─────────────────────────────────────────────────────────────
-          DOUBLE DOOR REVEAL OVERLAY (Smooth side-by-side parting)
-          Strictly ONLY "WELCOME TO BAYLEAFX" - no extra words or telemetry
+          DOUBLE DOOR REVEAL OVERLAY
+          Left Door carries "WELCOME TO" to the left
+          Right Door carries "BAYLEAFX" to the right
+          Slowly parts side by side without tampering with the section
           ───────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
-        {/* Left Door (Slides Left) */}
+        {/* Left Door (Slides Left carrying "WELCOME TO") */}
         <motion.div
           style={{ x: leftDoorX }}
-          className="absolute top-0 bottom-0 left-0 w-[50.5%] bg-[#0B0B0B] border-r border-white/[0.08] shadow-[20px_0_50px_rgba(0,0,0,0.98)]"
+          className="absolute top-0 bottom-0 left-0 w-[50.5%] bg-[#0B0B0B] border-r border-white/[0.08] shadow-[20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-end"
         >
-          <div className="absolute top-0 bottom-0 right-0 w-[2px] bg-gradient-to-b from-transparent via-[#8B0D1A]/50 to-transparent" />
+          {/* Seam red line on right edge */}
+          <div className="absolute top-0 bottom-0 right-0 w-[2px] bg-gradient-to-b from-transparent via-[#8B0D1A]/60 to-transparent" />
+
+          {/* "WELCOME TO" on Left Door */}
+          <motion.div
+            style={{ opacity: doorTextOpacity }}
+            className="absolute top-28 sm:top-36 md:top-44 right-0 pr-2 sm:pr-3 md:pr-4 flex items-center justify-end select-none pointer-events-none"
+          >
+            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F2ED] whitespace-nowrap leading-none">
+              WELCOME TO
+            </span>
+          </motion.div>
         </motion.div>
 
-        {/* Right Door (Slides Right) */}
+        {/* Right Door (Slides Right carrying "BAYLEAFX") */}
         <motion.div
           style={{ x: rightDoorX }}
-          className="absolute top-0 bottom-0 right-0 w-[50.5%] bg-[#0B0B0B] border-l border-white/[0.08] shadow-[-20px_0_50px_rgba(0,0,0,0.98)]"
+          className="absolute top-0 bottom-0 right-0 w-[50.5%] bg-[#0B0B0B] border-l border-white/[0.08] shadow-[-20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-start"
         >
-          <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-[#8B0D1A]/50 to-transparent" />
+          {/* Seam red line on left edge */}
+          <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-[#8B0D1A]/60 to-transparent" />
+
+          {/* "BAYLEAFX" on Right Door */}
+          <motion.div
+            style={{ opacity: doorTextOpacity }}
+            className="absolute top-28 sm:top-36 md:top-44 left-0 pl-2 sm:pl-3 md:pl-4 flex items-center justify-start select-none pointer-events-none"
+          >
+            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F2ED] whitespace-nowrap leading-none">
+              BAYLEAF
+            </span>
+            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#E50914] ml-1 sm:ml-2 inline-block drop-shadow-[0_0_24px_rgba(229,9,20,0.65)] leading-none">
+              X
+            </span>
+          </motion.div>
         </motion.div>
 
-        {/* Center Seam Red Laser Glow */}
+        {/* Center Seam Red Laser Glow (when doors meet) */}
         <motion.div
           style={{ opacity: seamOpacity }}
           className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 z-25 flex items-center justify-center"
         >
           <div className="w-[2px] h-full bg-gradient-to-b from-transparent via-[#E50914] to-transparent shadow-[0_0_16px_#E50914]" />
         </motion.div>
-
-        {/* ONLY "WELCOME TO BAYLEAFX" */}
-        <motion.div
-          style={{
-            opacity: textOpacity,
-            scale: textScale,
-          }}
-          className="absolute top-24 sm:top-28 md:top-36 inset-x-0 z-30 flex items-center justify-center pointer-events-none px-4"
-        >
-          <h2 className="font-display text-3xl min-[380px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#F5F2ED] text-center select-none leading-[1.05]">
-            <span>WELCOME TO </span>
-            <span className="text-[#F5F2ED]">BAYLEAF</span>
-            <span className="text-[#E50914] ml-1 sm:ml-2 inline-block drop-shadow-[0_0_24px_rgba(229,9,20,0.65)]">
-              X
-            </span>
-          </h2>
-        </motion.div>
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
-          STANDARD SERVICES CONTENT (Normal layout without delay or gaps)
+          STANDARD SERVICES CONTENT (Completely untampered)
           Heading, Filter Tabs, and 15 Bento Service Cards
           ───────────────────────────────────────────────────────────── */}
       <Container className="relative z-10">
