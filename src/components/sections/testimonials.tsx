@@ -36,7 +36,7 @@ export const TestimonialsSection: React.FC = () => {
     <section
       id="testimonials"
       aria-label="Executive Testimonials"
-      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0B0B]"
+      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0E0C]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -76,7 +76,7 @@ export const TestimonialsSection: React.FC = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                     currentIndex === index
-                      ? 'w-8 bg-[#8B0D1A]'
+                      ? 'w-8 bg-[#52B788]'
                       : 'w-2 bg-white/20 hover:bg-white/40'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -87,14 +87,14 @@ export const TestimonialsSection: React.FC = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrev}
-                className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-[#121212] text-[#9E9B95] hover:border-[#8B0D1A] hover:text-white transition-all cursor-pointer"
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-[#131A16] text-[#9CA3AF] hover:border-[#2D6A4F] hover:text-white transition-all cursor-pointer"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
               <button
                 onClick={handleNext}
-                className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-[#121212] text-[#9E9B95] hover:border-[#8B0D1A] hover:text-white transition-all cursor-pointer"
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-[#131A16] text-[#9CA3AF] hover:border-[#2D6A4F] hover:text-white transition-all cursor-pointer"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="h-4 w-4" />

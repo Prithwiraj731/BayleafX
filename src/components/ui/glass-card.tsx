@@ -24,16 +24,16 @@ export const GlassCard: React.FC<GlassCardProps> = ({
               },
               hover: {
                 y: -4,
-                borderColor: 'rgba(212, 168, 67, 0.4)',
+                borderColor: 'rgba(64, 145, 108, 0.4)',
                 boxShadow:
-                  '0 16px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(212, 168, 67, 0.12)',
+                  '0 16px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(45, 106, 79, 0.15)',
               },
             }
           : undefined
       }
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 md:p-8 backdrop-blur-xl ${
-        glow ? 'shadow-[0_0_32px_rgba(212,168,67,0.15)]' : ''
+      className={`relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-6 md:p-8 backdrop-blur-xl ${
+        glow ? 'shadow-[0_0_32px_rgba(45,106,79,0.2)]' : ''
       } ${className}`}
     >
       {/* Subtle top hairline accent highlight */}

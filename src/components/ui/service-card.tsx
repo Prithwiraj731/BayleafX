@@ -28,19 +28,19 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       onMouseLeave={() => setIsHovered(false)}
       className={`h-full ${className}`}
     >
-      <GlassCard hover={true} className="flex h-full flex-col justify-between group bg-[#111111]/80 hover:border-[#8B0D1A]/60 transition-all duration-300">
+      <GlassCard hover={true} className="flex h-full flex-col justify-between group bg-gradient-to-b from-[#111714] to-[#0D120F] border-white/[0.08] hover:border-[#2D6A4F]/60 transition-all duration-300">
         <div>
           {/* Icon Badge */}
-          <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.02] text-[#9E9B95] transition-all duration-300 group-hover:border-[#8B0D1A]/50 group-hover:bg-[#8B0D1A]/15 group-hover:text-[#F5F2ED] group-hover:shadow-[0_0_20px_rgba(139,13,26,0.35)]">
+          <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-[#15201A]/70 text-[#9CA3AF] transition-all duration-300 group-hover:border-[#2D6A4F]/60 group-hover:bg-[#1B4332]/40 group-hover:text-[#52B788] group-hover:shadow-[0_0_20px_rgba(45,106,79,0.25)]">
             <Icon className="h-5 w-5 stroke-[1.5]" />
           </div>
 
           {/* Titles */}
-          <h3 className="mb-2 font-display text-lg font-bold tracking-tight text-[#F5F2ED] transition-colors duration-200 group-hover:text-white md:text-xl">
+          <h3 className="mb-2 font-display text-lg font-bold tracking-tight text-[#F5F7F5] transition-colors duration-200 group-hover:text-white md:text-xl">
             {title}
           </h3>
 
-          <p className="font-body text-xs md:text-sm leading-relaxed text-[#9E9B95]">
+          <p className="font-body text-xs md:text-sm leading-relaxed text-[#9CA3AF]">
             {subtitle}
           </p>
         </div>
@@ -51,11 +51,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             <motion.div
               initial={false}
               animate={{
-                opacity: isHovered ? 1 : 0.7,
+                opacity: isHovered ? 1 : 0.75,
               }}
               transition={{ duration: 0.3 }}
             >
-              <p className="font-body text-xs leading-relaxed text-[#6E6B66] group-hover:text-[#9E9B95] transition-colors duration-200">
+              <p className="font-body text-xs leading-relaxed text-[#6C7A70] group-hover:text-[#9CA3AF] transition-colors duration-200">
                 {description}
               </p>
             </motion.div>

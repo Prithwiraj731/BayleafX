@@ -34,8 +34,8 @@ export default function PrivacyPolicyPage() {
       tocItems={TOC_ITEMS}
     >
       {/* Notice Callout */}
-      <div className="rounded-xl border border-[#8B0D1A]/30 bg-[#8B0D1A]/[0.06] p-5 text-xs sm:text-sm text-[#F5F2ED] space-y-2">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-[#8B0D1A] font-bold">
+      <div className="rounded-xl border border-[#2D6A4F]/40 bg-[#2D6A4F]/[0.08] p-5 text-xs sm:text-sm text-[#F5F7F5] space-y-2">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Operational Disclosure Notice
         </p>
         <p className="text-[#D0CDC8] leading-relaxed">
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 1 */}
       <section id="overview" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">01 //</span>
+          <span className="font-mono text-sm text-[#52B788]">01 //</span>
           Overview & Data Controller
         </h2>
         <p>
@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 2 */}
       <section id="data-collected" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">02 //</span>
+          <span className="font-mono text-sm text-[#52B788]">02 //</span>
           Information We Collect
         </h2>
         <p>
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 3 */}
       <section id="how-we-use" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">03 //</span>
+          <span className="font-mono text-sm text-[#52B788]">03 //</span>
           Purpose & Legal Basis for Processing
         </h2>
         <p>
@@ -137,7 +137,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 4 */}
       <section id="storage-security" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">04 //</span>
+          <span className="font-mono text-sm text-[#52B788]">04 //</span>
           Storage & Security Measures
         </h2>
         <p>
@@ -156,7 +156,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 5 */}
       <section id="third-parties" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">05 //</span>
+          <span className="font-mono text-sm text-[#52B788]">05 //</span>
           Third-Party Processors & Infrastructure
         </h2>
         <p>
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 6 */}
       <section id="cookies-tracking" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">06 //</span>
+          <span className="font-mono text-sm text-[#52B788]">06 //</span>
           Cookies & Tracking Disclosure
         </h2>
         <p>
@@ -186,14 +186,14 @@ export default function PrivacyPolicyPage() {
           <li><strong>Essential Infrastructure Only:</strong> Edge networking providers may utilize temporary security cookies (e.g. bot protection) strictly necessary to serve the web request.</li>
         </ul>
         <p>
-          For comprehensive details on how browser storage and essential cookies operate, please consult our dedicated <a href="/cookies" className="text-[#8B0D1A] hover:underline font-semibold">Cookie Policy</a>.
+          For comprehensive details on how browser storage and essential cookies operate, please consult our dedicated <a href="/cookies" className="text-[#52B788] hover:underline font-semibold">Cookie Policy</a>.
         </p>
       </section>
 
       {/* Section 7 */}
       <section id="data-retention" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">07 //</span>
+          <span className="font-mono text-sm text-[#52B788]">07 //</span>
           Data Retention Policy
         </h2>
         <p>
@@ -209,7 +209,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 8 */}
       <section id="user-rights" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">08 //</span>
+          <span className="font-mono text-sm text-[#52B788]">08 //</span>
           User Rights & Account / Data Deletion
         </h2>
         <p>
@@ -217,19 +217,19 @@ export default function PrivacyPolicyPage() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
           <div className="rounded-lg border border-white/10 bg-[#121212] p-4">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-[#8B0D1A] font-bold mb-1">Right of Access & Rectification</h4>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-[#52B788] font-bold mb-1">Right of Access & Rectification</h4>
             <p className="text-xs text-[#A8A5A0]">You may request a copy of the personal data we hold about you and correct any inaccurate information.</p>
           </div>
           <div className="rounded-lg border border-white/10 bg-[#121212] p-4">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-[#8B0D1A] font-bold mb-1">Right to Erasure (Deletion)</h4>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-[#52B788] font-bold mb-1">Right to Erasure (Deletion)</h4>
             <p className="text-xs text-[#A8A5A0]">You may request complete deletion of your inquiry data from our internal records at any time.</p>
           </div>
           <div className="rounded-lg border border-white/10 bg-[#121212] p-4">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-[#8B0D1A] font-bold mb-1">Right to Restrict Processing</h4>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-[#52B788] font-bold mb-1">Right to Restrict Processing</h4>
             <p className="text-xs text-[#A8A5A0]">You may request that we suspend processing while a dispute or verification is resolved.</p>
           </div>
           <div className="rounded-lg border border-white/10 bg-[#121212] p-4">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-[#8B0D1A] font-bold mb-1">Right to Portability</h4>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-[#52B788] font-bold mb-1">Right to Portability</h4>
             <p className="text-xs text-[#A8A5A0]">You may request the structured digital export of your submitted communication data.</p>
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 9 */}
       <section id="children" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">09 //</span>
+          <span className="font-mono text-sm text-[#52B788]">09 //</span>
           Children’s Privacy
         </h2>
         <p>
@@ -252,7 +252,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 10 */}
       <section id="transfers" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">10 //</span>
+          <span className="font-mono text-sm text-[#52B788]">10 //</span>
           International Data Transfers
         </h2>
         <p>
@@ -266,7 +266,7 @@ export default function PrivacyPolicyPage() {
       {/* Section 11 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">11 //</span>
+          <span className="font-mono text-sm text-[#52B788]">11 //</span>
           Privacy Contact & Inquiries
         </h2>
         <p>

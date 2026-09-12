@@ -2,31 +2,31 @@
 
 @layer base {
   :root {
-    /* Exact Color System: Black #0B0B0B, Crimson Red #8B0D1A, Off White #F5F2ED */
-    --bl-bg-void: #0B0B0B;
-    --bl-bg-base: #0B0B0B;
-    --bl-bg-elevated: #131313;
-    --bl-bg-overlay: #1A1A1A;
-    --bl-bg-subtle: #222222;
+    /* Exact Color System: Deep Obsidian, Bayleaf Green variations, Off White */
+    --bl-bg-void: #0B0E0C;
+    --bl-bg-base: #0B0E0C;
+    --bl-bg-elevated: #111714;
+    --bl-bg-overlay: #16201B;
+    --bl-bg-subtle: #1D2A24;
 
     /* Off-White Text Hierarchy */
-    --bl-text-primary: #F5F2ED;
-    --bl-text-secondary: #9E9B95;
-    --bl-text-tertiary: #6E6B66;
-    --bl-text-muted: #3D3B38;
+    --bl-text-primary: #F5F7F5;
+    --bl-text-secondary: #9CA3AF;
+    --bl-text-tertiary: #6C7A70;
+    --bl-text-muted: #4B554F;
 
-    /* Crimson Red Accents */
-    --bl-accent: #8B0D1A;
-    --bl-accent-hover: #A81324;
-    --bl-accent-bright: #C91D32;
-    --bl-accent-muted: rgba(139, 13, 26, 0.22);
-    --bl-accent-glow: rgba(139, 13, 26, 0.55);
+    /* Bayleaf Green Variations (Natural Laurel, Deep Forest, Refined Emerald, Sage - No neon) */
+    --bl-accent: #2D6A4F;
+    --bl-accent-hover: #40916C;
+    --bl-accent-bright: #52B788;
+    --bl-accent-muted: rgba(45, 106, 79, 0.18);
+    --bl-accent-glow: rgba(45, 106, 79, 0.35);
 
     /* Hairline Luxury Borders */
-    --bl-border-subtle: rgba(245, 242, 237, 0.08);
-    --bl-border-default: rgba(245, 242, 237, 0.14);
-    --bl-border-hover: rgba(245, 242, 237, 0.28);
-    --bl-border-accent: rgba(139, 13, 26, 0.6);
+    --bl-border-subtle: rgba(245, 247, 245, 0.08);
+    --bl-border-default: rgba(245, 247, 245, 0.14);
+    --bl-border-hover: rgba(82, 183, 136, 0.3);
+    --bl-border-accent: rgba(45, 106, 79, 0.6);
 
     /* Status */
     --bl-success: #22C55E;
@@ -66,13 +66,13 @@
 /* Base Body and Global Typography */
 html {
   scroll-behavior: smooth;
-  background-color: #0B0B0B;
-  color: #F5F2ED;
+  background-color: #0B0E0C;
+  color: #F5F7F5;
 }
 
 body {
-  background-color: #0B0B0B;
-  color: #F5F2ED;
+  background-color: #0B0E0C;
+  color: #F5F7F5;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -81,11 +81,11 @@ body {
 
 /* Custom Text Selection */
 ::selection {
-  background: rgba(139, 13, 26, 0.45);
-  color: #F5F2ED;
+  background: rgba(45, 106, 79, 0.45);
+  color: #F5F7F5;
 }
 
-/* Ambient Crimson Glow */
+/* Ambient Bayleaf Glow */
 @keyframes ambient-pulse {
   0%, 100% {
     opacity: 0.4;
@@ -97,11 +97,12 @@ body {
   }
 }
 
+.bayleaf-ambient-glow,
 .crimson-ambient-glow {
   background: radial-gradient(
     circle at 50% 30%,
-    rgba(139, 13, 26, 0.18) 0%,
-    rgba(139, 13, 26, 0.05) 50%,
+    rgba(45, 106, 79, 0.2) 0%,
+    rgba(27, 67, 50, 0.08) 50%,
     transparent 80%
   );
   animation: ambient-pulse 10s ease-in-out infinite;
@@ -111,8 +112,8 @@ body {
 .bl-card-glass {
   background: linear-gradient(
     145deg,
-    rgba(245, 242, 237, 0.028) 0%,
-    rgba(245, 242, 237, 0.008) 100%
+    rgba(245, 247, 245, 0.03) 0%,
+    rgba(245, 247, 245, 0.01) 100%
   );
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -121,13 +122,13 @@ body {
 }
 
 .bl-card-glass:hover {
-  border-color: rgba(139, 13, 26, 0.5);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75), 0 0 32px rgba(139, 13, 26, 0.2);
+  border-color: rgba(64, 145, 108, 0.45);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75), 0 0 32px rgba(45, 106, 79, 0.18);
 }
 
 /* Glassmorphic Navbar */
 .bl-glass-nav {
-  background: rgba(11, 11, 11, 0.88);
+  background: rgba(11, 14, 12, 0.88);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-bottom: 1px solid var(--bl-border-subtle);
@@ -139,16 +140,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0B0B;
+  background: #0B0E0C;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #242424;
+  background: #1D2A24;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8B0D1A;
+  background: #2D6A4F;
 }
 
 /* Reduced Motion Handling */

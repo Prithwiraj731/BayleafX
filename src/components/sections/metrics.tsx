@@ -13,10 +13,10 @@ export const MetricsSection: React.FC = () => {
     <section
       id="metrics"
       aria-label="Quantifiable Impact Metrics"
-      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0B0B]"
+      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0E0C]"
     >
-      {/* Background ambient crimson */}
-      <div className="pointer-events-none absolute bottom-0 left-1/3 -z-10 h-[350px] w-[350px] rounded-full bg-[#8B0D1A]/[0.06] blur-[140px]" />
+      {/* Background ambient bayleaf */}
+      <div className="pointer-events-none absolute bottom-0 left-1/3 -z-10 h-[350px] w-[350px] rounded-full bg-[#2D6A4F]/[0.08] blur-[140px]" />
 
       <Container>
         <SectionHeader

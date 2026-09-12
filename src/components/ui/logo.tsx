@@ -40,7 +40,7 @@ export const Logo: React.FC<LogoProps> = ({
     return (
       <Link
         href={href}
-        className="group inline-flex items-center focus:outline-none focus-visible:ring-1 focus-visible:ring-[#8B0D1A] rounded-sm transition-transform duration-300 group-hover:scale-[1.02]"
+        className="group inline-flex items-center focus:outline-none focus-visible:ring-1 focus-visible:ring-[#2D6A4F] rounded-sm transition-transform duration-300 group-hover:scale-[1.02]"
         aria-label="BayleafX Home"
       >
         {imageElement}

@@ -13,7 +13,7 @@ export const ProcessSection: React.FC = () => {
     <section
       id="process"
       aria-label="Development Process"
-      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0B0B]"
+      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0E0C]"
     >
       <Container>
         <SectionHeader
@@ -33,7 +33,7 @@ export const ProcessSection: React.FC = () => {
             <motion.div
               key={step.number}
               variants={staggerChild}
-              className="rounded-xl border border-white/[0.08] bg-[#121212] p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#8B0D1A]/50 hover:bg-[#161616]"
+              className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-[#111714] to-[#0D120F] p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#2D6A4F]/60 hover:bg-[#141C17] hover:shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(45,106,79,0.15)]"
             >
               <ProcessStep
                 number={step.number}

@@ -17,7 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
 }) => {
   const baseStyles =
-    'relative inline-flex items-center justify-center font-body font-semibold tracking-wide uppercase transition-all duration-300 rounded-[6px] focus:outline-none focus-visible:ring-1 focus-visible:ring-[#8B0D1A] select-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none';
+    'relative inline-flex items-center justify-center font-body font-semibold tracking-wide uppercase transition-all duration-300 rounded-[6px] focus:outline-none focus-visible:ring-1 focus-visible:ring-[#2D6A4F] select-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none';
 
   const sizeStyles = {
     default: 'text-xs py-3 px-6 gap-2',
@@ -26,9 +26,9 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-[#8B0D1A] text-[#F5F2ED] font-bold hover:bg-[#A81324] hover:shadow-[0_0_30px_rgba(139,13,26,0.55)] border border-[#8B0D1A] active:bg-[#700A15]',
+      'bg-[#2D6A4F] text-white font-bold hover:bg-[#40916C] hover:shadow-[0_0_24px_rgba(45,106,79,0.45)] border border-[#2D6A4F] active:bg-[#1B4332]',
     ghost:
-      'bg-transparent text-[#F5F2ED] border border-white/15 hover:border-[#8B0D1A] hover:bg-[#8B0D1A]/10 hover:text-white',
+      'bg-transparent text-[#F5F7F5] border border-white/15 hover:border-[#2D6A4F] hover:bg-[#2D6A4F]/15 hover:text-white',
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

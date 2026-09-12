@@ -33,7 +33,7 @@ export default function CookiePolicyPage() {
     >
       {/* Notice Callout */}
       <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-[#8B0D1A] font-bold">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Zero-Tracker Architecture Statement
         </p>
         <p className="leading-relaxed">
@@ -44,7 +44,7 @@ export default function CookiePolicyPage() {
       {/* Section 1 */}
       <section id="overview" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">01 //</span>
+          <span className="font-mono text-sm text-[#52B788]">01 //</span>
           Overview & Privacy-First Philosophy
         </h2>
         <p>
@@ -58,7 +58,7 @@ export default function CookiePolicyPage() {
       {/* Section 2 */}
       <section id="what-are-cookies" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">02 //</span>
+          <span className="font-mono text-sm text-[#52B788]">02 //</span>
           What are Cookies & Web Storage?
         </h2>
         <p>
@@ -72,7 +72,7 @@ export default function CookiePolicyPage() {
       {/* Section 3 */}
       <section id="cookie-audit" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">03 //</span>
+          <span className="font-mono text-sm text-[#52B788]">03 //</span>
           Technical Codebase Audit & Inventory
         </h2>
         <p>
@@ -94,7 +94,7 @@ export default function CookiePolicyPage() {
       {/* Section 4 */}
       <section id="categories" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">04 //</span>
+          <span className="font-mono text-sm text-[#52B788]">04 //</span>
           Cookie Classification & Current Status
         </h2>
         <p>
@@ -114,7 +114,7 @@ export default function CookiePolicyPage() {
               <tr>
                 <td className="p-3 sm:p-4 font-medium text-[#F5F2ED]">Strictly Necessary / Edge Security</td>
                 <td className="p-3 sm:p-4">Bot protection, DDoS mitigation, rate limiting, and edge routing handled by cloud CDN infrastructure.</td>
-                <td className="p-3 sm:p-4 font-mono text-[#8B0D1A] font-bold">Active as needed by Edge CDN</td>
+                <td className="p-3 sm:p-4 font-mono text-[#52B788] font-bold">Active as needed by Edge CDN</td>
               </tr>
               <tr>
                 <td className="p-3 sm:p-4 font-medium text-[#F5F2ED]">Functional & Preferences</td>
@@ -139,7 +139,7 @@ export default function CookiePolicyPage() {
       {/* Section 5 */}
       <section id="self-hosted" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">05 //</span>
+          <span className="font-mono text-sm text-[#52B788]">05 //</span>
           Self-Hosted Infrastructure Assets
         </h2>
         <p>
@@ -154,7 +154,7 @@ export default function CookiePolicyPage() {
       {/* Section 6 */}
       <section id="third-party-edge" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">06 //</span>
+          <span className="font-mono text-sm text-[#52B788]">06 //</span>
           Edge Security & Cloud Providers
         </h2>
         <p>
@@ -168,7 +168,7 @@ export default function CookiePolicyPage() {
       {/* Section 7 */}
       <section id="management" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">07 //</span>
+          <span className="font-mono text-sm text-[#52B788]">07 //</span>
           How to Manage & Disable Cookies
         </h2>
         <p>
@@ -188,7 +188,7 @@ export default function CookiePolicyPage() {
       {/* Section 8 */}
       <section id="updates" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">08 //</span>
+          <span className="font-mono text-sm text-[#52B788]">08 //</span>
           Updates to This Policy
         </h2>
         <p>
@@ -199,7 +199,7 @@ export default function CookiePolicyPage() {
       {/* Section 9 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">09 //</span>
+          <span className="font-mono text-sm text-[#52B788]">09 //</span>
           Inquiries & Contact Information
         </h2>
         <p>

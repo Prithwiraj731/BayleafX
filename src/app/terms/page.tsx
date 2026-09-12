@@ -38,7 +38,7 @@ export default function TermsOfServicePage() {
     >
       {/* Notice Callout */}
       <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-[#8B0D1A] font-bold">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Contractual Architecture Note
         </p>
         <p className="leading-relaxed">
@@ -49,7 +49,7 @@ export default function TermsOfServicePage() {
       {/* Section 1 */}
       <section id="acceptance" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">01 //</span>
+          <span className="font-mono text-sm text-[#52B788]">01 //</span>
           Acceptance of Terms & Eligibility
         </h2>
         <p>
@@ -63,7 +63,7 @@ export default function TermsOfServicePage() {
       {/* Section 2 */}
       <section id="informational-scope" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">02 //</span>
+          <span className="font-mono text-sm text-[#52B788]">02 //</span>
           Informational Scope & Initiation of Services
         </h2>
         <p>
@@ -78,7 +78,7 @@ export default function TermsOfServicePage() {
       {/* Section 3 */}
       <section id="intellectual-property" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">03 //</span>
+          <span className="font-mono text-sm text-[#52B788]">03 //</span>
           Intellectual Property of BayleafX
         </h2>
         <p>
@@ -92,7 +92,7 @@ export default function TermsOfServicePage() {
       {/* Section 4 */}
       <section id="client-deliverables" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">04 //</span>
+          <span className="font-mono text-sm text-[#52B788]">04 //</span>
           Client Deliverables & IP Assignment
         </h2>
         <p>
@@ -107,7 +107,7 @@ export default function TermsOfServicePage() {
       {/* Section 5 */}
       <section id="acceptable-use" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">05 //</span>
+          <span className="font-mono text-sm text-[#52B788]">05 //</span>
           Acceptable Use & Prohibited Conduct
         </h2>
         <p>When accessing or interacting with our digital presence, you agree NOT to:</p>
@@ -123,7 +123,7 @@ export default function TermsOfServicePage() {
       {/* Section 6 */}
       <section id="metrics-disclaimer" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">06 //</span>
+          <span className="font-mono text-sm text-[#52B788]">06 //</span>
           Agency Metrics & Performance Benchmarks
         </h2>
         <p>
@@ -137,7 +137,7 @@ export default function TermsOfServicePage() {
       {/* Section 7 */}
       <section id="digital-delivery" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">07 //</span>
+          <span className="font-mono text-sm text-[#52B788]">07 //</span>
           Digital Delivery, Work Products & Handover
         </h2>
         <p>
@@ -152,7 +152,7 @@ export default function TermsOfServicePage() {
       {/* Section 8 */}
       <section id="third-parties" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">08 //</span>
+          <span className="font-mono text-sm text-[#52B788]">08 //</span>
           Third-Party Integrations & External Links
         </h2>
         <p>
@@ -163,7 +163,7 @@ export default function TermsOfServicePage() {
       {/* Section 9 */}
       <section id="disclaimer" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">09 //</span>
+          <span className="font-mono text-sm text-[#52B788]">09 //</span>
           Warranty Disclaimers
         </h2>
         <p className="uppercase text-xs font-mono tracking-wider text-[#A8A5A0]">
@@ -177,7 +177,7 @@ export default function TermsOfServicePage() {
       {/* Section 10 */}
       <section id="liability" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">10 //</span>
+          <span className="font-mono text-sm text-[#52B788]">10 //</span>
           Limitation of Liability
         </h2>
         <p>
@@ -191,7 +191,7 @@ export default function TermsOfServicePage() {
       {/* Section 11 */}
       <section id="indemnity" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">11 //</span>
+          <span className="font-mono text-sm text-[#52B788]">11 //</span>
           Indemnification
         </h2>
         <p>
@@ -202,7 +202,7 @@ export default function TermsOfServicePage() {
       {/* Section 12 */}
       <section id="governing-law" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">12 //</span>
+          <span className="font-mono text-sm text-[#52B788]">12 //</span>
           Governing Law & Dispute Resolution
         </h2>
         <p>
@@ -216,7 +216,7 @@ export default function TermsOfServicePage() {
       {/* Section 13 */}
       <section id="modifications" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">13 //</span>
+          <span className="font-mono text-sm text-[#52B788]">13 //</span>
           Modifications to Terms
         </h2>
         <p>
@@ -227,7 +227,7 @@ export default function TermsOfServicePage() {
       {/* Section 14 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">14 //</span>
+          <span className="font-mono text-sm text-[#52B788]">14 //</span>
           Inquiries & Contact Information
         </h2>
         <p>

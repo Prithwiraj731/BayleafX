@@ -80,7 +80,7 @@ export const ServicesSection: React.FC = () => {
       id="services"
       ref={sectionRef}
       aria-label="Scope of Services"
-      className="relative w-full py-20 md:py-28 bg-[#0B0B0B] overflow-hidden"
+      className="relative w-full py-20 md:py-28 bg-[#0B0E0C] overflow-hidden"
     >
       {/* ─────────────────────────────────────────────────────────────
           DOUBLE DOOR REVEAL OVERLAY
@@ -92,17 +92,17 @@ export const ServicesSection: React.FC = () => {
         {/* Left Door (Slides Left carrying "WELCOME TO") */}
         <motion.div
           style={{ x: leftDoorX }}
-          className="absolute top-0 bottom-0 left-0 w-[50.5%] bg-[#0B0B0B] border-r border-white/[0.08] shadow-[20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-end"
+          className="absolute top-0 bottom-0 left-0 w-[50.5%] bg-[#0B0E0C] border-r border-white/[0.08] shadow-[20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-end"
         >
-          {/* Seam red line on right edge */}
-          <div className="absolute top-0 bottom-0 right-0 w-[2px] bg-gradient-to-b from-transparent via-[#8B0D1A]/60 to-transparent" />
+          {/* Seam bayleaf line on right edge */}
+          <div className="absolute top-0 bottom-0 right-0 w-[2px] bg-gradient-to-b from-transparent via-[#2D6A4F]/70 to-transparent" />
 
           {/* "WELCOME TO" on Left Door */}
           <motion.div
             style={{ opacity: doorTextOpacity }}
             className="absolute top-28 sm:top-36 md:top-44 right-0 pr-2 sm:pr-3 md:pr-4 flex items-center justify-end select-none pointer-events-none"
           >
-            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F2ED] whitespace-nowrap leading-none">
+            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F7F5] whitespace-nowrap leading-none">
               WELCOME TO
             </span>
           </motion.div>
@@ -111,31 +111,31 @@ export const ServicesSection: React.FC = () => {
         {/* Right Door (Slides Right carrying "BAYLEAFX") */}
         <motion.div
           style={{ x: rightDoorX }}
-          className="absolute top-0 bottom-0 right-0 w-[50.5%] bg-[#0B0B0B] border-l border-white/[0.08] shadow-[-20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-start"
+          className="absolute top-0 bottom-0 right-0 w-[50.5%] bg-[#0B0E0C] border-l border-white/[0.08] shadow-[-20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-start"
         >
-          {/* Seam red line on left edge */}
-          <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-[#8B0D1A]/60 to-transparent" />
+          {/* Seam bayleaf line on left edge */}
+          <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-[#2D6A4F]/70 to-transparent" />
 
           {/* "BAYLEAFX" on Right Door */}
           <motion.div
             style={{ opacity: doorTextOpacity }}
             className="absolute top-28 sm:top-36 md:top-44 left-0 pl-2 sm:pl-3 md:pl-4 flex items-center justify-start select-none pointer-events-none"
           >
-            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F2ED] whitespace-nowrap leading-none">
+            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F7F5] whitespace-nowrap leading-none">
               BAYLEAF
             </span>
-            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#E50914] ml-1 sm:ml-2 inline-block drop-shadow-[0_0_24px_rgba(229,9,20,0.65)] leading-none">
+            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#52B788] ml-1 sm:ml-2 inline-block drop-shadow-[0_0_24px_rgba(82,183,136,0.5)] leading-none">
               X
             </span>
           </motion.div>
         </motion.div>
 
-        {/* Center Seam Red Laser Glow (when doors meet) */}
+        {/* Center Seam Bayleaf Green Glow (when doors meet) */}
         <motion.div
           style={{ opacity: seamOpacity }}
           className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 z-25 flex items-center justify-center"
         >
-          <div className="w-[2px] h-full bg-gradient-to-b from-transparent via-[#E50914] to-transparent shadow-[0_0_16px_#E50914]" />
+          <div className="w-[2px] h-full bg-gradient-to-b from-transparent via-[#52B788] to-transparent shadow-[0_0_16px_rgba(82,183,136,0.6)]" />
         </motion.div>
       </div>
 
@@ -147,16 +147,17 @@ export const ServicesSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <div className="mb-3.5 flex items-center gap-2.5 justify-center">
-            <span className="font-mono text-[11px] font-semibold tracking-[0.24em] uppercase text-[#8B0D1A]">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D6A4F]/15 border border-[#2D6A4F]/30 font-mono text-[11px] font-semibold tracking-[0.22em] uppercase text-[#52B788]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#52B788]" />
               01 // CAPABILITIES
             </span>
           </div>
 
-          <h2 className="font-display text-3xl font-extrabold tracking-[-0.03em] text-[#F5F2ED] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08]">
+          <h2 className="font-display text-3xl font-extrabold tracking-[-0.03em] text-[#F5F7F5] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08]">
             Engineered from Infrastructure to Interface.
           </h2>
 
-          <p className="mt-4 font-body text-sm md:text-base leading-relaxed text-[#9E9B95] mx-auto max-w-2xl">
+          <p className="mt-4 font-body text-sm md:text-base leading-relaxed text-[#9CA3AF] mx-auto max-w-2xl">
             Fifteen specialized capabilities spanning systems engineering, haute-couture interface design, and data-driven market velocity.
           </p>
 
@@ -170,8 +171,8 @@ export const ServicesSection: React.FC = () => {
                   onClick={() => setActivePillar(option)}
                   className={`relative px-5 py-2.5 text-xs font-mono tracking-wider uppercase transition-all duration-300 rounded-[6px] cursor-pointer ${
                     isSelected
-                      ? 'text-[#F5F2ED] font-bold bg-[#8B0D1A] shadow-[0_0_24px_rgba(139,13,26,0.45)] border border-[#8B0D1A]'
-                      : 'text-[#9E9B95] hover:text-white bg-[#141414] hover:bg-[#1A1A1A] border border-white/[0.08]'
+                      ? 'text-white font-bold bg-[#2D6A4F] shadow-[0_0_20px_rgba(45,106,79,0.4)] border border-[#40916C]'
+                      : 'text-[#9CA3AF] hover:text-white bg-[#131A16] hover:bg-[#18231D] border border-white/[0.08]'
                   }`}
                 >
                   {option}

@@ -34,7 +34,7 @@ export default function RefundPolicyPage() {
     >
       {/* Notice Callout */}
       <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-[#8B0D1A] font-bold">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Professional Services Disclosure
         </p>
         <p className="leading-relaxed">
@@ -45,7 +45,7 @@ export default function RefundPolicyPage() {
       {/* Section 1 */}
       <section id="commercial-nature" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">01 //</span>
+          <span className="font-mono text-sm text-[#52B788]">01 //</span>
           Bespoke Services Architecture
         </h2>
         <p>
@@ -59,7 +59,7 @@ export default function RefundPolicyPage() {
       {/* Section 2 */}
       <section id="deposits" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">02 //</span>
+          <span className="font-mono text-sm text-[#52B788]">02 //</span>
           Project Deposits & Mobilization Fees
         </h2>
         <p>
@@ -74,7 +74,7 @@ export default function RefundPolicyPage() {
       {/* Section 3 */}
       <section id="milestones" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">03 //</span>
+          <span className="font-mono text-sm text-[#52B788]">03 //</span>
           Milestone Review & Acceptance Sign-Off
         </h2>
         <p>
@@ -89,7 +89,7 @@ export default function RefundPolicyPage() {
       {/* Section 4 */}
       <section id="refund-eligibility" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">04 //</span>
+          <span className="font-mono text-sm text-[#52B788]">04 //</span>
           Non-Refundability of Delivered Labor
         </h2>
         <p>
@@ -103,7 +103,7 @@ export default function RefundPolicyPage() {
       {/* Section 5 */}
       <section id="cancellation" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">05 //</span>
+          <span className="font-mono text-sm text-[#52B788]">05 //</span>
           Cancellation Procedures & Notice
         </h2>
         <p>
@@ -125,7 +125,7 @@ export default function RefundPolicyPage() {
       {/* Section 6 */}
       <section id="retainers" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">06 //</span>
+          <span className="font-mono text-sm text-[#52B788]">06 //</span>
           Monthly Engineering & Growth Retainers
         </h2>
         <p>
@@ -141,7 +141,7 @@ export default function RefundPolicyPage() {
       {/* Section 7 */}
       <section id="warranty" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">07 //</span>
+          <span className="font-mono text-sm text-[#52B788]">07 //</span>
           Technical Warranty & Punch-List Cure Window
         </h2>
         <p>
@@ -157,7 +157,7 @@ export default function RefundPolicyPage() {
       {/* Section 8 */}
       <section id="invoicing-disputes" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">08 //</span>
+          <span className="font-mono text-sm text-[#52B788]">08 //</span>
           Invoicing, Payment Terms & Duplicate Charges
         </h2>
         <p>
@@ -173,7 +173,7 @@ export default function RefundPolicyPage() {
       {/* Section 9 */}
       <section id="dispute-resolution" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">09 //</span>
+          <span className="font-mono text-sm text-[#52B788]">09 //</span>
           Dispute Escalation Protocol
         </h2>
         <p>
@@ -189,7 +189,7 @@ export default function RefundPolicyPage() {
       {/* Section 10 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#8B0D1A]">10 //</span>
+          <span className="font-mono text-sm text-[#52B788]">10 //</span>
           Commercial & Billing Inquiries
         </h2>
         <p>

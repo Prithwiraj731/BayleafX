@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0B0B0B',
+  themeColor: '#0B0E0C',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -61,7 +61,7 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#0B0B0B] text-[#F5F2ED] antialiased selection:bg-[#8B0D1A]/40 selection:text-[#F5F2ED]">
+      <body className="min-h-screen bg-[#0B0E0C] text-[#F5F7F5] antialiased selection:bg-[#2D6A4F]/40 selection:text-[#F5F7F5]">
         {children}
       </body>
     </html>
