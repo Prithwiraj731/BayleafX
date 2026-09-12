@@ -64,18 +64,18 @@ const MobileSwipeButton: React.FC = () => {
   return (
     <div
       ref={trackRef}
-      className="relative w-full max-w-[310px] sm:max-w-[330px] h-[56px] rounded-full border border-[#8B0D1A]/55 bg-black/85 backdrop-blur-xl p-1.5 flex items-center shadow-[0_0_16px_rgba(139,13,26,0.25),inset_0_0_10px_rgba(139,13,26,0.1)] overflow-hidden select-none"
+      className="relative w-full max-w-[310px] sm:max-w-[330px] h-[56px] rounded-full border border-[#2D6A4F]/60 bg-black/85 backdrop-blur-xl p-1.5 flex items-center shadow-[0_0_20px_rgba(45,106,79,0.3),inset_0_0_12px_rgba(45,106,79,0.15)] overflow-hidden select-none"
     >
       {/* Background Track Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none pl-7 pr-3">
-        <span className="font-mono text-[11px] sm:text-xs font-bold tracking-[0.28em] text-[#F5F2ED] uppercase transition-all duration-300">
+        <span className="font-mono text-[11px] sm:text-xs font-bold tracking-[0.28em] text-[#F5F7F5] uppercase transition-all duration-300">
           {unlocked ? 'REDIRECTING...' : 'GET STARTED'}
         </span>
       </div>
 
       {/* Swipe Progress Glow Fill */}
       <div
-        className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#8B0D1A]/20 to-transparent pointer-events-none transition-all duration-300"
+        className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#2D6A4F]/30 to-transparent pointer-events-none transition-all duration-300"
         style={{ width: unlocked ? '100%' : '45%' }}
       />
 
@@ -91,7 +91,7 @@ const MobileSwipeButton: React.FC = () => {
         animate={unlocked ? { x: maxDrag } : undefined}
         transition={{ type: 'spring', stiffness: 450, damping: 35 }}
         onClick={triggerAction}
-        className="relative z-10 h-11 w-11 rounded-full bg-gradient-to-br from-[#D11827] via-[#A81324] to-[#8B0D1A] flex items-center justify-center text-white shadow-[0_0_12px_rgba(139,13,26,0.7)] cursor-grab active:cursor-grabbing touch-none select-none shrink-0"
+        className="relative z-10 h-11 w-11 rounded-full bg-gradient-to-br from-[#40916C] via-[#2D6A4F] to-[#1B4332] flex items-center justify-center text-white shadow-[0_0_14px_rgba(45,106,79,0.7)] cursor-grab active:cursor-grabbing touch-none select-none shrink-0"
         aria-label="Swipe right or tap to get started"
       >
         {unlocked ? (
@@ -148,12 +148,12 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: transitionEase }}
-            className="font-display text-[36px] min-[380px]:text-[41px] sm:text-[48px] font-black uppercase tracking-tight text-[#F5F2ED] leading-[0.96] mb-3.5 sm:mb-4"
+            className="font-display text-[36px] min-[380px]:text-[41px] sm:text-[48px] font-black uppercase tracking-tight text-[#F5F7F5] leading-[0.96] mb-3.5 sm:mb-4"
           >
             <div>THE</div>
             <div>INTELLIGENCE</div>
             <div>LAYER FOR A</div>
-            <div className="text-[#E50914]">NEW ERA.</div>
+            <div className="text-[#52B788]">NEW ERA.</div>
           </motion.h1>
 
           {/* Telemetry Row */}
@@ -195,11 +195,11 @@ export const HeroSection: React.FC = () => {
 
           {/* Scroll to Explore Indicator */}
           <div className="flex flex-col items-center justify-center mt-4 sm:mt-5">
-            <div className="relative h-9 w-[1px] bg-gradient-to-b from-[#8B0D1A]/70 via-[#8B0D1A] to-transparent flex items-center justify-center">
+            <div className="relative h-9 w-[1px] bg-gradient-to-b from-[#2D6A4F]/70 via-[#52B788] to-transparent flex items-center justify-center">
               <motion.div
                 animate={{ y: [-8, 8, -8] }}
                 transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-                className="h-1.5 w-1.5 rounded-full bg-[#8B0D1A] shadow-[0_0_6px_#8B0D1A]"
+                className="h-1.5 w-1.5 rounded-full bg-[#52B788] shadow-[0_0_8px_#52B788]"
               />
             </div>
             <span className="mt-2 font-mono text-[9px] tracking-[0.28em] text-[#8E8B85] uppercase select-none">
@@ -218,11 +218,11 @@ export const HeroSection: React.FC = () => {
         className="hidden lg:flex relative min-h-[100vh] w-full flex-col justify-between overflow-hidden pt-24 pb-12 sm:pb-14 md:pt-28 md:pb-10"
         style={{
           background:
-            'radial-gradient(ellipse 95% 65% at 50% 36%, #1F1F25 0%, #111114 48%, #0B0B0B 88%)',
+            'radial-gradient(ellipse 95% 65% at 50% 36%, #151F19 0%, #0E1511 48%, #0B0E0C 88%)',
         }}
       >
-        {/* Ambient Crimson Glow behind desktop character */}
-        <div className="pointer-events-none absolute top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[540px] w-[540px] rounded-full bg-[#8B0D1A]/[0.18] blur-[140px]" />
+        {/* Ambient Bayleaf Glow behind desktop character */}
+        <div className="pointer-events-none absolute top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[540px] w-[540px] rounded-full bg-[#2D6A4F]/[0.22] blur-[140px]" />
 
         {/* 1. LAYER 1: Giant Background Word */}
         <div className="pointer-events-none absolute top-[18%] inset-x-0 z-0 flex select-none justify-center px-4 overflow-hidden">
@@ -266,11 +266,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.25, ease: transitionEase }}
               className="w-full max-w-[420px] xl:max-w-[460px] flex flex-col items-start"
             >
-              {/* <span className="font-mono text-xs font-semibold tracking-[0.22em] uppercase text-[#9E9B95] mb-4">
-                BEYOND AUTOMATION. BEYOND EXPECTATIONS.
-              </span> */}
-
-              <h1 className="font-display text-[3.2rem] xl:text-[3.6rem] font-black uppercase tracking-tight text-[#F5F2ED] leading-[1.02]">
+              <h1 className="font-display text-[3.2rem] xl:text-[3.6rem] font-black uppercase tracking-tight text-[#F5F7F5] leading-[1.02]">
                 THE INTELLIGENCE
                 <span className="block">LAYER FOR A</span>
                 <span className="block text-white">NEW ERA.</span>
@@ -280,10 +276,10 @@ export const HeroSection: React.FC = () => {
               <div className="mt-8">
                 <a
                   href="#contact"
-                  className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/60 py-2.5 pl-6 pr-2.5 backdrop-blur-xl text-sm font-body font-semibold tracking-wide text-[#F5F2ED] hover:border-[#8B0D1A] hover:bg-[#8B0D1A]/15 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
+                  className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/60 py-2.5 pl-6 pr-2.5 backdrop-blur-xl text-sm font-body font-semibold tracking-wide text-[#F5F7F5] hover:border-[#2D6A4F] hover:bg-[#2D6A4F]/15 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
                 >
                   <span>Get Started</span>
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#8B0D1A] text-white transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-0.5 shadow-[0_0_15px_rgba(139,13,26,0.6)]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2D6A4F] text-white transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-0.5 group-hover:bg-[#40916C] shadow-[0_0_15px_rgba(45,106,79,0.5)]">
                     <ArrowRight className="h-4 w-4" />
                   </span>
                 </a>
@@ -315,19 +311,19 @@ export const HeroSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
                   <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono tracking-wider text-white/90 uppercase">
                     <span>ATELIER SPEC</span>
-                    <span className="text-[#8B0D1A] font-bold">ACTIVE</span>
+                    <span className="text-[#52B788] font-bold">ACTIVE</span>
                   </div>
                 </div>
 
                 {/* Progress Slider: 01 ─────── 06 */}
                 <div className="mt-3.5 flex w-full items-center justify-between gap-3 text-xs font-mono text-[#6E6B66]">
-                  <span className="text-[#F5F2ED] font-semibold">01</span>
+                  <span className="text-[#F5F7F5] font-semibold">01</span>
                   <div className="relative h-[2px] flex-1 bg-white/15 rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: '0%' }}
                       animate={{ width: '45%' }}
                       transition={{ duration: 1.5, delay: 0.5 }}
-                      className="h-full bg-gradient-to-r from-[#8B0D1A] to-[#F5F2ED]"
+                      className="h-full bg-gradient-to-r from-[#52B788] to-[#2D6A4F]"
                     />
                   </div>
                   <span>06</span>

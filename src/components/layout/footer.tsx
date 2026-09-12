@@ -19,8 +19,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5">
             <Logo href="/" />
             <p className="mt-3.5 max-w-sm font-body text-xs text-[#6C7A70] leading-relaxed">
-              Bespoke digital architecture and haute-couture experience engineering.
-              Clean. Premium. Timeless.
+              Enterprise software architecture, mission-critical digital systems, and high-performance user experiences. Engineered for velocity, durability, and scale.
             </p>
             <div className="mt-4">
               <a

@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { HeroSection } from '@/components/sections/hero';
+import { TrustMarqueeSection } from '@/components/sections/trust-marquee';
 import { ServicesSection } from '@/components/sections/services';
 import { DifferentiatorsSection } from '@/components/sections/differentiators';
 import { MetricsSection } from '@/components/sections/metrics';
@@ -11,7 +12,7 @@ import { ContactSection } from '@/components/sections/contact';
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-bl-void text-bl-text-primary selection:bg-bl-accent/30 selection:text-white">
+    <div className="relative min-h-screen bg-[#0B0E0C] text-[#F5F7F5] selection:bg-[#2D6A4F]/50 selection:text-white">
       {/* Top Fixed Navigation */}
       <Navbar />
 
@@ -20,22 +21,25 @@ export default function HomePage() {
         {/* Section 1: Hero */}
         <HeroSection />
 
-        {/* Section 2: 15 Services with Split Door Reveal ("Welcome to BayleafX") */}
+        {/* Section 2: Enterprise Trust & Industry Verticals */}
+        <TrustMarqueeSection />
+
+        {/* Section 3: Enterprise Solutions Suite */}
         <ServicesSection />
 
-        {/* Section 3: Value Differentiators */}
+        {/* Section 4: Executive Differentiators Comparison Matrix */}
         <DifferentiatorsSection />
 
-        {/* Section 4: Quantifiable Impact Metrics */}
+        {/* Section 5: Quantifiable Impact Metrics & Architectural Spotlight */}
         <MetricsSection />
 
-        {/* Section 5: 4-Phase Delivery Process */}
+        {/* Section 6: Engineering Lifecycle Roadmap */}
         <ProcessSection />
 
-        {/* Section 6: Executive Testimonials */}
+        {/* Section 7: Executive Social Proof Grid */}
         <TestimonialsSection />
 
-        {/* Section 7: Contact & Engagement Initiation */}
+        {/* Section 8: Enterprise RFP & Architectural Consultation Portal */}
         <ContactSection />
       </main>
 

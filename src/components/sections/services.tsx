@@ -1,216 +1,303 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Monitor,
   Layers,
-  GitBranch,
+  Globe,
   Plug,
-  Cloud,
   Compass,
   MousePointerClick,
   Palette,
-  Sparkles,
   Eye,
   TrendingUp,
   Target,
   Share2,
   PenTool,
   BarChart3,
-  Globe,
+  ArrowRight,
+  CheckCircle2,
+  Sparkles,
   LucideIcon,
+  ShieldCheck,
+  Zap,
 } from 'lucide-react';
 import { Container } from '@/components/layout/container';
-import { ServiceCard } from '@/components/ui/service-card';
+import { SectionHeader } from '@/components/layout/section-header';
 import { SERVICE_PILLARS } from '@/lib/constants';
 
 const iconMap: Record<string, LucideIcon> = {
   Monitor,
   Layers,
-  GitBranch,
+  Globe,
   Plug,
-  Cloud,
   Compass,
   MousePointerClick,
   Palette,
-  Sparkles,
   Eye,
   TrendingUp,
   Target,
   Share2,
   PenTool,
   BarChart3,
-  Globe,
+};
+
+const PILLAR_META: Record<
+  string,
+  {
+    tagline: string;
+    description: string;
+    outcomes: string[];
+    techStack: string[];
+    slaBadge: string;
+  }
+> = {
+  'Core Development': {
+    tagline: 'High-Throughput Web & Full-Stack Systems',
+    description:
+      'We engineer production-grade platforms with clean component architecture, resilient database topologies, and edge SSR capabilities that eliminate technical debt before it forms.',
+    outcomes: [
+      'Sub-500ms Edge First Contentful Paint',
+      'Zero-Downtime Deployment Workflows',
+      'Bulletproof Identity & Payment Lifecycles',
+    ],
+    techStack: ['Next.js 15', 'React 19', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+    slaBadge: '99.99% Edge SLA Standard',
+  },
+  'UI/UX Engineering': {
+    tagline: 'Haute-Couture Interface Design & Design Systems',
+    description:
+      'We combine Apple-grade typography and hardware-accelerated motion with tokenized design systems, ensuring cohesive brand prestige across web and mobile surfaces.',
+    outcomes: [
+      'WCAG 2.2 AA Verified Accessibility',
+      'Figma-to-Code Token Synchronization',
+      'Tactile 60FPS Micro-Interactions',
+    ],
+    techStack: ['Figma Tokens', 'Framer Motion', 'Radix Primitives', 'Design Tokens', 'Storybook'],
+    slaBadge: 'Haute-Couture Craft Guarantee',
+  },
+  'Growth & Reach': {
+    tagline: 'Attribution Modeling & Full-Funnel Velocity',
+    description:
+      'We eliminate guesswork through technical SEO architecture, Generative Engine Optimization (GEO), and conversion rate experiments calibrated directly to Customer Acquisition Cost.',
+    outcomes: [
+      'Avg. 40% Verified Conversion Lift',
+      'Generative AI Search Indexation (GEO)',
+      'Telemetry Attribution Pipelines',
+    ],
+    techStack: ['PostHog', 'Telemetry Pipelines', 'GEO Schema', 'Multivariate CRO', 'Edge Analytics'],
+    slaBadge: 'Measurable ROI Calibration',
+  },
 };
 
 export const ServicesSection: React.FC = () => {
-  const [activePillar, setActivePillar] = useState<string>('All');
-  const sectionRef = useRef<HTMLElement>(null);
+  const [activePillarName, setActivePillarName] = useState<string>('Core Development');
+  const [viewAll, setViewAll] = useState<boolean>(false);
 
-  // Scroll tracking: Starts when Services section approaches viewport from Hero
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start 0.85', 'start -0.35'],
-  });
-
-  // Slow, smooth side-by-side sliding of the two full-width doors
-  const leftDoorX = useTransform(scrollYProgress, [0.15, 0.82], ['0%', '-105%']);
-  const rightDoorX = useTransform(scrollYProgress, [0.15, 0.82], ['0%', '105%']);
-
-  // Center vertical seam laser glow
-  const seamOpacity = useTransform(scrollYProgress, [0.12, 0.35], [1, 0]);
-
-  // Text on doors remains fully visible while doors are closed, then gently fades as doors slide off-screen
-  const doorTextOpacity = useTransform(scrollYProgress, [0.15, 0.72], [1, 0]);
-
-  const filterOptions = ['All', ...SERVICE_PILLARS.map((p) => p.name)];
-
-  const displayedServices =
-    activePillar === 'All'
-      ? SERVICE_PILLARS.flatMap((p) =>
-          p.services.map((s) => ({ ...s, pillarName: p.name }))
-        )
-      : (
-          SERVICE_PILLARS.find((p) => p.name === activePillar)?.services || []
-        ).map((s) => ({ ...s, pillarName: activePillar }));
+  const activePillar =
+    SERVICE_PILLARS.find((p) => p.name === activePillarName) || SERVICE_PILLARS[0];
+  const meta = PILLAR_META[activePillarName] || PILLAR_META['Core Development'];
 
   return (
     <section
       id="services"
-      ref={sectionRef}
-      aria-label="Scope of Services"
-      className="relative w-full py-20 md:py-28 bg-[#0B0E0C] overflow-hidden"
+      aria-label="Enterprise Solutions & Capabilities"
+      className="relative w-full py-24 md:py-36 bg-[#0B0E0C] overflow-hidden"
     >
-      {/* ─────────────────────────────────────────────────────────────
-          DOUBLE DOOR REVEAL OVERLAY
-          Left Door carries "WELCOME TO" to the left
-          Right Door carries "BAYLEAFX" to the right
-          Slowly parts side by side without tampering with the section
-          ───────────────────────────────────────────────────────────── */}
-      <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
-        {/* Left Door (Slides Left carrying "WELCOME TO") */}
-        <motion.div
-          style={{ x: leftDoorX }}
-          className="absolute top-0 bottom-0 left-0 w-[50.5%] bg-[#0B0E0C] border-r border-white/[0.08] shadow-[20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-end"
-        >
-          {/* Seam bayleaf line on right edge */}
-          <div className="absolute top-0 bottom-0 right-0 w-[2px] bg-gradient-to-b from-transparent via-[#2D6A4F]/70 to-transparent" />
+      {/* Ambient Bayleaf Depth */}
+      <div className="pointer-events-none absolute top-1/4 right-0 h-[450px] w-[450px] rounded-full bg-[#2D6A4F]/[0.08] blur-[150px]" />
+      <div className="pointer-events-none absolute bottom-1/4 left-0 h-[450px] w-[450px] rounded-full bg-[#1B4332]/[0.08] blur-[150px]" />
 
-          {/* "WELCOME TO" on Left Door */}
-          <motion.div
-            style={{ opacity: doorTextOpacity }}
-            className="absolute top-28 sm:top-36 md:top-44 right-0 pr-2 sm:pr-3 md:pr-4 flex items-center justify-end select-none pointer-events-none"
-          >
-            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F7F5] whitespace-nowrap leading-none">
-              WELCOME TO
-            </span>
-          </motion.div>
-        </motion.div>
-
-        {/* Right Door (Slides Right carrying "BAYLEAFX") */}
-        <motion.div
-          style={{ x: rightDoorX }}
-          className="absolute top-0 bottom-0 right-0 w-[50.5%] bg-[#0B0E0C] border-l border-white/[0.08] shadow-[-20px_0_60px_rgba(0,0,0,0.98)] pointer-events-none flex flex-col justify-start items-start"
-        >
-          {/* Seam bayleaf line on left edge */}
-          <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-[#2D6A4F]/70 to-transparent" />
-
-          {/* "BAYLEAFX" on Right Door */}
-          <motion.div
-            style={{ opacity: doorTextOpacity }}
-            className="absolute top-28 sm:top-36 md:top-44 left-0 pl-2 sm:pl-3 md:pl-4 flex items-center justify-start select-none pointer-events-none"
-          >
-            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#F5F7F5] whitespace-nowrap leading-none">
-              BAYLEAF
-            </span>
-            <span className="font-display text-2xl min-[380px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight text-[#52B788] ml-1 sm:ml-2 inline-block drop-shadow-[0_0_24px_rgba(82,183,136,0.5)] leading-none">
-              X
-            </span>
-          </motion.div>
-        </motion.div>
-
-        {/* Center Seam Bayleaf Green Glow (when doors meet) */}
-        <motion.div
-          style={{ opacity: seamOpacity }}
-          className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 z-25 flex items-center justify-center"
-        >
-          <div className="w-[2px] h-full bg-gradient-to-b from-transparent via-[#52B788] to-transparent shadow-[0_0_16px_rgba(82,183,136,0.6)]" />
-        </motion.div>
-      </div>
-
-      {/* ─────────────────────────────────────────────────────────────
-          STANDARD SERVICES CONTENT (Completely untampered)
-          Heading, Filter Tabs, and 15 Bento Service Cards
-          ───────────────────────────────────────────────────────────── */}
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
-          <div className="mb-3.5 flex items-center gap-2.5 justify-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D6A4F]/15 border border-[#2D6A4F]/30 font-mono text-[11px] font-semibold tracking-[0.22em] uppercase text-[#52B788]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#52B788]" />
-              01 // CAPABILITIES
-            </span>
-          </div>
+        <SectionHeader
+          overline="01 // CAPABILITIES"
+          title="Engineered from Infrastructure to Interface."
+          description="Fifteen specialized capabilities spanning systems engineering, haute-couture interface design, and data-driven market velocity."
+        />
 
-          <h2 className="font-display text-3xl font-extrabold tracking-[-0.03em] text-[#F5F7F5] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08]">
-            Engineered from Infrastructure to Interface.
-          </h2>
-
-          <p className="mt-4 font-body text-sm md:text-base leading-relaxed text-[#9CA3AF] mx-auto max-w-2xl">
-            Fifteen specialized capabilities spanning systems engineering, haute-couture interface design, and data-driven market velocity.
-          </p>
-
-          {/* Pillar Filter Tabs */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            {filterOptions.map((option) => {
-              const isSelected = activePillar === option;
-              return (
-                <button
-                  key={option}
-                  onClick={() => setActivePillar(option)}
-                  className={`relative px-5 py-2.5 text-xs font-mono tracking-wider uppercase transition-all duration-300 rounded-[6px] cursor-pointer ${
-                    isSelected
-                      ? 'text-white font-bold bg-[#2D6A4F] shadow-[0_0_20px_rgba(45,106,79,0.4)] border border-[#40916C]'
-                      : 'text-[#9CA3AF] hover:text-white bg-[#131A16] hover:bg-[#18231D] border border-white/[0.08]'
-                  }`}
-                >
-                  {option}
-                </button>
-              );
-            })}
-          </div>
+        {/* 3-Pillar Corporate Switcher Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+          {SERVICE_PILLARS.map((pillar, idx) => {
+            const isSelected = activePillarName === pillar.name;
+            return (
+              <button
+                key={pillar.name}
+                onClick={() => {
+                  setActivePillarName(pillar.name);
+                  setViewAll(false);
+                }}
+                className={`group flex items-center gap-2.5 rounded-full px-5 py-3 text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                  isSelected
+                    ? 'bg-[#2D6A4F] text-white font-bold shadow-[0_0_24px_rgba(45,106,79,0.4)] border border-[#40916C]'
+                    : 'bg-[#121815] text-[#9CA3AF] hover:text-[#F5F7F5] hover:bg-[#16201B] border border-white/[0.08]'
+                }`}
+              >
+                <span className={`text-[10px] font-bold ${isSelected ? 'text-[#A3B18A]' : 'text-[#6C7A70]'}`}>
+                  0{idx + 1}
+                </span>
+                <span>{pillar.name}</span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Bento Grid of 15 Services */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          <AnimatePresence mode="popLayout">
-            {displayedServices.map((service, index) => {
-              const IconComponent = iconMap[service.icon] || Sparkles;
+        {/* Interactive Pillar Showcase Deck */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activePillarName}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.35 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch"
+          >
+            {/* Left Strategic Overview Card */}
+            <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-[#121815] to-[#0D120F] p-8 md:p-10 shadow-[0_16px_40px_rgba(0,0,0,0.6)] relative overflow-hidden">
+              <div className="pointer-events-none absolute top-0 right-0 h-40 w-40 rounded-full bg-[#2D6A4F]/10 blur-[60px]" />
 
-              return (
-                <motion.div
-                  key={`${service.pillarName}-${service.title}`}
-                  layout
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.35, delay: index * 0.03 }}
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#2D6A4F]/40 bg-[#2D6A4F]/15 px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-[#52B788] mb-4">
+                  <ShieldCheck className="h-3 w-3" />
+                  <span>{meta.slaBadge}</span>
+                </div>
+
+                <h3 className="font-display text-2xl md:text-3xl font-extrabold text-[#F5F7F5] leading-tight mb-3">
+                  {meta.tagline}
+                </h3>
+
+                <p className="font-body text-sm text-[#9CA3AF] leading-relaxed mb-6">
+                  {meta.description}
+                </p>
+
+                {/* Key Business Outcomes */}
+                <div className="space-y-3 pt-4 border-t border-white/[0.06] mb-8">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#F5F7F5] font-semibold block">
+                    Enterprise Deliverables & Outcomes
+                  </span>
+                  {meta.outcomes.map((outcome) => (
+                    <div key={outcome} className="flex items-center gap-2.5 text-xs text-[#9CA3AF]">
+                      <CheckCircle2 className="h-4 w-4 text-[#52B788] shrink-0" />
+                      <span>{outcome}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom Tech Stack & Action */}
+              <div className="pt-6 border-t border-white/[0.06]">
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  {meta.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-md border border-white/[0.06] bg-[#16201B] px-2.5 py-1 text-[10px] font-mono text-[#A3B18A]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#52B788] hover:text-white transition-colors group"
                 >
-                  <ServiceCard
-                    icon={IconComponent}
-                    title={service.title}
-                    subtitle={service.subtitle}
-                    description={service.description}
-                  />
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+                  <span>Initiate Consultation in {activePillarName}</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Pillar Capabilities Grid */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+              {activePillar.services.map((service, index) => {
+                const IconComponent = iconMap[service.icon] || Sparkles;
+
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="group flex flex-col justify-between rounded-xl border border-white/[0.08] bg-gradient-to-b from-[#111714] to-[#0E1210] p-6 transition-all duration-300 hover:border-[#2D6A4F]/60 hover:bg-[#141C17] hover:shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(45,106,79,0.15)]"
+                  >
+                    <div>
+                      {/* Icon Badge */}
+                      <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#2D6A4F]/30 bg-[#16221B] text-[#52B788] transition-colors group-hover:border-[#2D6A4F]/60 group-hover:bg-[#1B4332]/40">
+                        <IconComponent className="h-5 w-5 stroke-[1.5]" />
+                      </div>
+
+                      <h4 className="font-display text-lg font-bold text-[#F5F7F5] mb-2 group-hover:text-white transition-colors">
+                        {service.title}
+                      </h4>
+
+                      <p className="font-body text-xs text-[#9CA3AF] leading-relaxed mb-4">
+                        {service.subtitle}
+                      </p>
+                    </div>
+
+                    {service.description && (
+                      <p className="font-body text-[11px] text-[#6C7A70] leading-relaxed pt-3 border-t border-white/[0.06] group-hover:text-[#8E9B93] transition-colors">
+                        {service.description}
+                      </p>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Global Capabilities Directory Toggle */}
+        <div className="mt-14 pt-10 border-t border-white/[0.06] text-center">
+          <button
+            onClick={() => setViewAll(!viewAll)}
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#121815] px-6 py-2.5 text-xs font-mono tracking-wider uppercase text-[#9CA3AF] hover:border-[#2D6A4F] hover:text-white transition-all cursor-pointer"
+          >
+            <span>{viewAll ? 'Collapse Enterprise Directory' : 'Explore Complete 15-Capability Architecture'}</span>
+            <Zap className="h-3.5 w-3.5 text-[#52B788]" />
+          </button>
+
+          {/* Full Grid of All 15 Capabilities */}
+          {viewAll && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4 }}
+              className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left"
+            >
+              {SERVICE_PILLARS.flatMap((p) =>
+                p.services.map((s) => {
+                  const Icon = iconMap[s.icon] || Sparkles;
+                  return (
+                    <div
+                      key={s.title}
+                      className="rounded-xl border border-white/[0.08] bg-[#111714]/80 p-5 hover:border-[#2D6A4F]/50 transition-all"
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#16221B] text-[#52B788]">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <span className="font-mono text-[9px] uppercase tracking-wider text-[#52B788] block">
+                            {p.name}
+                          </span>
+                          <h5 className="font-display text-sm font-bold text-[#F5F7F5]">
+                            {s.title}
+                          </h5>
+                        </div>
+                      </div>
+                      <p className="font-body text-xs text-[#9CA3AF] leading-relaxed">
+                        {s.subtitle}
+                      </p>
+                    </div>
+                  );
+                })
+              )}
+            </motion.div>
+          )}
+        </div>
       </Container>
     </section>
   );
