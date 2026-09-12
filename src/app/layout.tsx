@@ -36,11 +36,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/tab-logo.png' },
-      { url: '/favicon.ico' },
+      { url: '/tab-logo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
     ],
-    apple: '/tab-logo.png',
-    shortcut: '/tab-logo.png',
+    apple: [
+      { url: '/tab-logo.png', type: 'image/png' },
+    ],
+    shortcut: ['/tab-logo.png'],
   },
 };
 
