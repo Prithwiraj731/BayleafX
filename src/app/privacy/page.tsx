@@ -33,7 +33,6 @@ export default function PrivacyPolicyPage() {
       activeRoute="/privacy"
       tocItems={TOC_ITEMS}
     >
-      {/* Notice Callout */}
       <div className="rounded-xl border border-[#2D6A4F]/40 bg-[#2D6A4F]/[0.08] p-5 text-xs sm:text-sm text-[#F5F7F5] space-y-2">
         <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Operational Disclosure Notice
@@ -42,8 +41,6 @@ export default function PrivacyPolicyPage() {
           BayleafX operates strictly as a professional engineering and design atelier. We do not sell personal data, monetize visitor traffic, or deploy cross-site tracking advertising networks. Data provided to us is used solely to evaluate technical specifications, prepare architectural proposals, and conduct professional engagements.
         </p>
       </div>
-
-      {/* Section 1 */}
       <section id="overview" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">01 //</span>
@@ -56,8 +53,6 @@ export default function PrivacyPolicyPage() {
           For the purposes of applicable data protection regulations, including the European General Data Protection Regulation (GDPR) and relevant state and international privacy statutes, <strong>[COMPANY LEGAL NAME]</strong> acts as the Data Controller for information submitted through this website.
         </p>
       </section>
-
-      {/* Section 2 */}
       <section id="data-collected" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">02 //</span>
@@ -66,7 +61,7 @@ export default function PrivacyPolicyPage() {
         <p>
           We only collect personal information that is directly relevant to initiating architectural evaluations, client communications, and providing engineering consultations.
         </p>
-        
+
         <h3 className="font-display text-base font-bold text-[#F5F2ED] mt-4">A. Information You Voluntarily Provide</h3>
         <p>
           When you interact with our direct inquiry form or communicate with us via email, you may provide:
@@ -75,7 +70,7 @@ export default function PrivacyPolicyPage() {
           <li><strong>Identity Data:</strong> Full name and professional title.</li>
           <li><strong>Contact Data:</strong> Work email address and optional telephone number.</li>
           <li><strong>Project Specifications:</strong> Target deployment horizon (e.g. Immediate, 1–3 Months, Exploring), architectural requirements, technical stack details, and budget parameters.</li>
-          <li><strong>Correspondence:</strong> Any feedback, technical inquiries, or materials transmitted directly to <code className="text-[#F5F2ED] bg-white/[0.06] px-1.5 py-0.5 rounded font-mono text-xs">hello@bayleafx.com</code>.</li>
+          <li><strong>Correspondence:</strong> Any feedback, technical inquiries, or materials transmitted directly to <code className="text-[#F5F2ED] bg-white/[0.06] px-1.5 py-0.5 rounded font-mono text-xs">avirupd925@gmail.com</code>.</li>
         </ul>
 
         <h3 className="font-display text-base font-bold text-[#F5F2ED] mt-4">B. Information Collected Automatically</h3>
@@ -94,8 +89,6 @@ export default function PrivacyPolicyPage() {
           <li>We do <strong>not</strong> collect sensitive personal data such as race, religious beliefs, health status, or political affiliations.</li>
         </ul>
       </section>
-
-      {/* Section 3 */}
       <section id="how-we-use" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">03 //</span>
@@ -133,8 +126,6 @@ export default function PrivacyPolicyPage() {
           </table>
         </div>
       </section>
-
-      {/* Section 4 */}
       <section id="storage-security" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">04 //</span>
@@ -152,8 +143,6 @@ export default function PrivacyPolicyPage() {
           While no Internet transmission is 100% infallible, we continuously monitor and patch vulnerabilities to protect your data against unauthorized access, destruction, or alteration.
         </p>
       </section>
-
-      {/* Section 5 */}
       <section id="third-parties" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">05 //</span>
@@ -164,14 +153,12 @@ export default function PrivacyPolicyPage() {
         </p>
         <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
           <li><strong>Hosting & Edge Delivery:</strong> [E.G., VERCEL INC. / CLOUDFLARE INC. / AWS] — provides containerized edge routing, SSL termination, and content delivery.</li>
-          <li><strong>Corporate Communications:</strong> [E.G., GOOGLE WORKSPACE / RESEND] — manages email infrastructure for incoming inquiries directed to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">hello@bayleafx.com</code>.</li>
+          <li><strong>Corporate Communications:</strong> [E.G., GOOGLE WORKSPACE / RESEND] — manages email infrastructure for incoming inquiries directed to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">avirupd925@gmail.com</code>.</li>
         </ul>
         <p>
           All service providers are bound by strict data processing agreements ensuring confidentiality and regulatory compliance.
         </p>
       </section>
-
-      {/* Section 6 */}
       <section id="cookies-tracking" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">06 //</span>
@@ -189,8 +176,6 @@ export default function PrivacyPolicyPage() {
           For comprehensive details on how browser storage and essential cookies operate, please consult our dedicated <a href="/cookies" className="text-[#52B788] hover:underline font-semibold">Cookie Policy</a>.
         </p>
       </section>
-
-      {/* Section 7 */}
       <section id="data-retention" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">07 //</span>
@@ -205,8 +190,6 @@ export default function PrivacyPolicyPage() {
           <li><strong>Server Access Logs:</strong> Ephemeral server diagnostics are automatically rotated and discarded within <strong>[E.G., 30 TO 90 DAYS]</strong>.</li>
         </ul>
       </section>
-
-      {/* Section 8 */}
       <section id="user-rights" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">08 //</span>
@@ -234,11 +217,9 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
         <p>
-          <strong>How to Exercise Your Rights:</strong> Submit an explicit request to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">hello@bayleafx.com</code> or our designated legal desk at <strong>[SUPPORT EMAIL]</strong>. We respond to all verified statutory privacy requests within thirty (30) calendar days at zero cost to you.
+          <strong>How to Exercise Your Rights:</strong> Submit an explicit request to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">avirupd925@gmail.com</code> or our designated legal desk at <strong>[SUPPORT EMAIL]</strong>. We respond to all verified statutory privacy requests within thirty (30) calendar days at zero cost to you.
         </p>
       </section>
-
-      {/* Section 9 */}
       <section id="children" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">09 //</span>
@@ -248,8 +229,6 @@ export default function PrivacyPolicyPage() {
           Our services are exclusively tailored for businesses, enterprise organizations, and commercial entities. We do not direct services to, nor knowingly collect personal data from, individuals under the age of 18 (or the age of majority in your jurisdiction). If you suspect that a minor has provided information through our inquiry form, please contact us immediately to have it purged.
         </p>
       </section>
-
-      {/* Section 10 */}
       <section id="transfers" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">10 //</span>
@@ -262,8 +241,6 @@ export default function PrivacyPolicyPage() {
           Where personal data is transferred across national borders, we ensure adequate protective mechanisms are deployed, including European Commission Standard Contractual Clauses (SCCs) and UK International Data Transfer Addendums where required by applicable law.
         </p>
       </section>
-
-      {/* Section 11 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">11 //</span>
@@ -276,7 +253,7 @@ export default function PrivacyPolicyPage() {
         <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
           <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
           <div><strong className="text-[#F5F2ED]">Attention:</strong> Privacy Governance Officer / Legal Desk</div>
-          <div><strong className="text-[#F5F2ED]">Official Inquiries Email:</strong> hello@bayleafx.com / [SUPPORT EMAIL]</div>
+          <div><strong className="text-[#F5F2ED]">Official Inquiries Email:</strong> avirupd925@gmail.com / [SUPPORT EMAIL]</div>
           <div><strong className="text-[#F5F2ED]">Registered Business Address:</strong> [BUSINESS ADDRESS]</div>
           <div><strong className="text-[#F5F2ED]">Governing Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
         </div>

@@ -36,7 +36,6 @@ export default function TermsOfServicePage() {
       activeRoute="/terms"
       tocItems={TOC_ITEMS}
     >
-      {/* Notice Callout */}
       <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
         <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Contractual Architecture Note
@@ -45,8 +44,6 @@ export default function TermsOfServicePage() {
           These Terms govern access to our website and informational resources. All commercial software engineering, UI/UX design sprints, and strategic marketing deliverables are governed by customized, bilaterally executed Statements of Work (SOW) or Master Services Agreements (MSA).
         </p>
       </div>
-
-      {/* Section 1 */}
       <section id="acceptance" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">01 //</span>
@@ -59,8 +56,6 @@ export default function TermsOfServicePage() {
           Our platform is exclusively intended for commercial entities, enterprise organizations, and professional individuals representing corporate clients. By using this website, you represent and warrant that you possess the full legal power and corporate authority to agree to these Terms.
         </p>
       </section>
-
-      {/* Section 2 */}
       <section id="informational-scope" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">02 //</span>
@@ -74,8 +69,6 @@ export default function TermsOfServicePage() {
           <li><strong>Execution of Formal SOW:</strong> A legally binding commercial engagement is formed only upon the mutual bilateral execution of a written Statement of Work (SOW), Master Services Agreement (MSA), or accepted written proposal, accompanied by the receipt of applicable project deposits.</li>
         </ul>
       </section>
-
-      {/* Section 3 */}
       <section id="intellectual-property" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">03 //</span>
@@ -88,8 +81,6 @@ export default function TermsOfServicePage() {
           You may not scrape, reproduce, replicate, mirror, adapt, or distribute any proprietary design element, code component, or visual artwork from this website without explicit prior written authorization from BayleafX.
         </p>
       </section>
-
-      {/* Section 4 */}
       <section id="client-deliverables" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">04 //</span>
@@ -103,8 +94,6 @@ export default function TermsOfServicePage() {
           <li><strong>BayleafX Pre-Existing IP:</strong> BayleafX retains all rights in its internal scaffolding libraries, design token generators, starter frameworks, open-source dependencies, and generalized engineering techniques developed prior to or independently of the client engagement. Clients receive a perpetual, irrevocable, worldwide, royalty-free license to utilize such pre-existing IP as integrated into the final deliverables.</li>
         </ul>
       </section>
-
-      {/* Section 5 */}
       <section id="acceptable-use" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">05 //</span>
@@ -119,8 +108,6 @@ export default function TermsOfServicePage() {
           <li>Circumvent or tamper with security mechanisms, edge firewalls, or routing headers deployed by our CDN providers.</li>
         </ul>
       </section>
-
-      {/* Section 6 */}
       <section id="metrics-disclaimer" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">06 //</span>
@@ -133,8 +120,6 @@ export default function TermsOfServicePage() {
           Past performance does not constitute a legal guarantee or commercial warranty that every bespoke platform will achieve identical metric improvements. Engineering outcomes depend heavily on client stack constraints, third-party API dependencies, traffic volumes, and business domain variables.
         </p>
       </section>
-
-      {/* Section 7 */}
       <section id="digital-delivery" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">07 //</span>
@@ -148,8 +133,6 @@ export default function TermsOfServicePage() {
           <li><strong>Review & Acceptance Windows:</strong> Formal acceptance criteria and technical punch-list inspection windows are governed by the applicable Statement of Work (typically fourteen (14) calendar days following milestone delivery notification).</li>
         </ul>
       </section>
-
-      {/* Section 8 */}
       <section id="third-parties" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">08 //</span>
@@ -159,8 +142,6 @@ export default function TermsOfServicePage() {
           Our application and client platforms frequently integrate with third-party software tools, headless APIs, and cloud services (such as Next.js, Vercel, Stripe, AWS, and modern headless CMS engines). We do not control and assume no responsibility for the independent availability, uptime, pricing changes, or terms of third-party platforms.
         </p>
       </section>
-
-      {/* Section 9 */}
       <section id="disclaimer" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">09 //</span>
@@ -173,8 +154,6 @@ export default function TermsOfServicePage() {
           To the maximum extent permitted by applicable law, BayleafX disclaims all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, non-infringement, or that the website will operate uninterrupted, secure, or free from minor typographical or technical errors.
         </p>
       </section>
-
-      {/* Section 10 */}
       <section id="liability" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">10 //</span>
@@ -187,8 +166,6 @@ export default function TermsOfServicePage() {
           For formal commercial engagements, monetary liability limitations, caps, and mutual indemnities are expressly defined in the applicable executed Master Services Agreement.
         </p>
       </section>
-
-      {/* Section 11 */}
       <section id="indemnity" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">11 //</span>
@@ -198,8 +175,6 @@ export default function TermsOfServicePage() {
           You agree to defend, indemnify, and hold harmless <strong>[COMPANY LEGAL NAME]</strong> and its affiliates from and against any third-party claims, liabilities, damages, judgments, awards, losses, costs, or expenses (including reasonable attorneys’ fees) arising out of your violation of these Terms of Service or your unauthorized, malicious use of this website.
         </p>
       </section>
-
-      {/* Section 12 */}
       <section id="governing-law" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">12 //</span>
@@ -212,8 +187,6 @@ export default function TermsOfServicePage() {
           Any legal action, suit, or proceeding arising under these Terms shall be instituted exclusively in the competent courts located in <strong>[GOVERNING JURISDICTION]</strong>, and each party irrevocably submits to the personal jurisdiction of such courts.
         </p>
       </section>
-
-      {/* Section 13 */}
       <section id="modifications" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">13 //</span>
@@ -223,8 +196,6 @@ export default function TermsOfServicePage() {
           We reserve the right to revise and update these Terms of Service at our sole discretion. Any changes become effective immediately upon posting to this page with an updated &ldquo;Last Updated&rdquo; timestamp. Your continued use of the website following the posting of revised Terms signifies your acceptance of the amendments.
         </p>
       </section>
-
-      {/* Section 14 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">14 //</span>
@@ -237,7 +208,7 @@ export default function TermsOfServicePage() {
         <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
           <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
           <div><strong className="text-[#F5F2ED]">Counsel Desk:</strong> Corporate Governance & Legal Operations</div>
-          <div><strong className="text-[#F5F2ED]">Contact Email:</strong> hello@bayleafx.com / [SUPPORT EMAIL]</div>
+          <div><strong className="text-[#F5F2ED]">Contact Email:</strong> avirupd925@gmail.com / [SUPPORT EMAIL]</div>
           <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
           <div><strong className="text-[#F5F2ED]">Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
         </div>

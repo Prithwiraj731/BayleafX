@@ -31,7 +31,6 @@ export default function CookiePolicyPage() {
       activeRoute="/cookies"
       tocItems={TOC_ITEMS}
     >
-      {/* Notice Callout */}
       <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
         <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Zero-Tracker Architecture Statement
@@ -40,8 +39,6 @@ export default function CookiePolicyPage() {
           BayleafX does not deploy commercial advertising pixels, third-party marketing cookies, or behavioral data trackers. Our web architecture is engineered to provide an extraordinary digital experience without invasive client tracking.
         </p>
       </div>
-
-      {/* Section 1 */}
       <section id="overview" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">01 //</span>
@@ -54,8 +51,6 @@ export default function CookiePolicyPage() {
           We believe high-performance engineering and user privacy go hand in hand. We minimize data storage to the absolute lowest threshold required to deliver responsive, secure web traffic.
         </p>
       </section>
-
-      {/* Section 2 */}
       <section id="what-are-cookies" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">02 //</span>
@@ -68,8 +63,6 @@ export default function CookiePolicyPage() {
           Modern web applications may also use related browser storage mechanisms, such as <code>localStorage</code>, <code>sessionStorage</code>, and in-memory application state, to preserve interface preferences (such as dark mode states or mobile drawer toggles).
         </p>
       </section>
-
-      {/* Section 3 */}
       <section id="cookie-audit" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">03 //</span>
@@ -90,8 +83,6 @@ export default function CookiePolicyPage() {
           </li>
         </ul>
       </section>
-
-      {/* Section 4 */}
       <section id="categories" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">04 //</span>
@@ -135,8 +126,6 @@ export default function CookiePolicyPage() {
           </table>
         </div>
       </section>
-
-      {/* Section 5 */}
       <section id="self-hosted" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">05 //</span>
@@ -150,8 +139,6 @@ export default function CookiePolicyPage() {
           <li><strong>Icons & Scripts:</strong> Lucide Icons and animation routines execute entirely within the client bundle without calling remote tracking endpoints.</li>
         </ul>
       </section>
-
-      {/* Section 6 */}
       <section id="third-party-edge" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">06 //</span>
@@ -164,8 +151,6 @@ export default function CookiePolicyPage() {
           These security cookies do not store personally identifiable profiles and expire automatically within transient intervals (typically 30 minutes to 24 hours).
         </p>
       </section>
-
-      {/* Section 7 */}
       <section id="management" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">07 //</span>
@@ -184,8 +169,6 @@ export default function CookiePolicyPage() {
           Note that because BayleafX does not depend on invasive cookies, disabling non-essential cookies will not impair your ability to browse our website or submit project inquiries.
         </p>
       </section>
-
-      {/* Section 8 */}
       <section id="updates" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">08 //</span>
@@ -195,8 +178,6 @@ export default function CookiePolicyPage() {
           We may update this Cookie Policy if we introduce new operational integrations, analytics instrumentation, or infrastructure changes. Any modifications will be posted to this page with an updated &ldquo;Last Updated&rdquo; date.
         </p>
       </section>
-
-      {/* Section 9 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">09 //</span>
@@ -209,7 +190,7 @@ export default function CookiePolicyPage() {
         <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
           <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
           <div><strong className="text-[#F5F2ED]">Technical Governance:</strong> Web Architecture & Security Team</div>
-          <div><strong className="text-[#F5F2ED]">Inquiries Email:</strong> hello@bayleafx.com / [SUPPORT EMAIL]</div>
+          <div><strong className="text-[#F5F2ED]">Inquiries Email:</strong> avirupd925@gmail.com / [SUPPORT EMAIL]</div>
           <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
         </div>
       </section>

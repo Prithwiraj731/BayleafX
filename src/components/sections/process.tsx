@@ -19,7 +19,6 @@ export const ProcessSection: React.FC = () => {
     <section id="process" className="py-16 md:py-24 bg-white">
       <Container>
         <SectionHeader
-          overline="Execution Framework"
           title="How we take ideas to production."
           description="A structured, four-phase engineering cadence designed to eliminate risk and ensure rapid time-to-market."
         />

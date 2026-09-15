@@ -56,12 +56,10 @@ export const Navbar: React.FC = () => {
       >
         <Container>
           <div className="flex items-center justify-between">
-            {/* Left: Logo */}
             <div className="flex items-center">
               <Logo href="#" />
             </div>
 
-            {/* Center: Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
               {NAV_LINKS.map((link) => (
                 <a
@@ -75,7 +73,6 @@ export const Navbar: React.FC = () => {
               ))}
             </nav>
 
-            {/* Right: Single Primary CTA */}
             <div className="hidden md:flex items-center">
               <Button
                 variant="primary"
@@ -88,7 +85,6 @@ export const Navbar: React.FC = () => {
               </Button>
             </div>
 
-            {/* Mobile Hamburger Toggle */}
             <div className="flex md:hidden items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -102,7 +98,6 @@ export const Navbar: React.FC = () => {
         </Container>
       </header>
 
-      {/* Mobile Menu Fullscreen Overlay - direct sibling outside header */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div

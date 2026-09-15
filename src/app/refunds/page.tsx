@@ -32,7 +32,6 @@ export default function RefundPolicyPage() {
       activeRoute="/refunds"
       tocItems={TOC_ITEMS}
     >
-      {/* Notice Callout */}
       <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
         <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
           Professional Services Disclosure
@@ -41,8 +40,6 @@ export default function RefundPolicyPage() {
           BayleafX delivers bespoke, high-touch engineering and design consultancy. We do not sell off-the-shelf consumer retail goods or automated recurring self-serve SaaS subscriptions. All commercial transactions are governed by project-specific Statements of Work (SOW) executed between <strong>[COMPANY LEGAL NAME]</strong> and our corporate clients.
         </p>
       </div>
-
-      {/* Section 1 */}
       <section id="commercial-nature" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">01 //</span>
@@ -55,8 +52,6 @@ export default function RefundPolicyPage() {
           Because our services represent direct allocations of specialized engineering hours, senior software architectural time, and custom creative work, commercial commitments and refund rights differ substantially from mass-market consumer transactions.
         </p>
       </section>
-
-      {/* Section 2 */}
       <section id="deposits" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">02 //</span>
@@ -70,8 +65,6 @@ export default function RefundPolicyPage() {
           <li><strong>Post-Commencement:</strong> Once architectural discovery, wireframing, repo configuration, or design sprints have commenced, mobilization deposits are strictly <strong>non-refundable</strong>, compensating BayleafX for dedicated capacity committed and non-recoverable labor.</li>
         </ul>
       </section>
-
-      {/* Section 3 */}
       <section id="milestones" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">03 //</span>
@@ -85,8 +78,6 @@ export default function RefundPolicyPage() {
           <li><strong>Deemed Acceptance:</strong> If the client does not provide written, substantiated rejection notices detailing non-conformance within this window, the milestone is deemed formally accepted, and the corresponding milestone invoice becomes due.</li>
         </ul>
       </section>
-
-      {/* Section 4 */}
       <section id="refund-eligibility" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">04 //</span>
@@ -99,8 +90,6 @@ export default function RefundPolicyPage() {
           Custom code and creative assets cannot be &ldquo;returned&rdquo; or repurposed. Rather than offering retroactive financial refunds for accepted deliverables, BayleafX provides an explicit technical warranty and remediation period as described in Section 7.
         </p>
       </section>
-
-      {/* Section 5 */}
       <section id="cancellation" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">05 //</span>
@@ -121,8 +110,6 @@ export default function RefundPolicyPage() {
           </li>
         </ul>
       </section>
-
-      {/* Section 6 */}
       <section id="retainers" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">06 //</span>
@@ -137,8 +124,6 @@ export default function RefundPolicyPage() {
           <li><strong>Unused Allocation:</strong> Dedicated sprint allocations do not automatically roll over to subsequent months unless explicitly agreed in the Master Services Agreement. Pre-paid retainer fees for active billing months are non-refundable.</li>
         </ul>
       </section>
-
-      {/* Section 7 */}
       <section id="warranty" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">07 //</span>
@@ -153,8 +138,6 @@ export default function RefundPolicyPage() {
           <li><strong>Exclusions:</strong> Warranty remediation does not cover new feature requests, modifications introduced by client internal developers, or outages caused by third-party API deprecations.</li>
         </ul>
       </section>
-
-      {/* Section 8 */}
       <section id="invoicing-disputes" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">08 //</span>
@@ -169,8 +152,6 @@ export default function RefundPolicyPage() {
           <li><strong>Payment Terms:</strong> Invoices are subject to standard payment windows (typically <strong>[E.G., NET 15 DAYS]</strong> from invoice issuance). Late payments may incur interest at <strong>[E.G., 1.5% PER MONTH]</strong> or the maximum legal rate allowed by law.</li>
         </ul>
       </section>
-
-      {/* Section 9 */}
       <section id="dispute-resolution" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">09 //</span>
@@ -185,8 +166,6 @@ export default function RefundPolicyPage() {
           <li><strong>Arbitration:</strong> If unresolved within thirty (30) days, the matter shall be submitted to confidential binding arbitration in <strong>[GOVERNING JURISDICTION]</strong>.</li>
         </ol>
       </section>
-
-      {/* Section 10 */}
       <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
           <span className="font-mono text-sm text-[#52B788]">10 //</span>
@@ -199,7 +178,7 @@ export default function RefundPolicyPage() {
         <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
           <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
           <div><strong className="text-[#F5F2ED]">Department:</strong> Commercial Finance & Contracts Desk</div>
-          <div><strong className="text-[#F5F2ED]">Billing Contact:</strong> hello@bayleafx.com / [SUPPORT EMAIL]</div>
+          <div><strong className="text-[#F5F2ED]">Billing Contact:</strong> avirupd925@gmail.com / [SUPPORT EMAIL]</div>
           <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
           <div><strong className="text-[#F5F2ED]">Governing Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
         </div>

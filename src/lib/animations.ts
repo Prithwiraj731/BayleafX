@@ -1,6 +1,5 @@
 import { Variants } from 'framer-motion';
 
-// Primary easing curve: smooth deceleration
 export const transitionEase = [0.16, 1, 0.3, 1] as const;
 
 export const fadeIn: Variants = {

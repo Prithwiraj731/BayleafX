@@ -2,31 +2,26 @@
 
 @layer base {
   :root {
-    /* Backgrounds (Clean White Minimalist Stack) */
     --bl-bg-base: #FFFFFF;
     --bl-bg-subtle: #F8FAF9;
     --bl-bg-elevated: #FFFFFF;
     --bl-bg-muted: #F1F5F3;
 
-    /* Text Hierarchy (Deep Slate / Charcoal Near-Black) */
     --bl-text-primary: #0F172A;
     --bl-text-secondary: #475569;
     --bl-text-tertiary: #64748B;
     --bl-text-muted: #94A3B8;
 
-    /* Accent: Signature Bayleaf Green */
     --bl-green: #1B4332;
     --bl-green-primary: #2D6A4F;
     --bl-green-hover: #143526;
     --bl-green-light: #E8F5E9;
     --bl-green-border: #C8E6C9;
 
-    /* Borders */
     --bl-border: #E2E8F0;
     --bl-border-subtle: #F1F5F9;
     --bl-border-hover: #CBD5E1;
 
-    /* Status */
     --bl-success: #16A34A;
     --bl-error: #DC2626;
   }
@@ -54,7 +49,6 @@
   --font-mono: var(--font-mono), monospace;
 }
 
-/* Base Body and Global Typography */
 html {
   scroll-behavior: smooth;
   background-color: #FFFFFF;
@@ -70,13 +64,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Text Selection */
 ::selection {
   background: rgba(45, 106, 79, 0.15);
   color: #1B4332;
 }
 
-/* White Minimalist Card */
 .bl-card {
   background-color: #FFFFFF;
   border: 1px solid #E2E8F0;
@@ -91,7 +83,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Minimalist Light Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -109,7 +100,6 @@ body {
   background: #94A3B8;
 }
 
-/* Reduced Motion Handling */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

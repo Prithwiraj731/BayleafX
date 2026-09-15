@@ -585,7 +585,7 @@ LEFT COLUMN:
   [Body]           "Tell us about your project. We will respond
                     within 24 hours with a technical assessment."
                    Inter 400, --text-body, --bl-text-secondary
-  [Email]          "hello@bayleafx.com"
+  [Email]          "avirupd925@gmail.com"
                    Inter mono, 14px, --bl-green, underline on hover
 
 RIGHT COLUMN (Form):

@@ -13,7 +13,6 @@ export const MetricsSection: React.FC = () => {
     <section id="metrics" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
       <Container>
         <SectionHeader
-          overline="Quantifiable Impact"
           title="Proven by audited metrics."
           description="Real benchmark improvements achieved across production web platforms and enterprise partnerships."
         />

@@ -13,7 +13,6 @@ export const TestimonialsSection: React.FC = () => {
     <section id="testimonials" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
       <Container>
         <SectionHeader
-          overline="Client Endorsements"
           title="Validated by industry leaders."
           description="What technical founders and product executives say about partnering with BayleafX."
         />
@@ -38,7 +37,6 @@ export const TestimonialsSection: React.FC = () => {
                 className="bl-card p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-[#2D6A4F]/30 transition-all flex flex-col justify-between"
               >
                 <div>
-                  {/* Rating Stars & Badge */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-1 text-amber-400">
                       {[...Array(5)].map((_, i) => (
@@ -52,13 +50,11 @@ export const TestimonialsSection: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Quote */}
                   <blockquote className="font-body text-slate-700 text-sm sm:text-[15px] leading-relaxed italic">
                     &ldquo;{item.quote}&rdquo;
                   </blockquote>
                 </div>
 
-                {/* Author Info */}
                 <div className="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E8F5E9] font-sans text-xs font-bold text-[#1B4332]">
                     {initials}

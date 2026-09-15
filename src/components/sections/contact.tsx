@@ -27,7 +27,6 @@ export const ContactSection: React.FC = () => {
     <section id="contact" className="py-20 md:py-28 bg-white border-t border-slate-200/80">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
-          {/* Left Column: Direct Copy & Trust Points */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -35,10 +34,6 @@ export const ContactSection: React.FC = () => {
             variants={fadeInUp}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-emerald-50 text-emerald-800 border border-emerald-200/60">
-              Get In Touch
-            </div>
-
             <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-[1.15] tracking-tight">
               Ready to build something real?
             </h2>
@@ -73,16 +68,15 @@ export const ContactSection: React.FC = () => {
             <div className="pt-4 border-t border-slate-100">
               <p className="font-sans text-xs text-slate-500 mb-1">Direct inquiries:</p>
               <a
-                href="mailto:hello@bayleafx.com"
+                href="mailto:avirupd925@gmail.com"
                 className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4"
               >
                 <Mail className="h-4 w-4" />
-                <span>hello@bayleafx.com</span>
+                <span>avirupd925@gmail.com</span>
               </a>
             </div>
           </motion.div>
 
-          {/* Right Column: Clean Form Container */}
           <motion.div
             initial="hidden"
             whileInView="visible"

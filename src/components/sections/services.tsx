@@ -15,7 +15,6 @@ export const ServicesSection: React.FC = () => {
     <section id="services" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
       <Container>
         <SectionHeader
-          overline="Services Suite"
           title="Engineered for scale &amp; precision."
           description="Three integrated disciplines covering the entire software lifecycle from architecture to global market growth."
         />

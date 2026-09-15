@@ -12,10 +12,7 @@ import { ContactSection } from '@/components/sections/contact';
 export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
-      {/* Top Navigation */}
       <Navbar />
-
-      {/* Main Experience */}
       <main id="main-content" className="flex flex-col">
         <HeroSection />
         <ServicesSection />
@@ -25,8 +22,6 @@ export default function HomePage() {
         <TestimonialsSection />
         <ContactSection />
       </main>
-
-      {/* Footer */}
       <Footer />
     </div>
   );

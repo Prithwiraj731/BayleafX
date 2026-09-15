@@ -7,7 +7,6 @@ import {
   DifferentiatorItem,
 } from '@/types';
 
-// Navigation Links
 export const NAV_LINKS: NavLink[] = [
   { label: 'Services', href: '#services' },
   { label: 'Why Us', href: '#differentiators' },
@@ -17,7 +16,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Contact', href: '#contact' },
 ];
 
-// Services across 3 Core Pillars
 export const SERVICE_PILLARS: ServicePillar[] = [
   {
     name: 'Core Development',
@@ -127,7 +125,6 @@ export const SERVICE_PILLARS: ServicePillar[] = [
   },
 ];
 
-// Quantifiable Impact Metrics
 export const METRICS: MetricItem[] = [
   { value: 150, suffix: '+', label: 'Projects Shipped' },
   { value: 98, suffix: '%', label: 'Client Retention Rate' },
@@ -135,7 +132,6 @@ export const METRICS: MetricItem[] = [
   { value: 40, suffix: '%', label: 'Avg. Conversion Lift' },
 ];
 
-// 4-Phase Delivery Process
 export const PROCESS_STEPS: ProcessStepItem[] = [
   {
     number: 1,
@@ -163,7 +159,6 @@ export const PROCESS_STEPS: ProcessStepItem[] = [
   },
 ];
 
-// Verified Testimonials
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     quote:
@@ -188,7 +183,6 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
 ];
 
-// Value Differentiators: Other Agencies vs BayleafX
 export const DIFFERENTIATORS: DifferentiatorItem[] = [
   {
     dimension: 'Design Approach',
