@@ -1,24 +1,25 @@
 import type { Metadata, Viewport } from 'next';
-import { outfit, inter, jetbrainsMono } from '@/lib/fonts';
+import { plusJakartaSans, inter, jetbrainsMono } from '@/lib/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'BayleafX — Architectural Software & Haute-Couture Digital Design',
+  title: 'BayleafX — Enterprise Software & Digital Product Studio',
   description:
-    'BayleafX is an independent digital atelier fusing architectural software engineering with luxury brand elevation. Clean. Premium. Timeless.',
+    'BayleafX is an independent design and engineering studio building high-performance web applications, scalable platforms, and bespoke digital experiences for modern enterprises.',
   keywords: [
     'web application engineering',
-    'bespoke software architecture',
-    'luxury digital design',
-    'high-performance web apps',
-    'growth engineering',
+    'enterprise software studio',
+    'bespoke web design',
+    'Next.js development',
+    'UI/UX design systems',
+    'high-performance engineering',
   ],
-  authors: [{ name: 'BayleafX Atelier' }],
+  authors: [{ name: 'BayleafX' }],
   metadataBase: new URL('https://bayleafx.com'),
   openGraph: {
-    title: 'BayleafX — Architectural Software & Haute-Couture Digital Design',
+    title: 'BayleafX — Enterprise Software & Digital Product Studio',
     description:
-      'Independent digital atelier fusing architectural software engineering with luxury brand elevation. Clean. Premium. Timeless.',
+      'Independent design and engineering studio building high-performance web applications, scalable platforms, and bespoke digital experiences for modern enterprises.',
     url: 'https://bayleafx.com',
     siteName: 'BayleafX',
     locale: 'en_US',
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BayleafX — Architectural Software & Haute-Couture Digital Design',
+    title: 'BayleafX — Enterprise Software & Digital Product Studio',
     description:
-      'Independent digital atelier fusing architectural software engineering with luxury brand elevation.',
+      'Independent design and engineering studio building high-performance web applications and digital platforms.',
   },
   robots: {
     index: true,
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0B0E0C',
+  themeColor: '#FFFFFF',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -61,9 +62,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
+      className={`${plusJakartaSans.variable} ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#0B0E0C] text-[#F5F7F5] antialiased selection:bg-[#2D6A4F]/40 selection:text-[#F5F7F5]">
+      <body className="min-h-screen bg-white text-[#0F172A] font-body antialiased selection:bg-[#2D6A4F]/15 selection:text-[#1B4332]">
         {children}
       </body>
     </html>

@@ -2,63 +2,54 @@
 
 @layer base {
   :root {
-    /* Exact Color System: Deep Obsidian, Bayleaf Green variations, Off White */
-    --bl-bg-void: #0B0E0C;
-    --bl-bg-base: #0B0E0C;
-    --bl-bg-elevated: #111714;
-    --bl-bg-overlay: #16201B;
-    --bl-bg-subtle: #1D2A24;
+    /* Backgrounds (Clean White Minimalist Stack) */
+    --bl-bg-base: #FFFFFF;
+    --bl-bg-subtle: #F8FAF9;
+    --bl-bg-elevated: #FFFFFF;
+    --bl-bg-muted: #F1F5F3;
 
-    /* Off-White Text Hierarchy */
-    --bl-text-primary: #F5F7F5;
-    --bl-text-secondary: #9CA3AF;
-    --bl-text-tertiary: #6C7A70;
-    --bl-text-muted: #4B554F;
+    /* Text Hierarchy (Deep Slate / Charcoal Near-Black) */
+    --bl-text-primary: #0F172A;
+    --bl-text-secondary: #475569;
+    --bl-text-tertiary: #64748B;
+    --bl-text-muted: #94A3B8;
 
-    /* Bayleaf Green Variations (Natural Laurel, Deep Forest, Refined Emerald, Sage - No neon) */
-    --bl-accent: #2D6A4F;
-    --bl-accent-hover: #40916C;
-    --bl-accent-bright: #52B788;
-    --bl-accent-muted: rgba(45, 106, 79, 0.18);
-    --bl-accent-glow: rgba(45, 106, 79, 0.35);
+    /* Accent: Signature Bayleaf Green */
+    --bl-green: #1B4332;
+    --bl-green-primary: #2D6A4F;
+    --bl-green-hover: #143526;
+    --bl-green-light: #E8F5E9;
+    --bl-green-border: #C8E6C9;
 
-    /* Hairline Luxury Borders */
-    --bl-border-subtle: rgba(245, 247, 245, 0.08);
-    --bl-border-default: rgba(245, 247, 245, 0.14);
-    --bl-border-hover: rgba(82, 183, 136, 0.3);
-    --bl-border-accent: rgba(45, 106, 79, 0.6);
+    /* Borders */
+    --bl-border: #E2E8F0;
+    --bl-border-subtle: #F1F5F9;
+    --bl-border-hover: #CBD5E1;
 
     /* Status */
-    --bl-success: #22C55E;
-    --bl-error: #EF4444;
-    --bl-warning: #EAB308;
+    --bl-success: #16A34A;
+    --bl-error: #DC2626;
   }
 }
 
 @theme inline {
-  --color-bl-void: var(--bl-bg-void);
-  --color-bl-base: var(--bl-bg-base);
-  --color-bl-elevated: var(--bl-bg-elevated);
-  --color-bl-overlay: var(--bl-bg-overlay);
-  --color-bl-subtle: var(--bl-bg-subtle);
+  --color-bl-bg-base: var(--bl-bg-base);
+  --color-bl-bg-subtle: var(--bl-bg-subtle);
+  --color-bl-bg-elevated: var(--bl-bg-elevated);
 
   --color-bl-text-primary: var(--bl-text-primary);
   --color-bl-text-secondary: var(--bl-text-secondary);
   --color-bl-text-tertiary: var(--bl-text-tertiary);
   --color-bl-text-muted: var(--bl-text-muted);
 
-  --color-bl-accent: var(--bl-accent);
-  --color-bl-accent-hover: var(--bl-accent-hover);
-  --color-bl-accent-bright: var(--bl-accent-bright);
-  --color-bl-accent-muted: var(--bl-accent-muted);
-  --color-bl-accent-glow: var(--bl-accent-glow);
+  --color-bl-green: var(--bl-green);
+  --color-bl-green-hover: var(--bl-green-hover);
+  --color-bl-green-light: var(--bl-green-light);
 
-  --color-bl-border-subtle: var(--bl-border-subtle);
-  --color-bl-border-default: var(--bl-border-default);
-  --color-bl-border-hover: var(--bl-border-hover);
-  --color-bl-border-accent: var(--bl-border-accent);
+  --color-bl-border: var(--bl-border);
 
-  --font-display: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-sans), system-ui, -apple-system, sans-serif;
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono), monospace;
 }
@@ -66,13 +57,13 @@
 /* Base Body and Global Typography */
 html {
   scroll-behavior: smooth;
-  background-color: #0B0E0C;
-  color: #F5F7F5;
+  background-color: #FFFFFF;
+  color: #0F172A;
 }
 
 body {
-  background-color: #0B0E0C;
-  color: #F5F7F5;
+  background-color: #FFFFFF;
+  color: #0F172A;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -81,75 +72,41 @@ body {
 
 /* Custom Text Selection */
 ::selection {
-  background: rgba(45, 106, 79, 0.45);
-  color: #F5F7F5;
+  background: rgba(45, 106, 79, 0.15);
+  color: #1B4332;
 }
 
-/* Ambient Bayleaf Glow */
-@keyframes ambient-pulse {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.65;
-    transform: scale(1.06);
-  }
+/* White Minimalist Card */
+.bl-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bayleaf-ambient-glow,
-.crimson-ambient-glow {
-  background: radial-gradient(
-    circle at 50% 30%,
-    rgba(45, 106, 79, 0.2) 0%,
-    rgba(27, 67, 50, 0.08) 50%,
-    transparent 80%
-  );
-  animation: ambient-pulse 10s ease-in-out infinite;
+.bl-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
 }
 
-/* Glassmorphic Acrylic Containers */
-.bl-card-glass {
-  background: linear-gradient(
-    145deg,
-    rgba(245, 247, 245, 0.03) 0%,
-    rgba(245, 247, 245, 0.01) 100%
-  );
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid var(--bl-border-subtle);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bl-card-glass:hover {
-  border-color: rgba(64, 145, 108, 0.45);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75), 0 0 32px rgba(45, 106, 79, 0.18);
-}
-
-/* Glassmorphic Navbar */
-.bl-glass-nav {
-  background: rgba(11, 14, 12, 0.88);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-bottom: 1px solid var(--bl-border-subtle);
-}
-
-/* Minimalist Scrollbar */
+/* Minimalist Light Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0E0C;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1D2A24;
-  border-radius: 3px;
+  background: #CBD5E1;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2D6A4F;
+  background: #94A3B8;
 }
 
 /* Reduced Motion Handling */

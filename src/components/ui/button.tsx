@@ -17,18 +17,18 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
 }) => {
   const baseStyles =
-    'relative inline-flex items-center justify-center font-body font-semibold tracking-wide uppercase transition-all duration-300 rounded-[6px] focus:outline-none focus-visible:ring-1 focus-visible:ring-[#2D6A4F] select-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none';
+    'relative inline-flex items-center justify-center font-body font-semibold tracking-[-0.01em] transition-all duration-200 rounded-[8px] focus:outline-none focus-visible:outline-2 focus-visible:outline-[#2D6A4F] focus-visible:outline-offset-[3px] select-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none';
 
   const sizeStyles = {
-    default: 'text-xs py-3 px-6 gap-2',
-    lg: 'text-sm py-4 px-8 gap-2.5 tracking-wider',
+    default: 'text-sm py-2.5 px-5 gap-2',
+    lg: 'text-sm sm:text-base py-3 px-6 gap-2.5',
   };
 
   const variantStyles = {
     primary:
-      'bg-[#2D6A4F] text-white font-bold hover:bg-[#40916C] hover:shadow-[0_0_24px_rgba(45,106,79,0.45)] border border-[#2D6A4F] active:bg-[#1B4332]',
+      'bg-[#1B4332] text-white hover:bg-[#2D6A4F] active:bg-[#143526] shadow-sm hover:shadow border border-transparent',
     ghost:
-      'bg-transparent text-[#F5F7F5] border border-white/15 hover:border-[#2D6A4F] hover:bg-[#2D6A4F]/15 hover:text-white',
+      'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 shadow-xs active:bg-slate-100',
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
@@ -36,8 +36,8 @@ export const Button: React.FC<ButtonProps> = ({
   if (href) {
     return (
       <motion.div
-        whileHover={{ y: -2 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={{ y: -1 }}
+        whileTap={{ scale: 0.99 }}
         className="inline-block"
       >
         <Link
@@ -46,7 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
           onClick={onClick as unknown as React.MouseEventHandler<HTMLAnchorElement>}
         >
           <span>{children}</span>
-          {icon && <span className="transition-transform duration-300 group-hover:translate-x-1">{icon}</span>}
+          {icon && <span className="transition-transform duration-200 group-hover:translate-x-0.5">{icon}</span>}
         </Link>
       </motion.div>
     );
@@ -57,12 +57,12 @@ export const Button: React.FC<ButtonProps> = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      whileHover={disabled ? undefined : { y: -2 }}
-      whileTap={disabled ? undefined : { scale: 0.98 }}
+      whileHover={disabled ? undefined : { y: -1 }}
+      whileTap={disabled ? undefined : { scale: 0.99 }}
       className={combinedClasses}
     >
       <span>{children}</span>
-      {icon && <span className="transition-transform duration-300">{icon}</span>}
+      {icon && <span className="transition-transform duration-200">{icon}</span>}
     </motion.button>
   );
 };

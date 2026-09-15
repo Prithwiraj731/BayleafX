@@ -2,126 +2,75 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Star, Sparkles } from 'lucide-react';
+import { Star, ShieldCheck } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { SectionHeader } from '@/components/layout/section-header';
 import { TESTIMONIALS } from '@/lib/constants';
-import { staggerContainer, staggerChild } from '@/lib/animations';
-
-const TESTIMONIAL_META: Record<
-  string,
-  {
-    verifiedBadge: string;
-    outcomeMetric: string;
-    companyScale: string;
-  }
-> = {
-  'Sarah Chen': {
-    verifiedBadge: 'Verified Enterprise Client',
-    outcomeMetric: 'Platform Scaled 4x with Zero Downtime',
-    companyScale: 'AI & Neural Systems // Series B',
-  },
-  'Marcus Rivera': {
-    verifiedBadge: 'Verified Executive Partner',
-    outcomeMetric: 'Shipped in 4 Weeks vs 4 Months Estimate',
-    companyScale: 'Cloud Architecture // High-Growth',
-  },
-  'Priya Kapoor': {
-    verifiedBadge: 'Verified Enterprise Client',
-    outcomeMetric: '42% Higher Stakeholder Engagement',
-    companyScale: 'Global Digital Experience // Enterprise',
-  },
-};
+import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section
-      id="testimonials"
-      aria-label="Executive Testimonials & Social Proof"
-      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0B0E0C]"
-    >
-      {/* Background Subtle Bayleaf Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[600px] rounded-full bg-[#2D6A4F]/[0.07] blur-[160px]" />
-
-      <Container className="relative z-10">
+    <section id="testimonials" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
+      <Container>
         <SectionHeader
-          overline="05 // PARTNERS & ENDORSEMENTS"
-          title="Endorsed by Technical Founders & Leaders."
-          description="We measure our success by multi-year retention, zero-downtime deployments, and the market valuation our engineering unlocks."
+          overline="Client Endorsements"
+          title="Validated by industry leaders."
+          description="What technical founders and product executives say about partnering with BayleafX."
         />
 
-        {/* 3-Column Executive Endorsement Grid */}
         <motion.div
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
-          {TESTIMONIALS.map((testimonial) => {
-            const meta =
-              TESTIMONIAL_META[testimonial.author] || {
-                verifiedBadge: 'Verified Client',
-                outcomeMetric: 'Delivered On-Time & On-Budget',
-                companyScale: 'Enterprise Scale',
-              };
+          {TESTIMONIALS.map((item) => {
+            const initials = item.author
+              .split(' ')
+              .map((n) => n[0])
+              .join('');
 
             return (
               <motion.div
-                key={testimonial.author}
-                variants={staggerChild}
-                className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-[#121815] to-[#0D120F] p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-[#2D6A4F]/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_24px_rgba(45,106,79,0.18)] relative overflow-hidden"
+                key={item.author}
+                variants={fadeInUp}
+                className="bl-card p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-[#2D6A4F]/30 transition-all flex flex-col justify-between"
               >
-                {/* Decorative Quotation Symbol */}
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -top-4 right-4 font-display text-8xl font-light text-[#2D6A4F]/20 select-none"
-                >
-                  &ldquo;
-                </span>
-
                 <div>
-                  {/* Top Rating & Verified Badge */}
-                  <div className="flex items-center justify-between gap-2 mb-6">
-                    <div className="flex items-center gap-1 text-[#52B788]">
+                  {/* Rating Stars & Badge */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-1 text-amber-400">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-[#52B788]" />
+                        <Star key={i} className="h-4 w-4 fill-amber-400" />
                       ))}
                     </div>
-                    <span className="inline-flex items-center gap-1 rounded-full border border-[#2D6A4F]/30 bg-[#2D6A4F]/10 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-[#52B788]">
+
+                    <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                       <ShieldCheck className="h-3 w-3" />
-                      {meta.verifiedBadge}
+                      <span>Verified</span>
                     </span>
                   </div>
 
-                  {/* Quote Body */}
-                  <p className="font-display text-base md:text-lg font-light leading-relaxed text-[#F5F7F5] italic mb-6">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
+                  {/* Quote */}
+                  <blockquote className="font-body text-slate-700 text-sm sm:text-[15px] leading-relaxed italic">
+                    &ldquo;{item.quote}&rdquo;
+                  </blockquote>
                 </div>
 
-                {/* Outcome Metric Tag & Author Bio */}
-                <div className="pt-6 border-t border-white/[0.08]">
-                  <div className="mb-4 rounded-lg bg-[#16221B]/60 border border-[#2D6A4F]/25 px-3 py-1.5 flex items-center gap-2">
-                    <Sparkles className="h-3 w-3 text-[#52B788] shrink-0" />
-                    <span className="font-mono text-[10px] text-[#A3B18A] tracking-wider truncate">
-                      {meta.outcomeMetric}
-                    </span>
+                {/* Author Info */}
+                <div className="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E8F5E9] font-sans text-xs font-bold text-[#1B4332]">
+                    {initials}
                   </div>
-
-                  <div className="flex items-center gap-3.5">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1B4332]/60 border border-[#2D6A4F]/60 font-display font-bold text-sm text-[#52B788] shadow-[0_0_12px_rgba(45,106,79,0.25)]">
-                      {testimonial.author.charAt(0)}
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="font-display text-sm font-bold text-[#F5F7F5] truncate">
-                        {testimonial.author}
-                      </h4>
-                      <p className="font-body text-xs text-[#9CA3AF] truncate">
-                        {testimonial.title} &mdash;{' '}
-                        <span className="text-[#52B788] font-semibold">{testimonial.company}</span>
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="font-body text-sm font-bold text-slate-900">
+                      {item.author}
+                    </h4>
+                    <p className="font-body text-xs text-slate-500">
+                      {item.title} &middot;{' '}
+                      <span className="font-medium text-slate-700">{item.company}</span>
+                    </p>
                   </div>
                 </div>
               </motion.div>

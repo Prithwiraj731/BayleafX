@@ -10,10 +10,10 @@ import {
 // Navigation Links
 export const NAV_LINKS: NavLink[] = [
   { label: 'Services', href: '#services' },
-  { label: 'Our Edge', href: '#differentiators' },
-  { label: 'Work', href: '#metrics' },
+  { label: 'Why Us', href: '#differentiators' },
+  { label: 'Impact', href: '#metrics' },
   { label: 'Process', href: '#process' },
-  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Endorsements', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ];
 

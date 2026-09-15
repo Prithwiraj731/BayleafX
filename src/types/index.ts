@@ -1,4 +1,3 @@
-import { LucideIcon } from 'lucide-react';
 import React from 'react';
 
 export interface NavLink {
@@ -7,10 +6,10 @@ export interface NavLink {
 }
 
 export interface ServiceItem {
-  icon: string; // Lucide icon name or LucideIcon component reference
+  icon?: string;
   title: string;
   subtitle: string;
-  description: string;
+  description?: string;
 }
 
 export interface ServicePillar {
@@ -58,51 +57,19 @@ export interface SectionHeaderProps {
 }
 
 export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag' | 'onClick'> {
   variant?: 'primary' | 'ghost';
   size?: 'default' | 'lg';
   icon?: React.ReactNode;
   children: React.ReactNode;
   href?: string;
   className?: string;
-}
-
-export interface GlassCardProps {
-  children: React.ReactNode;
-  className?: string;
-  hover?: boolean;
-  as?: React.ElementType;
-  glow?: boolean;
-}
-
-export interface ServiceCardProps {
-  icon: LucideIcon;
-  title: string;
-  subtitle: string;
-  description?: string;
-  index?: number;
-  className?: string;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 export interface MetricCardProps {
   value: number;
   suffix?: string;
   label: string;
-  className?: string;
-}
-
-export interface ProcessStepProps {
-  number: number;
-  title: string;
-  description: string;
-  isLast?: boolean;
-  className?: string;
-}
-
-export interface TestimonialCardProps {
-  quote: string;
-  author: string;
-  title: string;
-  company: string;
   className?: string;
 }

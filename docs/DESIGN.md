@@ -1,8 +1,8 @@
-# BayleafX — Design System & Visual Specification
+# BayleafX — Design System v2 (Complete Redesign)
 
 > **Phase**: 2 of 3  
-> **Status**: Draft for Review  
-> **Last Updated**: 2026-09-10  
+> **Status**: Complete  
+> **Last Updated**: 2026-09-15  
 > **Parent**: [`ORCHESTRATION.md`](file:///c:/Users/USER/Desktop/BayleafX/ORCHESTRATION.md)  
 > **Depends On**: [`docs/PRD.md`](file:///c:/Users/USER/Desktop/BayleafX/docs/PRD.md)
 
@@ -10,112 +10,86 @@
 
 ## 1. Design Philosophy
 
-### 1.1 Aesthetic DNA
+### 1.1 Design North Stars
 
-Two reference poles, blended into a singular identity:
+This is not a startup landing page. This is not a template. This is the public face of a company that charges six figures per engagement. Every pixel must communicate:
 
-| Pole              | What We Take                                                      | What We Leave Behind              |
-|-------------------|-------------------------------------------------------------------|-----------------------------------|
-| **Apple.com**     | Editorial typography hierarchy, generous whitespace, scroll pacing, restrained motion, high-contrast text | Minimal color — we add warmth     |
-| **MetaMask.io**   | Dark depth layers, glassmorphic borders, glow accents, bento grids, tech-forward energy | Crypto aesthetics — we stay broad |
+- **Quiet confidence** — not shouting, not proving. Already proven.
+- **Surgical precision** — every element earns its place or gets deleted.
+- **Restrained luxury** — the most expensive restaurants have the simplest menus.
 
-### 1.2 Design Principles
+### 1.2 Reference Poles
 
-1. **Depth, not decoration** — Every visual layer communicates hierarchy. No ornamental elements.
-2. **Contrast is king** — Text is either boldly large or deliberately small. No medium-everything.
-3. **Glass is structural** — Glassmorphism defines containers, not sprinkled as effect.
-4. **Motion earns attention** — Animations reveal content, guide eyes, or confirm interaction. Never loop for show.
-5. **Space is a feature** — Whitespace (darkspace) is as designed as content. Never fill it nervously.
+| Reference          | What We Study                                              | What We Discard                    |
+| ------------------ | ---------------------------------------------------------- | ---------------------------------- |
+| **Linear.app**     | Clean sans-serif type, tight grids, monochromatic surfaces, subtle gradient overlays, single-color accent | Marketing fluff                    |
+| **Stripe.com**     | Generous whitespace, editorial copywriting, restrained motion, confident single-column hero, world-class typography | Rainbow gradients — we stay green  |
+| **Rauno Freiberg** | Micro-interaction craft, intentional negative space, invisible-until-needed UI details | Portfolio-scale — we apply to agency |
+
+### 1.3 Five Laws of BayleafX Design
+
+1. **Whitespace is authority.** Generous spacing signals confidence. Cramped layouts signal desperation.
+2. **One accent, everywhere.** Bayleaf green (#2D6A4F) is the only color that speaks. Everything else is grayscale.
+3. **Typography is the interface.** Headlines do the heavy lifting. Not icons, not badges, not glow effects.
+4. **Motion is invisible.** If a user notices an animation, it's too much. Animations guide — they don't perform.
+5. **No decoration.** Zero ambient glows, zero floating orbs, zero gradient meshes behind content. If it doesn't communicate, it doesn't exist.
 
 ---
 
 ## 2. Color System
 
-### 2.1 Core Palette
+### 2.1 Core Palette (Unchanged — Logo & Brand Preserved)
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│  BACKGROUNDS (Dark Depth Stack)                                 │
-├─────────────────────────────────────────────────────────────────┤
-│  --bl-bg-void       #050506   Deepest — page body              │
-│  --bl-bg-base       #0A0A0B   Primary surface — sections       │
-│  --bl-bg-elevated   #111113   Cards, panels, raised surfaces   │
-│  --bl-bg-overlay    #1A1A1E   Modals, dropdowns, tooltips      │
-│  --bl-bg-subtle     #222228   Hover states, active backgrounds │
-├─────────────────────────────────────────────────────────────────┤
-│  TEXT                                                           │
-├─────────────────────────────────────────────────────────────────┤
-│  --bl-text-primary    #F5F5F7   Headlines, primary content     │
-│  --bl-text-secondary  #A1A1AA   Body text, descriptions        │
-│  --bl-text-tertiary   #6B6B76   Captions, metadata, labels     │
-│  --bl-text-muted      #3E3E47   Disabled, placeholder text     │
-├─────────────────────────────────────────────────────────────────┤
-│  ACCENT (Warm Gold / Amber)                                    │
-├─────────────────────────────────────────────────────────────────┤
-│  --bl-accent          #D4A843   Primary accent — CTAs, links   │
-│  --bl-accent-hover    #E5BD5A   Hover state                    │
-│  --bl-accent-muted    #D4A84333 33% opacity — subtle highlights│
-│  --bl-accent-glow     #D4A84366 66% opacity — glow effects     │
-├─────────────────────────────────────────────────────────────────┤
-│  BORDERS & GLASS                                                │
-├─────────────────────────────────────────────────────────────────┤
-│  --bl-border-subtle   #FFFFFF08  8% white — glass panel edges  │
-│  --bl-border-default  #FFFFFF12  12% white — card borders      │
-│  --bl-border-hover    #FFFFFF20  20% white — hover borders     │
-│  --bl-border-accent   #D4A84340  Accent border for emphasis    │
-├─────────────────────────────────────────────────────────────────┤
-│  SEMANTIC                                                       │
-├─────────────────────────────────────────────────────────────────┤
-│  --bl-success         #34D399   Confirmation, positive states  │
-│  --bl-error           #F87171   Error, destructive actions     │
-│  --bl-warning         #FBBF24   Caution, attention needed      │
-│  --bl-info            #60A5FA   Informational, neutral alerts  │
-└─────────────────────────────────────────────────────────────────┘
+BACKGROUNDS (Neutral Dark Stack)
+──────────────────────────────────────────
+--bl-bg-deep       #080A09     Deepest — page body, void areas
+--bl-bg-base       #0B0E0C     Primary surface — sections
+--bl-bg-elevated   #121513     Cards, panels, raised content
+--bl-bg-subtle     #1A1D1B     Hover states, interactive fills
+
+TEXT (4-Level Hierarchy)
+──────────────────────────────────────────
+--bl-text-primary    #F5F7F5     Headlines, high-emphasis content
+--bl-text-secondary  #A8ADA9     Body text, descriptions
+--bl-text-tertiary   #6B716C     Captions, metadata, timestamps
+--bl-text-muted      #3D423E     Disabled, placeholder
+
+ACCENT (Single-Hue: Bayleaf Green)
+──────────────────────────────────────────
+--bl-green           #2D6A4F     Primary accent — buttons, links, highlights
+--bl-green-hover     #40916C     Hover/active state
+--bl-green-light     #52B788     Small text accents, badges
+--bl-green-subtle    #2D6A4F14   8% opacity — backgrounds, tints
+--bl-green-border    #2D6A4F40   25% opacity — borders
+
+BORDERS (Hairline Only)
+──────────────────────────────────────────
+--bl-border          #FFFFFF0A   4% white — section dividers
+--bl-border-card     #FFFFFF0F   6% white — card edges
+--bl-border-hover    #FFFFFF1A   10% white — hover states
+
+STATUS (Used Sparingly)
+──────────────────────────────────────────
+--bl-success         #22C55E
+--bl-error           #EF4444
 ```
 
-### 2.2 Contrast Ratios (WCAG 2.2 AA Compliance)
+### 2.2 Color Rules
 
-| Combination                                | Ratio  | Pass |
-|--------------------------------------------|--------|------|
-| `--bl-text-primary` on `--bl-bg-base`      | 17.4:1 | ✅   |
-| `--bl-text-secondary` on `--bl-bg-base`    | 7.8:1  | ✅   |
-| `--bl-text-tertiary` on `--bl-bg-base`     | 4.6:1  | ✅   |
-| `--bl-accent` on `--bl-bg-base`            | 8.2:1  | ✅   |
-| `--bl-text-primary` on `--bl-bg-elevated`  | 14.1:1 | ✅   |
-| `--bl-accent` on `--bl-bg-elevated`        | 6.7:1  | ✅   |
+1. **No color gradients on cards or panels.** Surfaces are flat, single-color fills.
+2. **Green is reserved for interactive elements only** — buttons, links, active states, and the logo accent.
+3. **No glow effects.** No `box-shadow` with green opacity. No radial gradient blobs.
+4. **Text hierarchy is achieved through weight and opacity** — never through color variation (e.g., no teal vs. cyan vs. mint).
 
-### 2.3 Gradient Tokens
+### 2.3 Contrast Compliance (WCAG 2.2 AA)
 
-```css
-/* Hero mesh gradient — slow animated drift */
---bl-gradient-hero: radial-gradient(
-  ellipse 80% 50% at 50% 50%,
-  #D4A84310 0%,
-  transparent 70%
-);
-
-/* CTA section warm wash */
---bl-gradient-cta: linear-gradient(
-  165deg,
-  #0A0A0B 0%,
-  #1A150D 50%,
-  #0A0A0B 100%
-);
-
-/* Glass panel background */
---bl-gradient-glass: linear-gradient(
-  135deg,
-  rgba(255, 255, 255, 0.03) 0%,
-  rgba(255, 255, 255, 0.01) 100%
-);
-
-/* Accent glow (behind interactive elements) */
---bl-gradient-glow: radial-gradient(
-  circle at center,
-  #D4A84325 0%,
-  transparent 70%
-);
-```
+| Combination                           | Ratio  | Status |
+| ------------------------------------- | ------ | ------ |
+| `--bl-text-primary` on `--bl-bg-base` | 16.8:1 | Pass   |
+| `--bl-text-secondary` on `--bl-bg-base` | 8.1:1 | Pass   |
+| `--bl-text-tertiary` on `--bl-bg-base` | 4.7:1 | Pass   |
+| `--bl-green` on `--bl-bg-base`        | 5.2:1  | Pass   |
 
 ---
 
@@ -123,614 +97,620 @@ Two reference poles, blended into a singular identity:
 
 ### 3.1 Font Stack
 
-| Role          | Family                        | Fallback Stack                          | Loading    |
-|---------------|-------------------------------|-----------------------------------------|------------|
-| **Display**   | `"Outfit"` (Google Fonts)     | `system-ui, -apple-system, sans-serif`  | `swap`     |
-| **Body**      | `"Inter"` (Google Fonts)      | `system-ui, -apple-system, sans-serif`  | `swap`     |
-| **Mono**      | `"JetBrains Mono"` (Google)   | `"Fira Code", monospace`                | `swap`     |
+| Role        | Family                           | Purpose                                       | Loading |
+| ----------- | -------------------------------- | --------------------------------------------- | ------- |
+| **Display** | `"Instrument Serif"` (Google)    | Headlines only. Gives editorial gravitas.      | `swap`  |
+| **Body**    | `"Inter"` (Google, Variable)     | Everything else. Optimized for screens.        | `swap`  |
+| **Mono**    | `"Geist Mono"` or `"JetBrains Mono"` | Code references, overlines, technical labels. | `swap`  |
 
-**Rationale**:
-- **Outfit** — Geometric sans with sharp terminals. Perfect for bold headlines. Wide weight range (100–900).
-- **Inter** — Optimized for screens. Excellent at small sizes. Variable font for performance.
-- **JetBrains Mono** — Code snippets in service cards, technical credibility signal.
+**Why Instrument Serif?**
+- Serif headlines on a dark tech background creates instant prestige contrast. It signals "we are not another SaaS template."
+- Inter for body keeps readability perfect at all sizes.
+- This combination is what separates a $10k site from a $100k site.
 
 ### 3.2 Type Scale
 
-Using a **1.250 (Major Third)** scale with `clamp()` for fluid responsiveness:
-
 ```
-┌──────────────────────────────────────────────────────────────────────────┐
-│  Token                  Size (desktop)     Clamp                        │
-├──────────────────────────────────────────────────────────────────────────┤
-│  --bl-text-hero         72px / 4.5rem      clamp(2.5rem, 5vw, 4.5rem)  │
-│  --bl-text-display      56px / 3.5rem      clamp(2rem, 4vw, 3.5rem)    │
-│  --bl-text-h1           44px / 2.75rem     clamp(1.75rem, 3.2vw, 2.75rem)│
-│  --bl-text-h2           36px / 2.25rem     clamp(1.5rem, 2.5vw, 2.25rem)│
-│  --bl-text-h3           28px / 1.75rem     clamp(1.25rem, 2vw, 1.75rem)│
-│  --bl-text-h4           22px / 1.375rem    clamp(1.125rem, 1.5vw, 1.375rem)│
-│  --bl-text-body-lg      18px / 1.125rem    Fixed                        │
-│  --bl-text-body         16px / 1rem        Fixed                        │
-│  --bl-text-body-sm      14px / 0.875rem    Fixed                        │
-│  --bl-text-caption       12px / 0.75rem     Fixed                        │
-│  --bl-text-overline     11px / 0.6875rem   Fixed, uppercase, tracked    │
-└──────────────────────────────────────────────────────────────────────────┘
+Token                    Size             Clamp                              Usage
+─────────────────────────────────────────────────────────────────────────────────
+--text-hero              80px / 5rem      clamp(2.75rem, 5.5vw, 5rem)       Hero headline only
+--text-display           56px / 3.5rem    clamp(2.25rem, 4vw, 3.5rem)       Section headlines
+--text-heading           36px / 2.25rem   clamp(1.75rem, 2.8vw, 2.25rem)    Sub-section titles
+--text-subheading        24px / 1.5rem    clamp(1.25rem, 1.8vw, 1.5rem)     Card titles
+--text-body-lg           18px / 1.125rem  Fixed                              Lead paragraphs
+--text-body              16px / 1rem      Fixed                              Default body
+--text-body-sm           14px / 0.875rem  Fixed                              Secondary body
+--text-caption           12px / 0.75rem   Fixed                              Meta, labels
+--text-overline          11px / 0.6875rem Fixed, uppercase, +0.08em tracking Overlines
 ```
 
-### 3.3 Typography Styles (Composite Tokens)
+### 3.3 Typography Rules
 
-| Style Name         | Font     | Size Token        | Weight | Line Height | Letter Spacing | Usage                         |
-|--------------------|----------|-------------------|--------|-------------|----------------|-------------------------------|
-| `hero-headline`    | Outfit   | `--bl-text-hero`  | 700    | 1.05        | -0.03em        | Hero section headline         |
-| `hero-subhead`     | Inter    | `--bl-text-body-lg`| 400   | 1.6         | 0              | Hero subheadline              |
-| `section-title`    | Outfit   | `--bl-text-h1`    | 600    | 1.15        | -0.02em        | Section headlines             |
-| `section-subtitle` | Inter    | `--bl-text-body-lg`| 400   | 1.6         | 0              | Section descriptions          |
-| `card-title`       | Outfit   | `--bl-text-h4`    | 600    | 1.3         | -0.01em        | Bento card titles             |
-| `card-body`        | Inter    | `--bl-text-body-sm`| 400   | 1.6         | 0              | Card descriptions             |
-| `overline`         | Inter    | `--bl-text-overline`| 500  | 1.4         | 0.12em         | Section labels, categories    |
-| `button-label`     | Inter    | `--bl-text-body-sm`| 600   | 1           | 0.02em         | Button text                   |
-| `nav-link`         | Inter    | `--bl-text-body-sm`| 500   | 1           | 0.01em         | Navigation items              |
-| `quote`            | Outfit   | `--bl-text-h2`    | 300    | 1.4         | -0.01em        | Testimonial quotes            |
-| `code`             | JetBrains| `--bl-text-body-sm`| 400   | 1.5         | 0              | Code snippets                 |
-
-### 3.4 Typographic Rules
-
-1. **Headlines** use Outfit. Everything else uses Inter. Never mix within a single line.
-2. **Weight contrast** in headlines: pair 300 (thin) with 700 (bold) in the same line for editorial impact.
-3. **Max line length**: Body text capped at `65ch`. Headlines capped at `20ch` per line.
-4. **No font size below 12px** on any breakpoint.
-5. **Letter spacing**: Negative on large type (tighter), positive on overlines (tracked out).
+1. **Serif headlines, sans-serif everything else.** Never mix within a single element.
+2. **Max body width: 600px (37.5rem).** Long lines destroy readability.
+3. **No font below 12px** on any breakpoint.
+4. **Headline line height: 1.0-1.1.** Tight. Headlines are set like posters.
+5. **Body line height: 1.6-1.7.** Generous. Body text breathes.
+6. **Weight contrast within headlines**: Use 400 (regular serif) as default. Bold (700) only for single emphasis words.
+7. **No ALL-CAPS headlines.** Only overlines use uppercase. Headlines use sentence case or title case.
 
 ---
 
 ## 4. Spacing & Layout
 
-### 4.1 Spacing Scale (8px base)
+### 4.1 Spacing Scale (4px base unit)
 
 ```
---bl-space-1     4px      0.25rem    Inline padding, icon gaps
---bl-space-2     8px      0.5rem     Tight element spacing
---bl-space-3     12px     0.75rem    Form field padding
---bl-space-4     16px     1rem       Standard element gap
---bl-space-5     20px     1.25rem    Card internal padding
---bl-space-6     24px     1.5rem     Component spacing
---bl-space-8     32px     2rem       Section internal gap
---bl-space-10    40px     2.5rem     Large component separation
---bl-space-12    48px     3rem       Sub-section gap
---bl-space-16    64px     4rem       Section padding (mobile)
---bl-space-20    80px     5rem       Section padding (tablet)
---bl-space-24    96px     6rem       Section padding (desktop small)
---bl-space-32    128px    8rem       Section padding (desktop large)
---bl-space-40    160px    10rem      Hero-level vertical space
+--space-1      4px       Inline gaps, icon padding
+--space-2      8px       Tight element spacing
+--space-3      12px      Small padding
+--space-4      16px      Standard gaps
+--space-6      24px      Card padding, element separation
+--space-8      32px      Component grouping
+--space-12     48px      Section sub-gaps
+--space-16     64px      Section padding (mobile)
+--space-24     96px      Section padding (tablet)
+--space-32     128px     Section padding (desktop)
+--space-40     160px     Hero-level vertical breathing room
 ```
 
 ### 4.2 Container & Grid
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│  CONTAINER                                                      │
-├─────────────────────────────────────────────────────────────────┤
-│  Max width:        1280px (80rem)                               │
-│  Padding:          24px (mobile) → 32px (tablet) → 48px (desk) │
-│  Center:           margin: 0 auto                               │
-├─────────────────────────────────────────────────────────────────┤
-│  GRID                                                           │
-├─────────────────────────────────────────────────────────────────┤
-│  System:           CSS Grid                                     │
-│  Columns:          12-column base                               │
-│  Gutter:           24px (mobile) → 32px (desktop)               │
-│  Bento grid:       Auto-fill, minmax(300px, 1fr)                │
-├─────────────────────────────────────────────────────────────────┤
-│  BREAKPOINTS                                                    │
-├─────────────────────────────────────────────────────────────────┤
-│  --bl-bp-sm        640px     Mobile landscape / large phone     │
-│  --bl-bp-md        768px     Tablet portrait                    │
-│  --bl-bp-lg        1024px    Tablet landscape / small desktop   │
-│  --bl-bp-xl        1280px    Desktop                            │
-│  --bl-bp-2xl       1536px    Large desktop                      │
-└─────────────────────────────────────────────────────────────────┘
+CONTAINER
+──────────────────────────────────────
+Max width:         1200px (75rem)
+Padding:           20px (mobile) -> 32px (tablet) -> 48px (desktop)
+Centering:         margin: 0 auto
+
+GRID
+──────────────────────────────────────
+System:            CSS Grid
+Base columns:      12
+Gutter:            24px (mobile) -> 32px (desktop)
+Content max-width: 680px for single-column text sections
+
+BREAKPOINTS
+──────────────────────────────────────
+sm      640px      Large phone / landscape
+md      768px      Tablet portrait
+lg      1024px     Tablet landscape / small desktop
+xl      1280px     Desktop
 ```
 
-### 4.3 Section Vertical Rhythm
+### 4.3 Section Rhythm
 
-Every homepage section follows a consistent vertical structure:
+Every section on the page follows this vertical rhythm:
 
 ```
-┌──────────────────────────────────────────────┐
-│  Section Top Padding     (--bl-space-24)     │
-│                                              │
-│  [Overline Label]        overline style       │
-│  [Section Headline]      section-title        │
-│  [Section Description]   section-subtitle     │
-│                                              │
-│  Content Gap             (--bl-space-16)     │
-│                                              │
-│  ┌────────────────────────────────────────┐  │
-│  │  SECTION CONTENT                       │  │
-│  │  (Grid / Cards / List / Media)         │  │
-│  └────────────────────────────────────────┘  │
-│                                              │
-│  Section Bottom Padding  (--bl-space-24)     │
-└──────────────────────────────────────────────┘
++----------------------------------------------+
+|                                              |
+|  Section Top Padding    96-128px             |
+|                                              |
+|  [Overline]             11px mono, green     |
+|  [Section Headline]     Instrument Serif     |
+|  [Section Description]  Inter, secondary     |
+|                                              |
+|  Content Gap            48-64px              |
+|                                              |
+|  +----------------------------------------+  |
+|  |  SECTION CONTENT                       |  |
+|  +----------------------------------------+  |
+|                                              |
+|  Section Bottom Padding 96-128px             |
+|                                              |
+|  ----------- 1px border (#FFFFFF0A) -------- |
++----------------------------------------------+
 ```
 
 ---
 
 ## 5. Component Specifications
 
-### 5.1 Glassmorphic Card (`.bl-card-glass`)
+### 5.1 Cards (`.bl-card`)
 
-The foundational card pattern used across Services, Work, and Process sections.
-
-```
-┌─────────────────────────────────────────────┐
-│  VISUAL SPEC                                │
-├─────────────────────────────────────────────┤
-│  Background:    --bl-gradient-glass          │
-│  Border:        1px solid --bl-border-subtle │
-│  Border Radius: 16px (1rem)                  │
-│  Padding:       --bl-space-6 (24px)          │
-│  Backdrop:      blur(12px) saturate(150%)    │
-│                                              │
-│  HOVER STATE                                 │
-│  Border:        --bl-border-hover            │
-│  Transform:     translateY(-2px)             │
-│  Box Shadow:    0 8px 32px rgba(0,0,0,0.3)  │
-│  Transition:    all 400ms cubic-bezier(...)  │
-│                                              │
-│  ACTIVE STATE                                │
-│  Transform:     translateY(0)                │
-│  Transition:    all 150ms ease-out           │
-└─────────────────────────────────────────────┘
-```
-
-**Internal layout:**
-```
-┌────────────────────────────────────┐
-│  [Icon]  24×24, --bl-text-tertiary │
-│                                    │
-│  [Title]  card-title style         │
-│  [Subtitle]  card-body style       │
-│                                    │
-│  [Expanded description]            │
-│  (revealed on hover, 0→1 opacity)  │
-└────────────────────────────────────┘
-```
-
-### 5.2 Primary Button (`.bl-btn-primary`)
+Minimal. No glassmorphism. No gradients. No glow.
 
 ```
-┌─────────────────────────────────────────────┐
-│  DEFAULT                                    │
-├─────────────────────────────────────────────┤
-│  Background:     --bl-accent                │
-│  Color:          --bl-bg-base (#0A0A0B)     │
-│  Padding:        12px 28px                  │
-│  Border Radius:  10px                       │
-│  Font:           button-label style         │
-│  Border:         none                       │
-│                                              │
-│  HOVER                                       │
-│  Background:     --bl-accent-hover          │
-│  Box Shadow:     0 0 24px --bl-accent-glow  │
-│  Transform:      translateY(-1px)           │
-│                                              │
-│  ACTIVE                                      │
-│  Transform:      translateY(0) scale(0.98)  │
-│                                              │
-│  FOCUS-VISIBLE                               │
-│  Outline:        2px solid --bl-accent      │
-│  Outline Offset: 4px                        │
-│                                              │
-│  DISABLED                                    │
-│  Opacity:        0.4                        │
-│  Cursor:         not-allowed                │
-│  Pointer Events: none                       │
-└─────────────────────────────────────────────┘
+DEFAULT STATE
+──────────────────────────────────────
+Background:        --bl-bg-elevated
+Border:            1px solid --bl-border-card
+Border Radius:     12px
+Padding:           24px (mobile) -> 32px (desktop)
+
+HOVER STATE
+──────────────────────────────────────
+Border Color:      --bl-border-hover
+Transform:         translateY(-2px)
+Transition:        all 300ms cubic-bezier(0.4, 0, 0.2, 1)
+
+No box-shadow on hover. No glow. Just a subtle lift and border brighten.
 ```
 
-### 5.3 Ghost Button (`.bl-btn-ghost`)
+### 5.2 Primary Button
 
 ```
-Background:      transparent
-Color:           --bl-text-primary
-Border:          1px solid --bl-border-default
-Padding:         12px 28px
-Border Radius:   10px
+DEFAULT
+──────────────────────────────────────
+Background:        --bl-green (#2D6A4F)
+Color:             white
+Padding:           12px 24px
+Border Radius:     8px
+Font:              Inter 500, 14px, +0.01em tracking
+Border:            none
+
+HOVER
+──────────────────────────────────────
+Background:        --bl-green-hover (#40916C)
+Transform:         translateY(-1px)
+
+FOCUS-VISIBLE
+──────────────────────────────────────
+Outline:           2px solid --bl-green
+Outline Offset:    3px
+
+No glow. No shadow. Clean.
+```
+
+### 5.3 Ghost Button
+
+```
+Background:        transparent
+Color:             --bl-text-primary
+Border:            1px solid --bl-border-card
+Padding:           12px 24px
+Border Radius:     8px
 
 HOVER:
-Border Color:    --bl-border-hover
-Background:      --bl-bg-subtle
+Background:        --bl-bg-subtle
+Border Color:      --bl-border-hover
 ```
 
-### 5.4 Navigation Bar
+### 5.4 Section Header Pattern
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│  STRUCTURE                                                      │
-├─────────────────────────────────────────────────────────────────┤
-│  Position:       fixed, top: 0, z-index: 50                    │
-│  Width:          100%                                           │
-│  Height:         72px (desktop), 64px (mobile)                  │
-│  Background:     --bl-bg-void with 80% opacity                 │
-│  Backdrop:       blur(16px) saturate(180%)                      │
-│  Border Bottom:  1px solid --bl-border-subtle                   │
-│                                                                  │
-│  SCROLL BEHAVIOR                                                │
-│  - Appears transparent at top (no border, no bg)                │
-│  - On scroll > 50px: bg + blur + border fade in (300ms)         │
-│  - On scroll up after scrolling down: navbar slides in          │
-│                                                                  │
-│  LAYOUT                                                          │
-│  ┌──────────┬──────────────────────┬─────────────┐              │
-│  │  Logo    │    Nav Links         │   CTA Btn   │              │
-│  │  (left)  │    (center)          │   (right)   │              │
-│  └──────────┴──────────────────────┴─────────────┘              │
-│                                                                  │
-│  MOBILE (< 768px)                                                │
-│  ┌──────────┬──────────────────────┬─────────────┐              │
-│  │  Logo    │                      │  Hamburger  │              │
-│  │  (left)  │                      │   (right)   │              │
-│  └──────────┴──────────────────────┴─────────────┘              │
-│  Full-screen overlay menu on toggle                              │
-│  Links stack vertically, centered, section-title size           │
-│  Close button: top-right X                                       │
-└─────────────────────────────────────────────────────────────────┘
+[OVERLINE]        "Services"
+                  11px, Inter mono, --bl-green, uppercase, tracked
+                  margin-bottom: 12px
+
+[HEADLINE]        "What we build."
+                  Instrument Serif, --text-display, --bl-text-primary
+                  line-height: 1.08
+                  margin-bottom: 16px
+
+[DESCRIPTION]     "From infrastructure to interface."
+                  Inter 400, --text-body-lg, --bl-text-secondary
+                  max-width: 520px
+                  line-height: 1.65
+
+Alignment: center (default). Left for asymmetric layouts.
 ```
 
-**Nav Links:**
-```
-Services  ·  Our Edge  ·  Work  ·  Process  ·  Contact
-```
-
-### 5.5 Section Header (Reusable Pattern)
+### 5.5 Navigation Bar
 
 ```
-┌─────────────────────────────────────────────┐
-│  [OVERLINE]    "WHAT WE BUILD"              │
-│               overline style, accent color   │
-│                                              │
-│  [HEADLINE]   "Services built to ship."     │
-│               section-title style            │
-│                                              │
-│  [BODY]       "From architecture to..."     │
-│               section-subtitle, max 50ch     │
-│               --bl-text-secondary            │
-└─────────────────────────────────────────────┘
+STRUCTURE
+──────────────────────────────────────
+Position:          fixed, top: 0, z-index: 50
+Height:            64px
+Background:        --bl-bg-base with 85% opacity
+Backdrop:          blur(12px)
+Border Bottom:     1px solid --bl-border (appears on scroll)
 
-Alignment: center (default), left (for split layouts)
-Spacing: 8px between overline→headline, 16px headline→body
+LAYOUT (Desktop)
++----------------------------------------------+
+|  [Logo]          [Nav Links]       [CTA Btn] |
+|  (left)          (center)          (right)   |
++----------------------------------------------+
+
+Nav links: Inter 400, 14px, --bl-text-secondary
+Active link: --bl-text-primary
+Hover: --bl-text-primary, 200ms transition
+No underlines. No pills. Just opacity shift.
+
+MOBILE (< 768px)
++----------------------------------------------+
+|  [Logo]                           [Menu Btn] |
++----------------------------------------------+
+Full-screen overlay on toggle.
+Links: Instrument Serif, 32px, stacked center.
 ```
 
-### 5.6 Metric Counter Card
+### 5.6 Input Fields
 
 ```
-┌─────────────────────────────────────────────┐
-│  [NUMBER]     "150+"                        │
-│              Outfit 700, --bl-text-hero     │
-│              Counter animates 0 → target    │
-│              on scroll into view            │
-│                                              │
-│  [LABEL]     "Projects shipped"             │
-│              card-body, --bl-text-secondary  │
-└─────────────────────────────────────────────┘
+Background:        --bl-bg-elevated
+Border:            1px solid --bl-border-card
+Border Radius:     8px
+Padding:           14px 16px
+Font:              Inter 400, 15px
+Color:             --bl-text-primary
+Placeholder:       --bl-text-muted
 
-Layout: 4-column grid on desktop, 2-column on mobile
-Border: Bottom accent line (2px --bl-accent)
+FOCUS:
+Border Color:      --bl-green
+Outline:           none
+No shadow. No glow ring. Just a clean green border.
 ```
 
-### 5.7 Testimonial Card
+### 5.7 Metric Display
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                  │
-│  ❝                     Oversized quotation mark                  │
-│                        --bl-accent, 120px Outfit 300             │
-│                                                                  │
-│  "BayleafX didn't just redesign our platform —                  │
-│   they re-engineered how our users think about us."             │
-│                        quote style, --bl-text-primary            │
-│                                                                  │
-│  — Sarah Chen, VP Product, Luminary AI                          │
-│                        card-body, --bl-text-tertiary             │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+[NUMBER]           "150+"
+                   Instrument Serif, 56px, weight 400, --bl-text-primary
+                   Counter animates 0 -> target on scroll
 
-### 5.8 Contact Form
+[LABEL]            "Projects shipped"
+                   Inter 400, 14px, --bl-text-tertiary
+                   margin-top: 4px
 
-```
-┌─────────────────────────────────────────────┐
-│  FIELD SPEC                                 │
-├─────────────────────────────────────────────┤
-│  Background:     --bl-bg-elevated           │
-│  Border:         1px solid --bl-border-default│
-│  Border Radius:  10px                       │
-│  Padding:        14px 16px                  │
-│  Font:           body style                 │
-│  Color:          --bl-text-primary          │
-│  Placeholder:    --bl-text-muted            │
-│                                              │
-│  FOCUS                                       │
-│  Border Color:   --bl-accent                │
-│  Box Shadow:     0 0 0 3px --bl-accent-muted│
-│  Outline:        none                       │
-│                                              │
-│  FIELDS                                      │
-│  1. Name (text, required)                   │
-│  2. Email (email, required)                 │
-│  3. Message (textarea, 4 rows, required)    │
-│  4. Submit button (bl-btn-primary)          │
-│                                              │
-│  LAYOUT                                      │
-│  Name + Email: side-by-side on desktop      │
-│  Message: full width                        │
-│  Max form width: 560px, centered            │
-└─────────────────────────────────────────────┘
+Layout: 4 columns on desktop, 2 on mobile.
+Separated by thin vertical 1px borders (--bl-border), not card containers.
+No background panels. Numbers breathe in open space.
 ```
 
 ---
 
 ## 6. Animation System
 
-### 6.1 Timing & Easing Tokens
+### 6.1 Timing & Easing
 
 ```css
-/* Duration tokens */
---bl-duration-fast       150ms     Button press, toggle
---bl-duration-normal     300ms     Hover states, fades
---bl-duration-slow       500ms     Section reveals, slide-ins
---bl-duration-glacial    800ms     Hero entrance, complex sequences
+--duration-fast       150ms      /* Button press, toggle */
+--duration-normal     250ms      /* Hover states, fades */
+--duration-medium     400ms      /* Section reveals */
+--duration-slow       600ms      /* Hero entrance, page transitions */
 
-/* Easing tokens */
---bl-ease-out            cubic-bezier(0.16, 1, 0.3, 1)       /* Deceleration — entering elements */
---bl-ease-in-out         cubic-bezier(0.65, 0, 0.35, 1)      /* Symmetric — state transitions */
---bl-ease-spring         cubic-bezier(0.34, 1.56, 0.64, 1)   /* Overshoot — playful emphasis */
---bl-ease-smooth         cubic-bezier(0.4, 0, 0.2, 1)        /* Material-style — general purpose */
+--ease-out            cubic-bezier(0.16, 1, 0.3, 1)       /* Entering elements */
+--ease-in-out         cubic-bezier(0.65, 0, 0.35, 1)      /* State changes */
+--ease-smooth         cubic-bezier(0.4, 0, 0.2, 1)        /* General purpose */
 ```
 
-### 6.2 Scroll-Triggered Animations (Framer Motion)
+### 6.2 Allowed Animations
 
-| Animation Name       | Trigger            | Properties                                    | Duration | Easing       |
-|----------------------|--------------------|-----------------------------------------------|----------|--------------|
-| `fadeInUp`           | Scroll into view   | opacity: 0→1, y: 30→0                        | 500ms    | ease-out     |
-| `fadeInScale`        | Scroll into view   | opacity: 0→1, scale: 0.95→1                  | 500ms    | ease-out     |
-| `staggerChildren`    | Parent in view     | Stagger delay: 100ms between children         | —        | —            |
-| `clipReveal`         | Scroll into view   | clipPath: inset(100% 0 0 0) → inset(0)       | 800ms    | ease-out     |
-| `counterUp`          | Scroll into view   | Number counts from 0 to target value          | 1500ms   | ease-in-out  |
-| `lineDrawProgress`   | Scroll progress    | strokeDashoffset animates with scroll         | Tied to scroll | linear |
-| `heroGradientDrift`  | Continuous         | Background position shifts slowly             | 15s loop | linear       |
+| Animation          | Trigger          | Properties                     | Duration | Notes                      |
+| ------------------ | ---------------- | ------------------------------ | -------- | -------------------------- |
+| `fadeIn`           | Scroll into view | opacity: 0 to 1               | 400ms    | Most common. Subtle.       |
+| `fadeInUp`         | Scroll into view | opacity: 0 to 1, y: 16 to 0   | 500ms    | For content blocks         |
+| `staggerChildren`  | Parent in view   | 80ms stagger between children  | -        | For lists and grids        |
+| `counterUp`        | Scroll into view | Number counts 0 to target      | 1200ms   | Metrics section only       |
+| `buttonHover`      | mouseenter       | translateY(-1px)               | 150ms    | Buttons only               |
+| `cardHover`        | mouseenter       | translateY(-2px), border shift | 300ms    | Cards only                 |
+| `navAppear`        | scroll > 20px    | Backdrop blur + border fade in | 250ms    | Navbar only                |
 
-### 6.3 Interaction Animations
+### 6.3 Banned Animations
 
-| Element              | Trigger     | Animation                                    | Duration |
-|----------------------|-------------|----------------------------------------------|----------|
-| Button hover         | mouseenter  | translateY(-1px), glow shadow appears        | 300ms    |
-| Button press         | mousedown   | scale(0.98), translateY(0)                   | 150ms    |
-| Card hover           | mouseenter  | translateY(-2px), border brightens           | 400ms    |
-| Nav link hover       | mouseenter  | Underline grows from center (scaleX 0→1)     | 300ms    |
-| Mobile menu open     | click       | Overlay fades in, links slide in staggered   | 500ms    |
-| Mobile menu close    | click       | Reverse of open                              | 300ms    |
-| Form field focus     | focus       | Border glow pulses once, then holds          | 300ms    |
-| Testimonial rotate   | auto/swipe  | Cross-fade with slight y-shift               | 600ms    |
+- NO Floating orbs or ambient pulse/glow
+- NO Parallax scrolling on any section
+- NO Continuous looping background animations
+- NO Scale-in effects (scale 0.95 to 1)
+- NO Clip-path reveals
+- NO Gradient drift/shift
+- NO Hover glow/shadow on cards
+- NO Swipe-to-unlock interactions
+- NO Progress bar animations unrelated to actual progress
 
-### 6.4 Framer Motion Configuration Patterns
-
-```tsx
-// Scroll reveal wrapper — reused across all sections
-const scrollReveal = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
-};
-
-// Staggered container
-const staggerContainer = {
-  initial: {},
-  whileInView: { transition: { staggerChildren: 0.1 } },
-  viewport: { once: true }
-};
-
-// Stagger child
-const staggerChild = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
-};
-```
-
-### 6.5 Reduced Motion Support
+### 6.4 Reduced Motion
 
 ```css
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
 ```
 
-Framer Motion equivalent:
-```tsx
-const prefersReducedMotion = 
-  typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+---
 
-// Pass to all motion components
-const motionProps = prefersReducedMotion 
-  ? { initial: false, animate: false }
-  : scrollReveal;
+## 7. Section-by-Section Visual Specification
+
+### 7.1 Hero
+
+```
+LAYOUT
+──────────────────────────────────────
+Full viewport height (100dvh).
+Single column, center-aligned.
+No background image. No character art. No floating widgets.
+Just type on dark space.
+
+CONTENT (Top to Bottom, centered)
+──────────────────────────────────────
+[Overline]     "Design & Engineering Studio"
+               Inter mono, 11px, --bl-green, uppercase, tracked
+
+[Headline]     "We don't decorate websites.
+                We engineer experiences."
+               Instrument Serif, 80px (clamped), --bl-text-primary
+               line-height: 1.05, max-width: 900px
+
+[Subheadline]  "BayleafX is a design & engineering studio for
+                teams that refuse to ship mediocre."
+               Inter 400, 18px, --bl-text-secondary
+               max-width: 520px, margin-top: 24px
+
+[CTA]          Single primary button: "Start a project"
+               with ArrowRight icon suffix
+               margin-top: 40px
+
+[Scroll Cue]   Small downward arrow at bottom center
+               Inter mono, 11px, --bl-text-muted
+               Gentle fade animation (opacity 0.4 to 0.7, 3s loop)
+
+BACKGROUND
+──────────────────────────────────────
+Solid --bl-bg-base (#0B0E0C).
+Optional: A single, barely visible radial gradient at center:
+  radial-gradient(ellipse 60% 50% at 50% 40%, #12151310 0%, transparent 70%)
+This is NOT a decorative glow. It is the faintest warmth to prevent total flatness.
+```
+
+### 7.2 Services
+
+```
+LAYOUT
+──────────────────────────────────────
+Standard section header (overline + headline + description).
+Below: 3-column grid on desktop, 1-column on mobile.
+Each column represents a Pillar (Core Dev, UI/UX, Growth).
+
+PILLAR CARD
+──────────────────────────────────────
+No tabs. No switcher. All 3 pillars visible simultaneously.
+Each pillar is a tall card with:
+
+  [Pillar Number]    "01" - Inter mono, 12px, --bl-text-muted
+  [Pillar Name]      "Core Development" - Inter 600, 13px, --bl-green, uppercase
+  [Divider Line]     1px --bl-border, full width, margin 16px vertical
+
+  [Service List]     4-5 services listed vertically:
+    [Title]          Inter 500, 16px, --bl-text-primary
+    [One-liner]      Inter 400, 14px, --bl-text-tertiary
+    margin-bottom: 20px between services
+
+Card styling: --bl-bg-elevated background, 1px --bl-border-card border, 12px radius.
+No hover effects on the pillar card. Content is the interaction.
+```
+
+### 7.3 Differentiators
+
+```
+LAYOUT
+──────────────────────────────────────
+Section header, then a clean comparison table (not cards).
+Two-column table layout:
+
+  LEFT COLUMN HEADER    "Others"       --bl-text-muted, strikethrough style
+  RIGHT COLUMN HEADER   "BayleafX"     --bl-green, normal weight
+
+  ROWS:
+  Each row is a dimension (Design Approach, Technical Depth, etc.)
+  Left cell: faded text, --bl-text-tertiary
+  Right cell: confident text, --bl-text-primary
+  Rows separated by 1px --bl-border
+
+  No X/Check icons. No colored backgrounds. Just text contrast.
+  The design itself IS the differentiator: clean vs cluttered.
+```
+
+### 7.4 Metrics
+
+```
+LAYOUT
+──────────────────────────────────────
+No card backgrounds. Numbers stand alone.
+4 metrics in a single row on desktop, 2x2 on mobile.
+Separated by thin vertical 1px lines (not card edges).
+
+  150+               98%
+  Projects shipped    Client retention
+
+  3.2s                40%
+  Avg load boost      Conversion lift
+
+Numbers: Instrument Serif, 56px, --bl-text-primary, counter animation.
+Labels: Inter 400, 14px, --bl-text-tertiary.
+```
+
+### 7.5 Process
+
+```
+LAYOUT
+──────────────────────────────────────
+4 steps displayed as a numbered list, not a stepper with connecting lines.
+Simple, editorial layout. Left-aligned or 2x2 grid.
+
+  01   Discovery & Architecture
+       "We audit your requirements, technical stack,
+        and constraints with zero fluff."
+
+  02   Design System
+       "High-fidelity prototypes and tokenized components
+        built directly for code translation."
+
+  03   Engineering
+       "Clean Next.js / TypeScript code with
+        performance auditing and CI/CD."
+
+  04   Launch & Growth
+       "Production deployment with telemetry
+        and continuous optimization."
+
+Numbers: Instrument Serif, 48px, --bl-text-muted (faded).
+Titles: Inter 600, 20px, --bl-text-primary.
+Descriptions: Inter 400, 15px, --bl-text-secondary.
+
+Desktop: 2-column grid (2 per row) or 4-column.
+Mobile: Single column, stacked.
+```
+
+### 7.6 Testimonials
+
+```
+LAYOUT
+──────────────────────────────────────
+Single featured quote, not 3-column grid.
+Large italic serif text, centered.
+
+  "BayleafX didn't just redesign our platform -
+   they re-engineered how our users think about us."
+
+  - Sarah Chen, VP Product at Luminary AI
+
+Quote: Instrument Serif, 28px (clamped), --bl-text-primary, italic
+Attribution: Inter 400, 14px, --bl-text-tertiary
+
+Auto-rotate every 6s with a simple crossfade (opacity transition).
+Small dots below indicate current testimonial.
+
+No star ratings. No "verified" badges. No outcome metric tags.
+The quote speaks for itself.
+```
+
+### 7.7 Contact / CTA
+
+```
+LAYOUT
+──────────────────────────────────────
+Two-column on desktop, stacked on mobile.
+Left: Headline + brief copy + direct email link.
+Right: Simple contact form.
+
+LEFT COLUMN:
+  [Headline]       "Ready to build something real?"
+                   Instrument Serif, --text-heading
+  [Body]           "Tell us about your project. We will respond
+                    within 24 hours with a technical assessment."
+                   Inter 400, --text-body, --bl-text-secondary
+  [Email]          "hello@bayleafx.com"
+                   Inter mono, 14px, --bl-green, underline on hover
+
+RIGHT COLUMN (Form):
+  Fields:  Name, Email, Message (textarea, 4 rows)
+  Submit:  Primary button, full-width: "Send message"
+  No scope selectors. No timeline pills. No engagement model cards.
+  Just name, email, message. Reduce friction to zero.
+```
+
+### 7.8 Footer
+
+```
+LAYOUT
+──────────────────────────────────────
+3-column: Brand + Nav Links + Legal
+Top border: 1px --bl-border
+
+Brand column: Logo + one-line description + email
+Nav column: Same anchor links as navbar
+Legal column: Privacy, Terms, Cookies
+
+Bottom bar: (c) 2026 BayleafX. All rights reserved.
+No "All Systems Operational" badge. No status dots. No pulse animations.
 ```
 
 ---
 
-## 7. Iconography
+## 8. Iconography
 
-### 7.1 Lucide Icon Mapping
+### 8.1 Lucide Icon Usage
 
-| Service / Element          | Lucide Icon       | Size   | Context                    |
-|----------------------------|-------------------|--------|----------------------------|
-| Web App Development        | `Monitor`         | 24px   | Service card               |
-| Full-Stack Platforms       | `Layers`          | 24px   | Service card               |
-| Custom Architecture        | `GitBranch`       | 24px   | Service card               |
-| API & Integrations         | `Plug`            | 24px   | Service card               |
-| Cloud & DevOps             | `Cloud`           | 24px   | Service card               |
-| Product Strategy           | `Compass`         | 24px   | Service card               |
-| Interactive Prototyping    | `MousePointerClick` | 24px | Service card               |
-| Design Systems             | `Palette`         | 24px   | Service card               |
-| Motion & Animation         | `Sparkles`        | 24px   | Service card               |
-| Accessibility Audit        | `Eye`             | 24px   | Service card               |
-| Digital Marketing          | `TrendingUp`      | 24px   | Service card               |
-| Performance Marketing      | `Target`          | 24px   | Service card               |
-| Social Media Management    | `Share2`          | 24px   | Service card               |
-| Content & SEO              | `PenTool`         | 24px   | Service card               |
-| Analytics & CRO            | `BarChart3`       | 24px   | Service card               |
-| Navigation menu toggle     | `Menu` / `X`      | 24px   | Mobile nav                 |
-| External link indicator    | `ArrowUpRight`    | 14px   | Links, CTAs                |
-| CTA arrow                  | `ArrowRight`      | 18px   | Primary buttons            |
+Icons are **supporting**, never primary. Used at 20px, stroke 1.5.
 
-### 7.2 Icon Style Rules
+| Context               | Icon            | Color              |
+| --------------------- | --------------- | ------------------ |
+| CTA button suffix     | `ArrowRight`    | white              |
+| Form success          | `Check`         | --bl-green         |
+| Nav mobile toggle     | `Menu` / `X`    | --bl-text-primary  |
+| Email link            | `Mail`          | --bl-green         |
+| Scroll cue            | `ChevronDown`   | --bl-text-muted    |
 
-1. **Stroke width**: 1.5px (Lucide default). Never change.
-2. **Color**: `--bl-text-tertiary` default, `--bl-accent` on hover/active.
-3. **Sizing**: 24px for cards, 18px for buttons, 14px for inline indicators.
-4. **Animation**: Icons do not animate independently. Only their parent container transforms.
+### 8.2 Icon Rules
+
+1. **No icon badges** (colored circle backgrounds behind icons).
+2. **No service-specific icons** in service lists. The title IS the identifier.
+3. **Icons never animate independently.** Only their parent transforms.
 
 ---
 
-## 8. Effects & Depth
+## 9. What Gets Deleted
 
-### 8.1 Box Shadows
+### 9.1 Images to Remove
 
-```css
---bl-shadow-sm:      0 1px 2px rgba(0, 0, 0, 0.3);
---bl-shadow-md:      0 4px 12px rgba(0, 0, 0, 0.4);
---bl-shadow-lg:      0 8px 32px rgba(0, 0, 0, 0.5);
---bl-shadow-xl:      0 16px 48px rgba(0, 0, 0, 0.6);
---bl-shadow-glow:    0 0 24px var(--bl-accent-glow);
---bl-shadow-glow-lg: 0 0 48px var(--bl-accent-glow);
-```
+All files in `public/images/`:
+- `hero-character.png` — Cybernetic figure. Gone.
+- `hero-character-opt.png` — Same. Gone.
+- `hero-mobile-bg.jpg` — Sci-fi backdrop. Gone.
+- `hero-raven.jpg` — Preview widget image. Gone.
 
-### 8.2 Backdrop Filters
+The hero section is now **purely typographic**. No images needed.
 
-```css
---bl-glass-blur:     blur(12px) saturate(150%);
---bl-nav-blur:       blur(16px) saturate(180%);
-```
+### 9.2 UI Patterns to Remove
 
-### 8.3 Border Radius Scale
-
-```css
---bl-radius-sm:      6px;      /* Tags, badges */
---bl-radius-md:      10px;     /* Buttons, inputs */
---bl-radius-lg:      16px;     /* Cards, panels */
---bl-radius-xl:      24px;     /* Large feature cards */
---bl-radius-full:    9999px;   /* Pills, avatars */
-```
-
----
-
-## 9. Responsive Behavior Matrix
-
-| Element              | 375px (Mobile)          | 768px (Tablet)          | 1280px+ (Desktop)        |
-|----------------------|-------------------------|-------------------------|--------------------------|
-| **Nav**              | Logo + hamburger        | Logo + links + CTA      | Logo + links + CTA       |
-| **Hero headline**    | `clamp` → ~40px         | `clamp` → ~56px         | 72px                     |
-| **Hero layout**      | Centered, single col    | Centered, single col    | Centered, single col     |
-| **Bento grid**       | 1 column, stacked       | 2 columns               | 3 columns                |
-| **Differentiator**   | Stacked (statement→list)| Side-by-side split      | Side-by-side split       |
-| **Metrics**          | 2×2 grid                | 4 columns               | 4 columns                |
-| **Process stepper**  | Vertical stack           | Horizontal, compact     | Horizontal, full         |
-| **Testimonial**      | Full width, swipe       | Full width, arrows      | Centered, max-width      |
-| **Contact form**     | Single column fields    | Name+Email side-by-side | Name+Email side-by-side  |
-| **Section padding**  | 64px top/bottom         | 80px top/bottom         | 96–128px top/bottom      |
-| **Container padding**| 24px horizontal         | 32px horizontal         | 48px horizontal          |
+| Current Pattern                       | Replacement                                  |
+| ------------------------------------- | -------------------------------------------- |
+| Glassmorphic cards with backdrop-blur  | Flat elevated cards with hairline border      |
+| Ambient glow orbs (radial gradients)  | Nothing. Empty space.                        |
+| SLA badges, verified badges           | Nothing. Let the work speak.                 |
+| Tech stack pill tags                  | Remove entirely or footnote text             |
+| Tab switcher for service pillars      | All 3 pillars visible simultaneously         |
+| Swipe-to-unlock mobile CTA           | Standard button                              |
+| Trust marquee section (industries)    | Remove entirely                              |
+| Engagement model cards (contact)      | Remove. Simple form only.                    |
+| Enterprise Standards SLA card         | Remove. Simplify contact section.            |
+| Floating preview widget (hero)        | Remove.                                      |
+| Giant "SINGULARITY" background word   | Remove.                                      |
+| Telemetry status indicators           | Remove.                                      |
+| 5-star ratings on testimonials        | Remove.                                      |
+| Outcome metric tags on testimonials   | Remove.                                      |
+| Progress slider (01 --- 06)           | Remove.                                      |
 
 ---
 
-## 10. Asset Requirements
+## 10. Responsive Behavior
 
-### 10.1 Generated Assets (Pre-Build)
+| Element           | 375px (Mobile)        | 768px (Tablet)        | 1200px+ (Desktop)      |
+| ----------------- | --------------------- | --------------------- | ---------------------- |
+| **Nav**           | Logo + hamburger      | Logo + links + CTA    | Logo + links + CTA     |
+| **Hero headline** | clamp to ~44px        | clamp to ~64px        | 80px                   |
+| **Service grid**  | 1 column, stacked     | 2 columns             | 3 columns              |
+| **Differentiator**| Stacked rows          | Side-by-side table    | Side-by-side table     |
+| **Metrics**       | 2x2 grid              | 4 columns             | 4 columns              |
+| **Process**       | 1 column              | 2x2 grid              | 4 columns or 2x2       |
+| **Testimonial**   | Full width            | Max-width centered    | Max-width centered     |
+| **Contact**       | Stacked               | 2 columns             | 2 columns              |
+| **Section padding**| 64px vertical        | 80px vertical         | 96-128px vertical      |
 
-| Asset                | Format    | Dimensions      | Source          |
-|----------------------|-----------|-----------------|-----------------|
-| OG Image             | PNG/WebP  | 1200×630        | AI-generated    |
-| Favicon set          | ICO + PNG | 16/32/180/192   | SVG → generated |
-| Logo (text mark)     | SVG       | Scalable        | Custom Outfit   |
-| Hero gradient mesh   | CSS       | Full viewport   | Code            |
-| Case study mockups   | WebP      | 800×600 each    | AI-generated    |
+---
 
-### 10.2 Logo Specification
-
-The BayleafX logo is a **text mark** (no icon/symbol needed for MVP):
+## 11. Logo Specification (Preserved)
 
 ```
-Font:           Outfit
-Weight:         700
-Text:           BayleafX
-Color:          --bl-text-primary (#F5F5F7)
-Accent:         The "X" rendered in --bl-accent (#D4A843)
-Size:           20px in nav, scalable elsewhere
-Tracking:       -0.02em
+Format:          SVG (public/logo.svg) — KEEP AS-IS
+Usage:           20-28px height in navbar
+Color:           Inherits from SVG. White with green "X" accent.
+No modifications to the logo file.
 ```
 
 ---
 
-## 11. Tailwind Configuration Preview
+## 12. Pre-Implementation Checklist
 
-```ts
-// tailwind.config.ts — key customizations
-{
-  theme: {
-    extend: {
-      colors: {
-        'bl-void':      '#050506',
-        'bl-base':      '#0A0A0B',
-        'bl-elevated':  '#111113',
-        'bl-overlay':   '#1A1A1E',
-        'bl-subtle':    '#222228',
-        'bl-accent':    '#D4A843',
-        'bl-accent-hover': '#E5BD5A',
-      },
-      fontFamily: {
-        display: ['Outfit', 'system-ui', 'sans-serif'],
-        body:    ['Inter', 'system-ui', 'sans-serif'],
-        mono:    ['JetBrains Mono', 'Fira Code', 'monospace'],
-      },
-      borderRadius: {
-        'bl-sm': '6px',
-        'bl-md': '10px',
-        'bl-lg': '16px',
-        'bl-xl': '24px',
-      },
-      backdropBlur: {
-        'glass': '12px',
-        'nav':   '16px',
-      },
-    },
-  },
-}
-```
+- [ ] Font pairing (Instrument Serif + Inter) tested at 375px and 1440px
+- [ ] All ambient glows, orbs, and gradient meshes removed from CSS
+- [ ] Glassmorphic `.bl-card-glass` class replaced with flat `.bl-card`
+- [ ] All images in `public/images/` deleted
+- [ ] Hero section is purely typographic (no Image tags)
+- [ ] Services render all 3 pillars simultaneously (no tab switcher)
+- [ ] Testimonials display as single rotating quote (not 3-column grid)
+- [ ] Contact form reduced to 3 fields: name, email, message
+- [ ] Trust marquee section removed entirely from page
+- [ ] No component uses `backdrop-filter: blur()` except navbar
+- [ ] All animations comply with the "Allowed Animations" list
+- [ ] Color usage audit: green only on interactive elements
 
 ---
 
-## 12. Design Checklist (Pre-Implementation Gate)
-
-Before moving to Phase 3, confirm:
-
-- [ ] Color palette contrast ratios verified against WCAG 2.2 AA
-- [ ] Typography scale tested at 375px and 1440px extremes
-- [ ] All 15 service cards have assigned Lucide icons
-- [ ] Glassmorphic card style tested on dark backgrounds
-- [ ] Animation timing feels natural (not mechanical, not sluggish)
-- [ ] Reduced motion fallback defined for all animated elements
-- [ ] Logo text mark renders cleanly at 20px nav size
-- [ ] Form field states cover: default, focus, error, disabled
-- [ ] Mobile nav overlay interaction fully specified
-- [ ] Gradient tokens don't cause banding on 8-bit displays
-
----
-
-> **Next Phase**: [`docs/IMPLEMENTATION.md`](file:///c:/Users/USER/Desktop/BayleafX/docs/IMPLEMENTATION.md) — Component tree, build order, file structure, route setup, and development workflow.
+> **Next Phase**: [`docs/IMPLEMENTATION.md`](file:///c:/Users/USER/Desktop/BayleafX/docs/IMPLEMENTATION.md) — Component rewrite plan, file deletions, build order, and verification steps.

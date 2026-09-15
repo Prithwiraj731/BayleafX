@@ -2,115 +2,67 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { SectionHeader } from '@/components/layout/section-header';
 import { PROCESS_STEPS } from '@/lib/constants';
-import { staggerContainer, staggerChild } from '@/lib/animations';
+import { fadeInUp, staggerContainer } from '@/lib/animations';
 
-const PHASE_DETAILS: Record<
-  number,
-  {
-    cadence: string;
-    deliverables: string[];
-    gateCheckpoint: string;
-  }
-> = {
-  1: {
-    cadence: 'Days 1–5 // Sprint 0',
-    deliverables: ['Technical Architecture Blueprint', 'Database & API Schema Matrix', 'Core Constraint Risk Audit'],
-    gateCheckpoint: 'Architecture Sign-Off Gate',
-  },
-  2: {
-    cadence: 'Weeks 2–3 // Design Sprint',
-    deliverables: ['Tokenized Component Library', '60FPS Clickable Prototypes', 'WCAG 2.2 AA Contrast Audit'],
-    gateCheckpoint: 'Interactive Prototype Approval',
-  },
-  3: {
-    cadence: 'Weeks 3–5 // Code Sprint',
-    deliverables: ['Modular Next.js / TypeScript Core', 'Hardware Accelerated Motion', 'Automated CI/CD & Unit Tests'],
-    gateCheckpoint: 'Staging & Security Audit',
-  },
-  4: {
-    cadence: 'Week 6+ // Production Go-Live',
-    deliverables: ['Global Edge CDN Warmup', 'Telemetry & CRO Pipelines', 'Zero-Downtime DNS Cutover'],
-    gateCheckpoint: 'Production SLA Handover',
-  },
-};
+const STEP_CADENCES = [
+  'Days 1–5 // Sprint 0',
+  'Weeks 2–3 // Design Sprint',
+  'Weeks 3–5 // Code Sprint',
+  'Week 6+ // Production Go-Live',
+];
 
 export const ProcessSection: React.FC = () => {
   return (
-    <section
-      id="process"
-      aria-label="Engineering Lifecycle & Execution Framework"
-      className="relative w-full py-24 md:py-36 overflow-hidden border-t border-white/[0.08] bg-[#0A0E0C]"
-    >
-      {/* Background Subtle Bayleaf Glow */}
-      <div className="pointer-events-none absolute left-1/2 bottom-10 -translate-x-1/2 h-[380px] w-[600px] rounded-full bg-[#2D6A4F]/[0.06] blur-[150px]" />
-
+    <section id="process" className="py-16 md:py-24 bg-white">
       <Container>
         <SectionHeader
-          overline="04 // EXECUTION FRAMEWORK"
-          title="From First Principles to Edge Deployment."
-          description="A structured engineering cadence replacing arbitrary guesswork with predictable deployment milestones."
+          overline="Execution Framework"
+          title="How we take ideas to production."
+          description="A structured, four-phase engineering cadence designed to eliminate risk and ensure rapid time-to-market."
         />
 
-        {/* 4-Phase Chronological Engineering Pipeline */}
         <motion.div
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto"
         >
-          {PROCESS_STEPS.map((step, index) => {
-            const details = PHASE_DETAILS[step.number];
+          {PROCESS_STEPS.map((step, idx) => {
+            const stepNum = String(step.number).padStart(2, '0');
+            const cadence = STEP_CADENCES[idx] || 'Sprint Phase';
+
             return (
               <motion.div
                 key={step.number}
-                variants={staggerChild}
-                className="group flex flex-col justify-between rounded-xl border border-white/[0.08] bg-gradient-to-b from-[#111714] to-[#0D120F] p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#2D6A4F]/60 hover:shadow-[0_12px_36px_rgba(0,0,0,0.6),0_0_24px_rgba(45,106,79,0.15)]"
+                variants={fadeInUp}
+                className="bl-card p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-[#2D6A4F]/40 transition-all flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Phase Header */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#2D6A4F]/50 bg-[#1B4332]/40 font-mono text-xs font-bold text-[#52B788] shadow-[0_0_12px_rgba(45,106,79,0.25)]">
-                      0{step.number}
-                    </div>
-                    <span className="flex items-center gap-1 font-mono text-[10px] text-[#A3B18A] bg-white/[0.04] px-2.5 py-1 rounded-full border border-white/[0.06]">
-                      <Clock className="h-3 w-3 text-[#52B788]" />
-                      {details.cadence}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-[#E8F5E9] text-[#1B4332] font-mono text-xs font-bold">
+                      Step {stepNum}
+                    </span>
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-slate-400 font-medium">
+                      {cadence}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-lg font-bold text-[#F5F7F5] mb-2 group-hover:text-white transition-colors">
+                  <h3 className="font-sans text-xl font-bold text-slate-900">
                     {step.title}
                   </h3>
 
-                  <p className="font-body text-xs text-[#9CA3AF] leading-relaxed mb-6">
+                  <p className="mt-2.5 font-body text-sm leading-relaxed text-slate-600">
                     {step.description}
                   </p>
-
-                  {/* Deliverables Checklist */}
-                  <div className="space-y-2 pt-4 border-t border-white/[0.06] mb-6">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#6C7A70] block font-semibold">
-                      Key Deliverables
-                    </span>
-                    {details.deliverables.map((item) => (
-                      <div key={item} className="flex items-start gap-2 text-[11px] text-[#D0CDC8] leading-tight">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-[#52B788] shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                {/* Gate Checkpoint Footer */}
-                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-[#52B788]">
-                  <span className="truncate">{details.gateCheckpoint}</span>
-                  {index < PROCESS_STEPS.length - 1 && (
-                    <ArrowRight className="h-3.5 w-3.5 text-white/30 shrink-0 hidden lg:block" />
-                  )}
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#1B4332]">
+                  <span>Milestone Verified</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#2D6A4F]" />
                 </div>
               </motion.div>
             );

@@ -20,26 +20,26 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
       variants={fadeInUp}
-      className={`mb-12 md:mb-16 ${isCentered ? 'text-center mx-auto' : 'text-left'} max-w-3xl ${className}`}
+      className={`mb-10 md:mb-12 ${isCentered ? 'text-center mx-auto' : 'text-left'} max-w-3xl ${className}`}
     >
       {overline && (
-        <div className={`mb-3.5 flex items-center gap-2.5 ${isCentered ? 'justify-center' : ''}`}>
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D6A4F]/15 border border-[#2D6A4F]/30 font-mono text-[11px] font-semibold tracking-[0.22em] uppercase text-[#52B788]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#52B788]" />
+        <div className={`mb-3 flex items-center ${isCentered ? 'justify-center' : ''}`}>
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F5E9] text-[#1B4332] border border-[#C8E6C9] font-mono text-[11px] font-semibold tracking-wider uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#2D6A4F]" />
             {overline}
           </span>
         </div>
       )}
 
-      <h2 className="font-display text-3xl font-extrabold tracking-[-0.03em] text-[#F5F7F5] sm:text-4xl md:text-5xl leading-[1.15]">
+      <h2 className="font-sans text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 leading-[1.15] tracking-[-0.02em]">
         {title}
       </h2>
 
       {description && (
         <p
-          className={`mt-4 font-body text-sm md:text-base leading-relaxed text-[#9CA3AF] ${
+          className={`mt-3.5 font-body text-base sm:text-lg leading-relaxed text-slate-600 ${
             isCentered ? 'mx-auto' : ''
-          } max-w-2xl`}
+          } max-w-[620px]`}
         >
           {description}
         </p>
