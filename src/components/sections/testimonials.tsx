@@ -13,8 +13,8 @@ export const TestimonialsSection: React.FC = () => {
     <section id="testimonials" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
       <Container>
         <SectionHeader
-          title="Validated by industry leaders."
-          description="What technical founders and product executives say about partnering with BayleafX."
+          title="What our clients say."
+          description="Read genuine feedback from founders and businesses who trust BayleafX."
         />
 
         <motion.div

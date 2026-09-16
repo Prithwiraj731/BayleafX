@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-4">
             <Logo href="/" />
             <p className="max-w-sm font-sans text-sm text-slate-600 leading-relaxed">
-              Design and engineering studio building digital products for ambitious teams. Built with craft, performance, and scale.
+              We design and build fast websites, custom web applications, and digital marketing that helps your business grow.
             </p>
             <div>
               <a

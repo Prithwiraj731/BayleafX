@@ -15,8 +15,8 @@ export const ServicesSection: React.FC = () => {
     <section id="services" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
       <Container>
         <SectionHeader
-          title="Engineered for scale &amp; precision."
-          description="Three integrated disciplines covering the entire software lifecycle from architecture to global market growth."
+          title="Everything you need to grow online."
+          description="From custom websites and web applications to modern design and marketing, we take care of it all under one roof."
         />
 
         <motion.div

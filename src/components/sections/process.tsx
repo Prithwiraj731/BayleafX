@@ -8,10 +8,10 @@ import { PROCESS_STEPS } from '@/lib/constants';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 const STEP_CADENCES = [
-  'Days 1–5 // Sprint 0',
-  'Weeks 2–3 // Design Sprint',
-  'Weeks 3–5 // Code Sprint',
-  'Week 6+ // Production Go-Live',
+  'Phase 1 // Week 1',
+  'Phase 2 // Weeks 2–3',
+  'Phase 3 // Weeks 3–4',
+  'Phase 4 // Week 5+',
 ];
 
 export const ProcessSection: React.FC = () => {
@@ -19,8 +19,8 @@ export const ProcessSection: React.FC = () => {
     <section id="process" className="py-16 md:py-24 bg-white">
       <Container>
         <SectionHeader
-          title="How we take ideas to production."
-          description="A structured, four-phase engineering cadence designed to eliminate risk and ensure rapid time-to-market."
+          title="How we work with you."
+          description="A simple, transparent 4-step process from your first conversation to a successful launch."
         />
 
         <motion.div

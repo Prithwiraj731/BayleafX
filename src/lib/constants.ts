@@ -10,208 +10,208 @@ import {
 export const NAV_LINKS: NavLink[] = [
   { label: 'Services', href: '#services' },
   { label: 'Why Us', href: '#differentiators' },
-  { label: 'Impact', href: '#metrics' },
-  { label: 'Process', href: '#process' },
-  { label: 'Endorsements', href: '#testimonials' },
+  { label: 'Results', href: '#metrics' },
+  { label: 'How It Works', href: '#process' },
+  { label: 'Reviews', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export const SERVICE_PILLARS: ServicePillar[] = [
   {
-    name: 'Core Development',
+    name: 'Web & App Development',
     services: [
       {
         icon: 'Monitor',
         title: 'Web App Development',
-        subtitle: 'Production-grade React/Next.js apps built for scale, not demos.',
+        subtitle: 'Fast, modern web applications built with React & Next.js.',
         description:
-          'Engineered with modern component architecture, rigorous state management, and edge SSR capabilities that outpace commercial benchmarks.',
+          'Custom web apps designed to load instantly, work smoothly on every phone and computer, and scale effortlessly as your business grows.',
       },
       {
         icon: 'Layers',
-        title: 'Full-Stack Platforms',
-        subtitle: 'End-to-end systems: auth, payments, dashboards, APIs.',
+        title: 'Full-Stack Software',
+        subtitle: 'Complete platforms with user accounts, payments & dashboards.',
         description:
-          'Bespoke full-stack architectures integrating bulletproof identity, complex billing lifecycles, and resilient database topology.',
+          'We build complete software solutions from scratch: secure login systems, Stripe payments, customer portals, and easy admin panels.',
       },
       {
         icon: 'Globe',
-        title: 'Wordpress Website Development',
-        subtitle: 'High-performance, bespoke WordPress & WooCommerce architectures.',
+        title: 'WordPress Websites',
+        subtitle: 'Custom, secure WordPress sites that are easy for you to edit.',
         description:
-          'Custom theme engineering, headless setups, enterprise security hardening, and lightning-fast page load speeds tailored to your brand.',
+          'Custom themes, online stores with WooCommerce, and top-tier security with fast loading speeds that keep your visitors engaged.',
       },
       {
         icon: 'Plug',
-        title: 'API & Integrations',
-        subtitle: "Clean, documented APIs. Third-party stitching that doesn't rot.",
+        title: 'Tool & API Integrations',
+        subtitle: 'Connect your website with your favorite business apps.',
         description:
-          'High-throughput REST/GraphQL gateways, resilient webhook ingestion, and seamless third-party synchronization.',
+          'We connect your site to payment gateways, email tools, CRMs, and databases so your operations run smoothly on autopilot.',
       },
     ],
   },
   {
-    name: 'UI/UX Engineering',
+    name: 'Design & User Experience',
     services: [
       {
         icon: 'Compass',
-        title: 'Product Strategy',
-        subtitle: "We ask 'should we build this?' before 'how do we build this?'",
+        title: 'Project Planning',
+        subtitle: 'We map out what to build before writing a single line of code.',
         description:
-          'Validating user mental models, competitive positioning, and technical feasibility before a single wireframe is drawn.',
+          'We study your business goals, understand what your customers need, and create a clear visual roadmap to ensure project success.',
       },
       {
         icon: 'MousePointerClick',
-        title: 'Interactive Prototyping',
-        subtitle: 'Click-through prototypes that feel like the real product.',
+        title: 'Clickable Prototypes',
+        subtitle: 'Test and explore your site before development begins.',
         description:
-          'High-fidelity micro-interactions and tactile feedback loops simulating production environments for rapid stakeholder sign-off.',
+          'Interactive prototypes that let you click through every screen, so you see and approve the exact look and feel before we build.',
       },
       {
         icon: 'Palette',
-        title: 'Design Systems',
-        subtitle: 'Tokens, components, documentation. Scales across teams.',
+        title: 'Brand & Design Systems',
+        subtitle: 'Consistent colors, fonts, and styles across all your pages.',
         description:
-          'Comprehensive tokenized design architectures built in code and Figma, ensuring brand consistency across web and mobile.',
+          'Clean, modern typography and visual guidelines that give your brand a trustworthy, established, and million-dollar look.',
       },
       {
         icon: 'Eye',
-        title: 'Accessibility Audit',
-        subtitle: 'WCAG 2.2 AA compliance. Inclusive design, not afterthought.',
+        title: 'Mobile & Fast Performance',
+        subtitle: 'Built for speed, easy reading, and every screen size.',
         description:
-          'Comprehensive screen reader compatibility, keyboard navigation traps, contrast validation, and semantic structural audits.',
+          'Websites that look great on any device — iPhones, Androids, tablets, or laptops — with easy-to-read text and quick loading times.',
       },
     ],
   },
   {
-    name: 'Growth & Reach',
+    name: 'Marketing & Business Growth',
     services: [
       {
         icon: 'TrendingUp',
         title: 'Digital Marketing',
-        subtitle: 'Strategy-first campaigns. No spray-and-pray.',
+        subtitle: 'Clear marketing strategies to attract real customers.',
         description:
-          'Targeted audience acquisition strategies rooted in behavioral analytics, market segmentation, and compounding organic funnels.',
+          'No guessing games. We find where your target audience spends time and guide them directly to your website to buy or contact you.',
       },
       {
         icon: 'Target',
-        title: 'Performance Marketing',
-        subtitle: 'Paid search, social ads, retargeting — optimized to CAC.',
+        title: 'Paid Ads (Google & Meta)',
+        subtitle: 'Targeted ads designed to bring sales, not just clicks.',
         description:
-          'Data-driven creative iterations, rigorous multivariate testing, and channel scaling calibrated directly to Customer Acquisition Cost.',
+          'We create, run, and optimize ad campaigns on Google, Facebook, and Instagram to get you the highest return on your ad spend.',
       },
       {
         icon: 'Share2',
-        title: 'Social Media Management',
-        subtitle: 'Platform-native content with real engagement strategy.',
+        title: 'Social Media Growth',
+        subtitle: 'Consistent, eye-catching posts that build trust.',
         description:
-          'High-impact editorial voice, engineering-centric narrative design, and community growth for modern tech and enterprise brands.',
+          'Professional visuals, engaging captions, and smart scheduling that keep your brand active, respected, and memorable.',
       },
       {
         icon: 'PenTool',
-        title: 'Content & SEO',
-        subtitle: 'Authority content that ranks and converts, not just publishes.',
+        title: 'Google SEO & Content',
+        subtitle: 'Rank higher on Google search so customers find you first.',
         description:
-          'Technical SEO architecture, Generative Engine Optimization (GEO), and programmatic content systems targeting high-intent queries.',
+          'We optimize your website for search engines and write clear, helpful articles that bring you free organic traffic year after year.',
       },
       {
         icon: 'BarChart3',
-        title: 'Analytics & CRO',
-        subtitle: 'Data pipelines, dashboards, and conversion experiments.',
+        title: 'Analytics & Sales Optimization',
+        subtitle: 'Clear reports on your visitors and how to get more sales.',
         description:
-          'Attribution modeling, custom telemetry dashboards, and continuous A/B experimentation eliminating drop-off at every funnel step.',
+          'We set up simple dashboards to show you where your visitors come from and test improvements to convert more visitors into paying customers.',
       },
     ],
   },
 ];
 
 export const METRICS: MetricItem[] = [
-  { value: 150, suffix: '+', label: 'Projects Shipped' },
-  { value: 98, suffix: '%', label: 'Client Retention Rate' },
-  { value: 3.2, suffix: 's', label: 'Avg. Load Improvement' },
-  { value: 40, suffix: '%', label: 'Avg. Conversion Lift' },
+  { value: 150, suffix: '+', label: 'Projects Completed' },
+  { value: 98, suffix: '%', label: 'Client Satisfaction' },
+  { value: 3.2, suffix: 's', label: 'Faster Load Speed' },
+  { value: 40, suffix: '%', label: 'Average Sales Growth' },
 ];
 
 export const PROCESS_STEPS: ProcessStepItem[] = [
   {
     number: 1,
-    title: 'Discovery & Architecture',
+    title: 'Discovery & Plan',
     description:
-      'We audit your core requirements, technical stack, user pain points, and architectural constraints with zero fluff.',
+      'We discuss your business goals, your target audience, and create a clear step-by-step plan with fixed pricing and timelines.',
   },
   {
     number: 2,
-    title: 'Interactive Design System',
+    title: 'Design & Clickable Preview',
     description:
-      'High-fidelity prototypes, Apple-grade editorial typography, and live tokenized design components built directly for code translation.',
+      'We design modern, beautiful screens and share a clickable prototype with you so you can review and approve every detail.',
   },
   {
     number: 3,
-    title: 'Bespoke Engineering',
+    title: 'Development & Testing',
     description:
-      'Clean, modular Next.js / TypeScript code with hardware-accelerated Framer Motion interactions, CI/CD, and performance auditing.',
+      'Our team writes clean, fast code, tests every feature across all mobile and desktop devices, and ensures high security.',
   },
   {
     number: 4,
-    title: 'Deployment & Growth Engine',
+    title: 'Launch & Ongoing Support',
     description:
-      'Production deployment with sub-second page loads, telemetry instrumentation, and compounding full-funnel growth loops.',
+      'We connect your domain, take your site live to the world, and provide continuous updates and support as your business grows.',
   },
 ];
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     quote:
-      "BayleafX didn't just redesign our platform — they re-engineered how our users think about us. The polish is extraordinary.",
+      "BayleafX didn't just rebuild our website — they helped us double our customer leads in the very first month. Fast, professional, and super easy to work with.",
     author: 'Sarah Chen',
-    title: 'VP of Product',
-    company: 'Luminary AI',
+    title: 'Head of Product',
+    company: 'Luminary Tech',
   },
   {
     quote:
-      "Three legacy agencies failed before them. BayleafX shipped in 4 weeks what others couldn't pull together in 4 months.",
+      "We had bad experiences with other agencies before finding BayleafX. They delivered our entire custom web application in 4 weeks, exactly as promised.",
     author: 'Marcus Rivera',
-    title: 'Chief Executive Officer',
-    company: 'Stackbridge Platforms',
+    title: 'Founder & CEO',
+    company: 'Stackbridge Co.',
   },
   {
     quote:
-      "The precision and craft in every single micro-interaction made our investors sit up and take notice. Truly rare talent.",
+      "The speed and attention to detail blew us away. Our site loads instantly, looks world-class, and our clients constantly compliment the new design.",
     author: 'Priya Kapoor',
-    title: 'Head of Digital Experience',
+    title: 'Marketing Director',
     company: 'Meridian Global',
   },
 ];
 
 export const DIFFERENTIATORS: DifferentiatorItem[] = [
   {
-    dimension: 'Design Approach',
-    others: 'Template-first, reskin & ship with generic libraries',
-    ours: 'Custom-crafted from zero, every single time',
+    dimension: 'Design Quality',
+    others: 'Cheap templates and cookie-cutter designs that look generic',
+    ours: '100% custom-designed from scratch specifically for your brand',
   },
   {
-    dimension: 'Technical Depth',
-    others: 'Outsourced dev teams, zero architectural foresight',
-    ours: 'In-house full-stack mastery, from infrastructure to UI',
+    dimension: 'Development Team',
+    others: 'Work outsourced to inexperienced freelancers, leading to bugs',
+    ours: 'Experienced in-house developers building clean, reliable software',
   },
   {
     dimension: 'Communication',
-    others: 'Weekly vague PDF reports and endless email chains',
-    ours: 'Real-time sprint boards, shared repos, async standups',
+    others: 'Slow email replies, weeks of silence, and confusing technical jargon',
+    ours: 'Direct chats with the team, regular updates, and clear answers',
   },
   {
-    dimension: 'Animation & Motion',
-    others: 'Static layouts or heavy unoptimized Lottie drops',
-    ours: 'Hand-tuned, GPU-accelerated Framer Motion interactions',
+    dimension: 'Speed of Delivery',
+    others: 'Endless delays and projects dragging on for 3 to 6 months',
+    ours: 'Fast 3 to 5 week delivery with clear deadlines and weekly milestones',
   },
   {
-    dimension: 'Delivery Velocity',
-    others: '8–12 week bloated corporate turnaround cycles',
-    ours: '3–6 week agile sprints with continuous staging reviews',
+    dimension: 'Website Speed',
+    others: 'Heavy, slow-loading websites that drive customers away',
+    ours: 'Lightning-fast load times optimized for phones and Google ranking',
   },
   {
-    dimension: 'Post-Launch Partnership',
-    others: '"Our contract ended, good luck with maintenance"',
-    ours: 'Proactive monitoring, telemetry, and compounding growth',
+    dimension: 'Support After Launch',
+    others: 'They disappear the moment the final bill is paid',
+    ours: 'Ongoing maintenance, security checks, and support as you scale',
   },
 ];

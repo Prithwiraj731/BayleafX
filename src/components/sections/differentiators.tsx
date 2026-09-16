@@ -13,8 +13,8 @@ export const DifferentiatorsSection: React.FC = () => {
     <section id="differentiators" className="py-16 md:py-24 bg-white">
       <Container>
         <SectionHeader
-          title="Why ambitious teams choose BayleafX."
-          description="We eliminated traditional agency bureaucracy, junior handoffs, and fragmented subcontractors."
+          title="Why choose BayleafX?"
+          description="See how we work differently compared to traditional web agencies."
         />
 
         <motion.div
@@ -25,11 +25,11 @@ export const DifferentiatorsSection: React.FC = () => {
           className="mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
         >
           <div className="hidden md:grid md:grid-cols-12 border-b border-slate-200 bg-slate-50/80 font-mono text-[11px] uppercase tracking-wider font-semibold">
-            <div className="md:col-span-4 p-4 text-slate-500">Dimension</div>
-            <div className="md:col-span-4 p-4 text-slate-400">Traditional Agency</div>
+            <div className="md:col-span-4 p-4 text-slate-500">What Matters</div>
+            <div className="md:col-span-4 p-4 text-slate-400">Other Agencies</div>
             <div className="md:col-span-4 p-4 bg-[#E8F5E9]/70 text-[#1B4332] flex items-center gap-1.5 border-l border-slate-200/80">
               <Sparkles className="h-3.5 w-3.5 text-[#2D6A4F]" />
-              <span>The BayleafX Standard</span>
+              <span>The BayleafX Way</span>
             </div>
           </div>
 

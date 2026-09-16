@@ -8,10 +8,10 @@ import { Button } from '@/components/ui/button';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 const TRUST_METRICS = [
-  { label: 'Production Releases', value: '150+' },
-  { label: 'Client Retention Rate', value: '98%' },
-  { label: 'Average MVP Sprint', value: '4 Weeks' },
-  { label: 'Accessibility Standard', value: 'WCAG 2.2' },
+  { label: 'Projects Completed', value: '150+' },
+  { label: 'Client Satisfaction', value: '98%' },
+  { label: 'Fast Delivery', value: '3-4 Weeks' },
+  { label: 'Client Rating', value: '4.9 / 5' },
 ];
 
 const SHOW_PRODUCTION_STACK = false;
@@ -59,14 +59,14 @@ export const HeroSection: React.FC = () => {
             variants={fadeInUp}
             className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-[66px] font-extrabold text-slate-900 leading-[1.1] tracking-[-0.03em]"
           >
-            Engineering <span className="text-[#1B4332]">high-impact web platforms</span> &amp; digital products.
+            We build <span className="text-[#1B4332]">modern websites &amp; apps</span> that grow your business.
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
             className="mt-6 font-body text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl"
           >
-            BayleafX partners with visionary teams to build production-grade web applications, bespoke software architectures, and compounding digital growth engines.
+            From custom websites and web applications to design and marketing, BayleafX helps you look world-class, load fast, and turn visitors into paying customers.
           </motion.p>
 
           <motion.div
@@ -89,7 +89,7 @@ export const HeroSection: React.FC = () => {
               onClick={scrollToServices}
               className="w-full sm:w-auto font-semibold px-7 py-3.5"
             >
-              Explore Solutions
+              See Our Services
             </Button>
           </motion.div>
 

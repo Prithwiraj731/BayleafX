@@ -13,8 +13,8 @@ export const MetricsSection: React.FC = () => {
     <section id="metrics" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
       <Container>
         <SectionHeader
-          title="Proven by audited metrics."
-          description="Real benchmark improvements achieved across production web platforms and enterprise partnerships."
+          title="Real numbers. Proven results."
+          description="Here is the measurable impact we deliver for the founders and businesses we work with."
         />
 
         <motion.div

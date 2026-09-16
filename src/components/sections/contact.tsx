@@ -35,11 +35,11 @@ export const ContactSection: React.FC = () => {
             className="lg:col-span-5 space-y-6"
           >
             <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-[1.15] tracking-tight">
-              Ready to build something real?
+              Let&apos;s build something great together.
             </h2>
 
             <p className="font-sans text-base text-slate-600 leading-relaxed">
-              Tell us about your project. A founding partner will review your requirements and respond within 24 hours with an actionable technical and design assessment.
+              Have an idea or need a new website? Send us a message and we will get back to you within 24 hours with a clear plan, timeline, and free estimate.
             </p>
 
             <div className="space-y-3 pt-2">
@@ -47,21 +47,21 @@ export const ContactSection: React.FC = () => {
                 <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
                   <Clock className="h-4 w-4" />
                 </div>
-                <span>Response within 24 hours guarantee</span>
+                <span>Guaranteed response within 24 hours</span>
               </div>
 
               <div className="flex items-center gap-3 text-sm text-slate-700">
                 <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
                   <Users className="h-4 w-4" />
                 </div>
-                <span>Direct consultation with principal engineers</span>
+                <span>Free project consultation &amp; cost estimate</span>
               </div>
 
               <div className="flex items-center gap-3 text-sm text-slate-700">
                 <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
                   <ShieldCheck className="h-4 w-4" />
                 </div>
-                <span>Mutual NDA executed prior to deep scoping</span>
+                <span>100% private &amp; confidential</span>
               </div>
             </div>
 
