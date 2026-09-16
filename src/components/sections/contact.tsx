@@ -68,11 +68,11 @@ export const ContactSection: React.FC = () => {
             <div className="pt-4 border-t border-slate-100">
               <p className="font-sans text-xs text-slate-500 mb-1">Direct inquiries:</p>
               <a
-                href="mailto:avirupd925@gmail.com"
+                href="mailto:bayleafxtechnologies@gmail.com"
                 className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4"
               >
                 <Mail className="h-4 w-4" />
-                <span>avirupd925@gmail.com</span>
+                <span>bayleafxtechnologies@gmail.com</span>
               </a>
             </div>
           </motion.div>

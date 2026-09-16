@@ -178,10 +178,10 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
                   For questions regarding data processing, contractual agreements, or terms clarification:
                 </p>
                 <a
-                  href="mailto:avirupd925@gmail.com"
+                  href="mailto:bayleafxtechnologies@gmail.com"
                   className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
                 >
-                  <span>avirupd925@gmail.com</span>
+                  <span>bayleafxtechnologies@gmail.com</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </div>

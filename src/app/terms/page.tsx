@@ -208,7 +208,7 @@ export default function TermsOfServicePage() {
         <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
           <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
           <div><strong className="text-[#F5F2ED]">Counsel Desk:</strong> Corporate Governance & Legal Operations</div>
-          <div><strong className="text-[#F5F2ED]">Contact Email:</strong> avirupd925@gmail.com / [SUPPORT EMAIL]</div>
+          <div><strong className="text-[#F5F2ED]">Contact Email:</strong> bayleafxtechnologies@gmail.com</div>
           <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
           <div><strong className="text-[#F5F2ED]">Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
         </div>

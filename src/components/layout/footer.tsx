@@ -23,10 +23,10 @@ export const Footer: React.FC = () => {
             </p>
             <div>
               <a
-                href="mailto:avirupd925@gmail.com"
+                href="mailto:bayleafxtechnologies@gmail.com"
                 className="font-mono text-xs text-emerald-700 hover:text-emerald-800 font-semibold transition-colors"
               >
-                avirupd925@gmail.com
+                bayleafxtechnologies@gmail.com
               </a>
             </div>
           </div>

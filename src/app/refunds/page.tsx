@@ -178,7 +178,7 @@ export default function RefundPolicyPage() {
         <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
           <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
           <div><strong className="text-[#F5F2ED]">Department:</strong> Commercial Finance & Contracts Desk</div>
-          <div><strong className="text-[#F5F2ED]">Billing Contact:</strong> avirupd925@gmail.com / [SUPPORT EMAIL]</div>
+          <div><strong className="text-[#F5F2ED]">Billing Contact:</strong> bayleafxtechnologies@gmail.com</div>
           <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
           <div><strong className="text-[#F5F2ED]">Governing Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
         </div>

@@ -70,7 +70,7 @@ export default function PrivacyPolicyPage() {
           <li><strong>Identity Data:</strong> Full name and professional title.</li>
           <li><strong>Contact Data:</strong> Work email address and optional telephone number.</li>
           <li><strong>Project Specifications:</strong> Target deployment horizon (e.g. Immediate, 1–3 Months, Exploring), architectural requirements, technical stack details, and budget parameters.</li>
-          <li><strong>Correspondence:</strong> Any feedback, technical inquiries, or materials transmitted directly to <code className="text-[#F5F2ED] bg-white/[0.06] px-1.5 py-0.5 rounded font-mono text-xs">avirupd925@gmail.com</code>.</li>
+          <li><strong>Correspondence:</strong> Any feedback, technical inquiries, or materials transmitted directly to <code className="text-[#F5F2ED] bg-white/[0.06] px-1.5 py-0.5 rounded font-mono text-xs">bayleafxtechnologies@gmail.com</code>.</li>
         </ul>
 
         <h3 className="font-display text-base font-bold text-[#F5F2ED] mt-4">B. Information Collected Automatically</h3>
@@ -153,7 +153,7 @@ export default function PrivacyPolicyPage() {
         </p>
         <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
           <li><strong>Hosting & Edge Delivery:</strong> [E.G., VERCEL INC. / CLOUDFLARE INC. / AWS] — provides containerized edge routing, SSL termination, and content delivery.</li>
-          <li><strong>Corporate Communications:</strong> [E.G., GOOGLE WORKSPACE / RESEND] — manages email infrastructure for incoming inquiries directed to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">avirupd925@gmail.com</code>.</li>
+          <li><strong>Corporate Communications:</strong> [E.G., GOOGLE WORKSPACE / RESEND] — manages email infrastructure for incoming inquiries directed to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">bayleafxtechnologies@gmail.com</code>.</li>
         </ul>
         <p>
           All service providers are bound by strict data processing agreements ensuring confidentiality and regulatory compliance.
@@ -217,7 +217,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
         <p>
-          <strong>How to Exercise Your Rights:</strong> Submit an explicit request to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">avirupd925@gmail.com</code> or our designated legal desk at <strong>[SUPPORT EMAIL]</strong>. We respond to all verified statutory privacy requests within thirty (30) calendar days at zero cost to you.
+          <strong>How to Exercise Your Rights:</strong> Submit an explicit request to <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">bayleafxtechnologies@gmail.com</code>. We respond to all verified statutory privacy requests within thirty (30) calendar days at zero cost to you.
         </p>
       </section>
       <section id="children" className="space-y-4 pt-4 border-t border-white/[0.06]">
@@ -253,7 +253,7 @@ export default function PrivacyPolicyPage() {
         <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
           <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
           <div><strong className="text-[#F5F2ED]">Attention:</strong> Privacy Governance Officer / Legal Desk</div>
-          <div><strong className="text-[#F5F2ED]">Official Inquiries Email:</strong> avirupd925@gmail.com / [SUPPORT EMAIL]</div>
+          <div><strong className="text-[#F5F2ED]">Official Inquiries Email:</strong> bayleafxtechnologies@gmail.com</div>
           <div><strong className="text-[#F5F2ED]">Registered Business Address:</strong> [BUSINESS ADDRESS]</div>
           <div><strong className="text-[#F5F2ED]">Governing Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
         </div>
