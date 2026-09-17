@@ -2,185 +2,170 @@ import type { Metadata } from 'next';
 import { LegalLayout } from '@/components/layout/legal-layout';
 
 export const metadata: Metadata = {
-  title: 'Refund & Cancellation Policy — BayleafX Atelier',
+  title: 'Refund & Cancellation Policy | BayleafX Technologies',
   description:
-    'Commercial policies governing project deposits, milestone billing, sprint retainers, cancellation procedures, and defect remediation for BayleafX engagements.',
+    'Commercial policies governing project deposits, milestone billing, cancellations, and the 30-day bug-fix guarantee for BayleafX Technologies.',
   alternates: {
-    canonical: 'https://bayleafx.com/refunds',
+    canonical: 'https://www.bayleafx.com/refunds',
   },
 };
 
 const TOC_ITEMS = [
-  { id: 'commercial-nature', label: '1. Bespoke Services Architecture' },
-  { id: 'deposits', label: '2. Project Deposits & Mobilization' },
-  { id: 'milestones', label: '3. Milestone Review & Sign-Off' },
-  { id: 'refund-eligibility', label: '4. Non-Refundability of Delivered Labor' },
-  { id: 'cancellation', label: '5. Cancellation Procedures & Notice' },
-  { id: 'retainers', label: '6. Monthly Engineering Retainers' },
-  { id: 'warranty', label: '7. Technical Warranty & Punch-List Cure' },
-  { id: 'invoicing-disputes', label: '8. Payment Invoicing & Duplicate Charges' },
-  { id: 'dispute-resolution', label: '9. Dispute Escalation Protocol' },
-  { id: 'contact', label: '10. Commercial & Billing Inquiries' },
+  { id: 'custom-services', label: '1. Nature of Custom Services' },
+  { id: 'deposits', label: '2. Project Deposits' },
+  { id: 'milestones', label: '3. Milestone Reviews & Sign-Off' },
+  { id: 'cancellation', label: '4. Cancellation by Client' },
+  { id: 'agency-cancellation', label: '5. Cancellation by BayleafX' },
+  { id: 'warranty-guarantee', label: '6. 30-Day Bug-Fix Guarantee' },
+  { id: 'retainers', label: '7. Monthly Support & Retainers' },
+  { id: 'billing-disputes', label: '8. Payment Disputes & Errors' },
+  { id: 'contact', label: '9. Billing Inquiries & Contact' },
 ];
 
 export default function RefundPolicyPage() {
   return (
     <LegalLayout
       title="Refund & Cancellation Policy"
-      subtitle="Standard commercial governance regarding project mobilization deposits, milestone approvals, contract cancellations, and defect remediation."
-      lastUpdated="March 10, 2026"
+      subtitle="Clear and transparent commercial policies regarding project deposits, milestone approvals, cancellations, and our quality guarantee."
+      lastUpdated="September 2026"
       activeRoute="/refunds"
       tocItems={TOC_ITEMS}
     >
-      <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
-          Professional Services Disclosure
+      <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/50 p-5 text-xs sm:text-sm text-slate-700 space-y-1.5">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-[#1B4332] font-bold">
+          Custom Services Policy
         </p>
         <p className="leading-relaxed">
-          BayleafX delivers bespoke, high-touch engineering and design consultancy. We do not sell off-the-shelf consumer retail goods or automated recurring self-serve SaaS subscriptions. All commercial transactions are governed by project-specific Statements of Work (SOW) executed between <strong>[COMPANY LEGAL NAME]</strong> and our corporate clients.
+          BayleafX Technologies delivers custom, bespoke software engineering, web development, and digital design services tailored to each client’s exact specifications. Because our work represents dedicated time, senior talent allocation, and custom intellectual property, our refund and cancellation terms reflect the nature of professional services.
         </p>
       </div>
-      <section id="commercial-nature" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">01 //</span>
-          Bespoke Services Architecture
+
+      <section id="custom-services" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">01 //</span>
+          Nature of Custom Services
         </h2>
-        <p>
-          Every software platform, full-stack architecture, interactive design system, and digital growth campaign developed by <strong>[COMPANY LEGAL NAME]</strong> (&ldquo;BayleafX&rdquo;) is tailored exclusively to client specifications.
+        <p className="text-slate-600 leading-relaxed">
+          Unlike pre-packaged software or physical goods, every website, custom application, and design system we build is created specifically for your brand. We commit our senior designers and developers exclusively to your project sprints.
         </p>
-        <p>
-          Because our services represent direct allocations of specialized engineering hours, senior software architectural time, and custom creative work, commercial commitments and refund rights differ substantially from mass-market consumer transactions.
+        <p className="text-slate-600 leading-relaxed">
+          All client engagements are governed by this policy along with the specific milestones, timelines, and deliverables outlined in your project proposal or Statement of Work.
         </p>
       </section>
-      <section id="deposits" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">02 //</span>
-          Project Deposits & Mobilization Fees
+
+      <section id="deposits" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">02 //</span>
+          Project Deposits
         </h2>
-        <p>
-          Prior to initiating technical discovery, sprint scheduling, or team mobilization, clients are required to remit an upfront project deposit as stipulated in their Statement of Work (typically <strong>[DEPOSIT PERCENTAGE, E.G., 30% TO 50%]</strong> of the total estimated engagement fee).
+        <p className="text-slate-600 leading-relaxed">
+          To reserve our team&apos;s schedule and commence architectural planning, an upfront project deposit (typically 30% to 50% of the total project value) is required before work begins.
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Pre-Kickoff Cancellation:</strong> If a client requests cancellation in writing before BayleafX commences architectural discovery, team onboarding, or sprint work, the deposit may be refunded minus an administrative preparation fee of <strong>[E.G., 10% OR ACTUAL DIRECT EXPENSES]</strong>.</li>
-          <li><strong>Post-Commencement:</strong> Once architectural discovery, wireframing, repo configuration, or design sprints have commenced, mobilization deposits are strictly <strong>non-refundable</strong>, compensating BayleafX for dedicated capacity committed and non-recoverable labor.</li>
-        </ul>
-      </section>
-      <section id="milestones" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">03 //</span>
-          Milestone Review & Acceptance Sign-Off
-        </h2>
-        <p>
-          Custom engineering projects are structured in phased milestones (e.g. Discovery & Wireframes, Design System Completion, Full-Stack Alpha Build, Production Release):
-        </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Review Window:</strong> Upon delivery of each milestone (via staging deployment, GitHub pull request, or Figma prototype), the client has a formal review period of <strong>[REVIEW WINDOW, E.G., 10 TO 14 CALENDAR DAYS]</strong> to verify compliance with the agreed SOW specifications.</li>
-          <li><strong>Deemed Acceptance:</strong> If the client does not provide written, substantiated rejection notices detailing non-conformance within this window, the milestone is deemed formally accepted, and the corresponding milestone invoice becomes due.</li>
-        </ul>
-      </section>
-      <section id="refund-eligibility" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">04 //</span>
-          Non-Refundability of Delivered Labor
-        </h2>
-        <p>
-          Once a milestone has been formally accepted or deployed to client production infrastructure, the fees associated with that milestone are <strong>strictly non-refundable</strong>.
-        </p>
-        <p className="text-xs text-[#A8A5A0]">
-          Custom code and creative assets cannot be &ldquo;returned&rdquo; or repurposed. Rather than offering retroactive financial refunds for accepted deliverables, BayleafX provides an explicit technical warranty and remediation period as described in Section 7.
-        </p>
-      </section>
-      <section id="cancellation" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">05 //</span>
-          Cancellation Procedures & Notice
-        </h2>
-        <p>
-          Either party may terminate an ongoing Statement of Work pursuant to the cancellation protocols defined in the executed agreement:
-        </p>
-        <ul className="list-disc pl-5 space-y-2 text-[#A8A5A0]">
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
           <li>
-            <strong className="text-[#F5F2ED]">Written Notice:</strong> The terminating party must deliver written notice of cancellation via electronic mail to designated project leads with a minimum notice period of <strong>[NOTICE PERIOD, E.G., 14 OR 30 CALENDAR DAYS]</strong>.
+            <strong className="text-slate-900">Before Work Commences:</strong> If a client requests cancellation in writing before our team has begun discovery meetings, wireframing, or repository setup, the deposit will be refunded in full minus any direct transaction processing fees.
           </li>
           <li>
-            <strong className="text-[#F5F2ED]">Pro-Rata Settlement:</strong> Upon receipt of cancellation notice, the client is financially liable for all hours accrued, milestone progress achieved, and third-party commitments incurred up to the effective termination date.
-          </li>
-          <li>
-            <strong className="text-[#F5F2ED]">Work Product Handover:</strong> Upon full payment of all accrued invoices and outstanding balances, BayleafX will transfer all current work-in-progress code repositories, Figma designs, and project documentation to the client.
+            <strong className="text-slate-900">After Work Has Started:</strong> Once technical discovery, wireframes, design mockups, or development sprints have been initiated, the initial deposit is non-refundable as it covers dedicated team capacity and non-recoverable hours.
           </li>
         </ul>
       </section>
-      <section id="retainers" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">06 //</span>
-          Monthly Engineering & Growth Retainers
+
+      <section id="milestones" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">03 //</span>
+          Milestone Reviews &amp; Sign-Off
         </h2>
-        <p>
-          For clients engaging BayleafX on ongoing monthly retainers (e.g. continuous feature development, proactive cloud telemetry, or growth engineering):
+        <p className="text-slate-600 leading-relaxed">
+          We believe in complete transparency. We structure our projects into clear sequential milestones (e.g. Discovery &amp; Wireframes ➔ Design Approval ➔ Frontend/Backend Development ➔ QA &amp; Launch).
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Billing Cycle:</strong> Retainer fees are invoiced and payable in advance of each monthly billing cycle (e.g. on the 1st of each calendar month).</li>
-          <li><strong>Cancellation Notice:</strong> Retainer agreements may be canceled by providing written notice at least <strong>[RETAINER NOTICE, E.G., 30 DAYS]</strong> prior to the start of the next billing cycle.</li>
-          <li><strong>Unused Allocation:</strong> Dedicated sprint allocations do not automatically roll over to subsequent months unless explicitly agreed in the Master Services Agreement. Pre-paid retainer fees for active billing months are non-refundable.</li>
+        <p className="text-slate-600 leading-relaxed">
+          At each milestone, we deliver live previews or clickable prototypes for your review. Once a milestone is reviewed, approved, and paid for, the fees associated with that milestone are deemed earned and non-refundable.
+        </p>
+      </section>
+
+      <section id="cancellation" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">04 //</span>
+          Cancellation by Client
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          Clients may cancel an ongoing project at any time by sending written notice via email to <code className="text-[#1B4332] bg-emerald-50 border border-emerald-200/60 px-1.5 py-0.5 rounded font-mono text-xs">bayleafxtechnologies@gmail.com</code>.
+        </p>
+        <p className="text-slate-600 leading-relaxed">
+          In the event of cancellation:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li>The client is billed only for work and hours completed up to the date of cancellation notice.</li>
+          <li>Any unearned advance payments exceeding the completed work will be refunded promptly within 14 business days.</li>
+          <li>All completed source code, Figma design assets, and documentation completed up to that point will be packaged and delivered to the client.</li>
         </ul>
       </section>
-      <section id="warranty" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">07 //</span>
-          Technical Warranty & Punch-List Cure Window
+
+      <section id="agency-cancellation" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">05 //</span>
+          Cancellation by BayleafX
         </h2>
-        <p>
-          To ensure absolute client satisfaction without compromising professional delivery integrity, BayleafX provides an explicit technical warranty:
+        <p className="text-slate-600 leading-relaxed">
+          In rare circumstances (such as an irreconcilable conflict, material breach of terms, or prolonged client unresponsiveness exceeding 30 days), BayleafX reserves the right to terminate an engagement.
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Cure Period:</strong> Following milestone delivery, BayleafX maintains a <strong>[WARRANTY WINDOW, E.G., 30-DAY]</strong> technical defect warranty.</li>
-          <li><strong>Remediation Scope:</strong> If reproducible software bugs or design defects deviating from the mutually agreed Statement of Work are identified during this window, BayleafX will triage, patch, and remediate the issue at no additional charge to the client.</li>
-          <li><strong>Exclusions:</strong> Warranty remediation does not cover new feature requests, modifications introduced by client internal developers, or outages caused by third-party API deprecations.</li>
+        <p className="text-slate-600 leading-relaxed">
+          If BayleafX terminates the contract without cause, any unearned prepaid amounts will be refunded in full, and all work completed to date will be handed over immediately.
+        </p>
+      </section>
+
+      <section id="warranty-guarantee" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">06 //</span>
+          30-Day Bug-Fix Guarantee
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          We stand behind everything we build. All custom software, web applications, and WordPress sites developed by BayleafX Technologies include a <strong className="text-slate-900">30-day post-launch warranty</strong> at no extra charge.
+        </p>
+        <p className="text-slate-600 leading-relaxed">
+          If any technical bug, broken layout, or functional issue matching the agreed project scope arises within 30 days of launch, we will diagnose and fix it immediately at zero cost.
+        </p>
+      </section>
+
+      <section id="retainers" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">07 //</span>
+          Monthly Support &amp; Retainers
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          For clients enrolled in monthly maintenance, hosting, or marketing retainers:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li>Monthly retainer agreements may be cancelled at any time with 14 days written notice prior to the next billing cycle.</li>
+          <li>Retainer fees for the current active month are non-refundable once the billing cycle has commenced.</li>
         </ul>
       </section>
-      <section id="invoicing-disputes" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">08 //</span>
-          Invoicing, Payment Terms & Duplicate Charges
+
+      <section id="billing-disputes" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">08 //</span>
+          Payment Disputes &amp; Errors
         </h2>
-        <p>
-          Invoicing protocols are governed as follows:
+        <p className="text-slate-600 leading-relaxed">
+          If you notice any billing discrepancy, duplicate charge, or clerical error on an invoice, please notify us within 14 calendar days. We will investigate immediately and issue any necessary credit or direct refund within 5 to 7 business days.
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Payment Modalities:</strong> Invoices are settled via wire transfer, ACH, or commercial invoice platforms as designated by BayleafX.</li>
-          <li><strong>Duplicate Charges:</strong> In the rare event of an inadvertent duplicate wire or banking transaction, BayleafX will immediately investigate and issue a full credit or refund of the duplicate amount within five (5) business days of verification.</li>
-          <li><strong>Payment Terms:</strong> Invoices are subject to standard payment windows (typically <strong>[E.G., NET 15 DAYS]</strong> from invoice issuance). Late payments may incur interest at <strong>[E.G., 1.5% PER MONTH]</strong> or the maximum legal rate allowed by law.</li>
-        </ul>
       </section>
-      <section id="dispute-resolution" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">09 //</span>
-          Dispute Escalation Protocol
+
+      <section id="contact" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">09 //</span>
+          Billing Inquiries &amp; Contact
         </h2>
-        <p>
-          If a commercial disagreement arises regarding milestone acceptance, scope interpretation, or invoicing, both parties agree to follow a structured escalation procedure:
-        </p>
-        <ol className="list-decimal pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Executive Consultation:</strong> Lead architectural and executive representatives from both parties will convene for a good-faith conference within ten (10) business days of written notice.</li>
-          <li><strong>Independent Technical Review:</strong> If technical compliance is disputed, an agreed independent code auditor may evaluate the repository against the written SOW specifications.</li>
-          <li><strong>Arbitration:</strong> If unresolved within thirty (30) days, the matter shall be submitted to confidential binding arbitration in <strong>[GOVERNING JURISDICTION]</strong>.</li>
-        </ol>
-      </section>
-      <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">10 //</span>
-          Commercial & Billing Inquiries
-        </h2>
-        <p>
-          For invoice verification, project billing inquiries, or cancellation notices, please direct communications to our commercial desk:
+        <p className="text-slate-600 leading-relaxed">
+          For any questions regarding billing, invoices, deposits, or cancellation requests, contact our commercial desk:
         </p>
 
-        <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
-          <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
-          <div><strong className="text-[#F5F2ED]">Department:</strong> Commercial Finance & Contracts Desk</div>
-          <div><strong className="text-[#F5F2ED]">Billing Contact:</strong> bayleafxtechnologies@gmail.com</div>
-          <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
-          <div><strong className="text-[#F5F2ED]">Governing Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
+        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-5 space-y-2.5 font-sans text-xs sm:text-sm text-slate-700">
+          <div><strong className="text-slate-900">Company:</strong> BayleafX Technologies</div>
+          <div><strong className="text-slate-900">Official Website:</strong> https://www.bayleafx.com</div>
+          <div><strong className="text-slate-900">Billing &amp; Commercial Email:</strong> bayleafxtechnologies@gmail.com</div>
+          <div><strong className="text-slate-900">Support Hours:</strong> Monday – Friday (Responses within 24 hours)</div>
         </div>
       </section>
     </LegalLayout>

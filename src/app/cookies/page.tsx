@@ -2,196 +2,162 @@ import type { Metadata } from 'next';
 import { LegalLayout } from '@/components/layout/legal-layout';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy — BayleafX Atelier',
+  title: 'Cookie Policy | BayleafX Technologies',
   description:
-    'Complete transparency regarding cookies, browser storage technologies, and tracking disclosures across the BayleafX digital atelier.',
+    'Information regarding cookies, browser storage, and privacy-first tracking policies on the BayleafX Technologies website.',
   alternates: {
-    canonical: 'https://bayleafx.com/cookies',
+    canonical: 'https://www.bayleafx.com/cookies',
   },
 };
 
 const TOC_ITEMS = [
-  { id: 'overview', label: '1. Overview & Privacy-First Philosophy' },
-  { id: 'what-are-cookies', label: '2. What are Cookies & Web Storage?' },
-  { id: 'cookie-audit', label: '3. Technical Audit & Inventory' },
-  { id: 'categories', label: '4. Cookie Classification & Status' },
-  { id: 'self-hosted', label: '5. Self-Hosted Infrastructure Assets' },
-  { id: 'third-party-edge', label: '6. Edge Security & Cloud Providers' },
-  { id: 'management', label: '7. How to Manage & Disable Cookies' },
-  { id: 'updates', label: '8. Updates to This Policy' },
-  { id: 'contact', label: '9. Inquiries & Contact' },
+  { id: 'overview', label: '1. Overview & Privacy Philosophy' },
+  { id: 'what-are-cookies', label: '2. What Are Cookies?' },
+  { id: 'cookies-we-use', label: '3. Cookies We Use' },
+  { id: 'marketing-trackers', label: '4. No Ad or Marketing Cookies' },
+  { id: 'self-hosted-fonts', label: '5. Self-Hosted Typography' },
+  { id: 'manage-cookies', label: '6. How to Control Cookies' },
+  { id: 'updates', label: '7. Policy Updates' },
+  { id: 'contact', label: '8. Contact Information' },
 ];
 
 export default function CookiePolicyPage() {
   return (
     <LegalLayout
       title="Cookie Policy"
-      subtitle="Complete architectural disclosure regarding cookies, local storage mechanisms, and tracking technologies utilized across our digital platform."
-      lastUpdated="March 10, 2026"
+      subtitle="Complete transparency regarding cookies, browser storage, and security mechanisms used across our website."
+      lastUpdated="September 2026"
       activeRoute="/cookies"
       tocItems={TOC_ITEMS}
     >
-      <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
-          Zero-Tracker Architecture Statement
+      <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/50 p-5 text-xs sm:text-sm text-slate-700 space-y-1.5">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-[#1B4332] font-bold">
+          Zero-Tracker Guarantee
         </p>
         <p className="leading-relaxed">
-          BayleafX does not deploy commercial advertising pixels, third-party marketing cookies, or behavioral data trackers. Our web architecture is engineered to provide an extraordinary digital experience without invasive client tracking.
+          BayleafX Technologies is built with a privacy-first mindset. We do not use commercial advertising cookies, cross-site social media tracking pixels, or third-party marketing beacons. Our website uses only essential infrastructure cookies strictly necessary to keep our site secure, fast, and operational.
         </p>
       </div>
-      <section id="overview" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">01 //</span>
-          Overview & Privacy-First Philosophy
-        </h2>
-        <p>
-          This Cookie Policy explains how <strong>[COMPANY LEGAL NAME]</strong> (&ldquo;BayleafX&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) treats cookies, local browser storage, and related web technologies when you visit our website at <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">https://bayleafx.com</code>.
-        </p>
-        <p>
-          We believe high-performance engineering and user privacy go hand in hand. We minimize data storage to the absolute lowest threshold required to deliver responsive, secure web traffic.
-        </p>
-      </section>
-      <section id="what-are-cookies" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">02 //</span>
-          What are Cookies & Web Storage?
-        </h2>
-        <p>
-          Cookies are small text strings placed on your device by websites you visit. They are widely used to maintain security, enable core website functionality, or gather statistical analytics.
-        </p>
-        <p>
-          Modern web applications may also use related browser storage mechanisms, such as <code>localStorage</code>, <code>sessionStorage</code>, and in-memory application state, to preserve interface preferences (such as dark mode states or mobile drawer toggles).
-        </p>
-      </section>
-      <section id="cookie-audit" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">03 //</span>
-          Technical Codebase Audit & Inventory
-        </h2>
-        <p>
-          Based on our technical audit of the production application codebase:
-        </p>
-        <ul className="list-disc pl-5 space-y-2 text-[#A8A5A0]">
-          <li>
-            <strong className="text-[#F5F2ED]">No Marketing / Advertising Cookies:</strong> We do not load third-party ad tags (such as Google Tag Manager marketing pixels, Facebook Pixel, LinkedIn Insight Tag, TikTok Pixel, or retargeting networks).
-          </li>
-          <li>
-            <strong className="text-[#F5F2ED]">No First-Party Persistent Tracking Cookies:</strong> BayleafX does not place first-party tracking identifiers to monitor your browsing behavior across external websites.
-          </li>
-          <li>
-            <strong className="text-[#F5F2ED]">Transient In-Memory State Only:</strong> Interactive elements (such as service category filters, mobile navigation toggles, and contact form completion status) are held transiently in React client memory during your active page session and discarded upon reload.
-          </li>
-        </ul>
-      </section>
-      <section id="categories" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">04 //</span>
-          Cookie Classification & Current Status
-        </h2>
-        <p>
-          The table below discloses the classification of cookie technologies and their factual deployment status on this website:
-        </p>
 
-        <div className="overflow-x-auto my-4 rounded-lg border border-white/10 bg-[#121212]">
-          <table className="w-full text-left text-xs sm:text-sm">
-            <thead className="border-b border-white/10 bg-white/[0.02] font-mono uppercase tracking-wider text-[#F5F2ED]">
-              <tr>
-                <th className="p-3 sm:p-4">Category</th>
-                <th className="p-3 sm:p-4">Purpose</th>
-                <th className="p-3 sm:p-4">Status on BayleafX</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-white/[0.06] text-[#A8A5A0]">
-              <tr>
-                <td className="p-3 sm:p-4 font-medium text-[#F5F2ED]">Strictly Necessary / Edge Security</td>
-                <td className="p-3 sm:p-4">Bot protection, DDoS mitigation, rate limiting, and edge routing handled by cloud CDN infrastructure.</td>
-                <td className="p-3 sm:p-4 font-mono text-[#52B788] font-bold">Active as needed by Edge CDN</td>
-              </tr>
-              <tr>
-                <td className="p-3 sm:p-4 font-medium text-[#F5F2ED]">Functional & Preferences</td>
-                <td className="p-3 sm:p-4">Remembering language choices or visual display themes across sessions.</td>
-                <td className="p-3 sm:p-4 font-mono text-[#9E9B95]">Transient Session Memory Only</td>
-              </tr>
-              <tr>
-                <td className="p-3 sm:p-4 font-medium text-[#F5F2ED]">Analytics & Performance</td>
-                <td className="p-3 sm:p-4">Aggregated visitor count, bounce rates, and traffic origin tracking.</td>
-                <td className="p-3 sm:p-4 font-mono text-[#6E6B66]">Not Deployed on this Site</td>
-              </tr>
-              <tr>
-                <td className="p-3 sm:p-4 font-medium text-[#F5F2ED]">Advertising & Behavioral Profiling</td>
-                <td className="p-3 sm:p-4">Tracking users across websites to serve personalized ad campaigns.</td>
-                <td className="p-3 sm:p-4 font-mono text-[#6E6B66]">Strictly Prohibited & Not Deployed</td>
-              </tr>
-            </tbody>
-          </table>
+      <section id="overview" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">01 //</span>
+          Overview &amp; Privacy Philosophy
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          This Cookie Policy explains how <strong className="text-slate-900">BayleafX Technologies</strong> (&ldquo;BayleafX&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) treats cookies and browser storage technologies when you visit our website at <code className="text-[#1B4332] bg-emerald-50 border border-emerald-200/60 px-1.5 py-0.5 rounded font-mono text-xs">https://www.bayleafx.com</code>.
+        </p>
+        <p className="text-slate-600 leading-relaxed">
+          We believe premium software engineering and respect for user privacy go hand in hand. We minimize data storage to the absolute minimum required to deliver a responsive, secure digital experience.
+        </p>
+      </section>
+
+      <section id="what-are-cookies" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">02 //</span>
+          What Are Cookies?
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          Cookies are small text files stored in your web browser by websites you visit. They are standard across modern websites and are used to remember user preferences, ensure secure connections, prevent cyberattacks, and help pages load quickly.
+        </p>
+      </section>
+
+      <section id="cookies-we-use" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">03 //</span>
+          Cookies We Use (Strictly Essential)
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          We only deploy cookies that are strictly necessary for the technical operation and defense of our website:
+        </p>
+        <div className="rounded-xl border border-slate-200 bg-white overflow-hidden my-3">
+          <div className="p-4 border-b border-slate-100 bg-slate-50/70">
+            <h4 className="font-sans text-xs uppercase tracking-wider font-bold text-slate-900">Essential Infrastructure Cookies</h4>
+          </div>
+          <div className="p-5 space-y-3 text-xs sm:text-sm text-slate-600">
+            <div>
+              <strong className="text-slate-900">Provider:</strong> Vercel Inc. (Global Edge Network)
+            </div>
+            <div>
+              <strong className="text-slate-900">Purpose:</strong> Security routing, DDoS protection, bot filtering, and server load balancing.
+            </div>
+            <div>
+              <strong className="text-slate-900">Lifespan:</strong> Session-only or up to 24 hours (temporary).
+            </div>
+            <div>
+              <strong className="text-slate-900">Data Stored:</strong> Anonymous cryptographic identifiers for request verification. No personal identity data is stored.
+            </div>
+          </div>
         </div>
       </section>
-      <section id="self-hosted" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">05 //</span>
-          Self-Hosted Infrastructure Assets
+
+      <section id="marketing-trackers" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">04 //</span>
+          No Ad or Marketing Cookies
         </h2>
-        <p>
-          Unlike conventional websites that make external HTTP calls to third-party CDNs to fetch fonts and scripts (which may allow those third parties to log visitor IP addresses or set tracking cookies), BayleafX builds and compiles its assets locally:
+        <p className="text-slate-600 leading-relaxed">
+          We do not deploy any of the following intrusive tracking mechanisms on our website:
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Typography:</strong> All font files (Outfit, Inter, JetBrains Mono) are compiled into the Next.js bundle and hosted directly from our own domain. No client requests are routed to Google Font servers at runtime.</li>
-          <li><strong>Icons & Scripts:</strong> Lucide Icons and animation routines execute entirely within the client bundle without calling remote tracking endpoints.</li>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li><strong className="text-slate-900">No Advertising Pixels:</strong> We do not use Meta (Facebook) Pixel, TikTok Pixel, Google Ads remarketing pixels, or LinkedIn Insight Tags.</li>
+          <li><strong className="text-slate-900">No Cross-Site Profiling:</strong> We do not track what you browse on other websites or sell behavioral data to data brokers.</li>
+          <li><strong className="text-slate-900">No Third-Party Cookies:</strong> We do not allow third-party advertisers to place tracking cookies on your device through our site.</li>
         </ul>
       </section>
-      <section id="third-party-edge" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">06 //</span>
-          Edge Security & Cloud Providers
+
+      <section id="self-hosted-fonts" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">05 //</span>
+          Self-Hosted Typography
         </h2>
-        <p>
-          Our application may be served through enterprise edge infrastructure providers (such as <strong>[E.G., VERCEL / CLOUDFLARE]</strong>). These providers may set strictly essential security cookies (such as <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">__cf_bm</code> or equivalent cryptographic challenge tokens) to distinguish legitimate human visitors from malicious bot networks and prevent Distributed Denial of Service (DDoS) assaults.
-        </p>
-        <p className="text-xs text-[#A8A5A0]">
-          These security cookies do not store personally identifiable profiles and expire automatically within transient intervals (typically 30 minutes to 24 hours).
+        <p className="text-slate-600 leading-relaxed">
+          Our fonts (Outfit, Inter, and JetBrains Mono) are optimized and self-hosted locally within our Next.js project at build time. When you visit our website, your browser makes zero external connections to Google Fonts servers, preserving your privacy and speeding up page load times.
         </p>
       </section>
-      <section id="management" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">07 //</span>
-          How to Manage & Disable Cookies
+
+      <section id="manage-cookies" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">06 //</span>
+          How to Control Cookies
         </h2>
-        <p>
-          You have full control over cookie permissions through your web browser. You can configure your browser to block all cookies, accept only first-party cookies, or purge cookies whenever you close your browser window:
+        <p className="text-slate-600 leading-relaxed">
+          You have full control over cookies through your web browser settings. You can choose to block or delete cookies at any time:
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Google Chrome:</strong> Settings &rarr; Privacy and Security &rarr; Third-Party Cookies.</li>
-          <li><strong>Apple Safari:</strong> Preferences &rarr; Privacy &rarr; Prevent cross-site tracking / Block all cookies.</li>
-          <li><strong>Mozilla Firefox:</strong> Settings &rarr; Privacy & Security &rarr; Enhanced Tracking Protection.</li>
-          <li><strong>Microsoft Edge:</strong> Settings &rarr; Cookies and site permissions &rarr; Manage and delete cookies.</li>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li><strong className="text-slate-900">Google Chrome:</strong> Settings ➔ Privacy and security ➔ Third-party cookies.</li>
+          <li><strong className="text-slate-900">Apple Safari:</strong> Settings ➔ Privacy ➔ Manage Website Data.</li>
+          <li><strong className="text-slate-900">Mozilla Firefox:</strong> Settings ➔ Privacy &amp; Security ➔ Cookies and Site Data.</li>
+          <li><strong className="text-slate-900">Microsoft Edge:</strong> Settings ➔ Cookies and site permissions.</li>
         </ul>
-        <p className="text-xs text-[#6E6B66]">
-          Note that because BayleafX does not depend on invasive cookies, disabling non-essential cookies will not impair your ability to browse our website or submit project inquiries.
+        <p className="text-slate-600 leading-relaxed">
+          Please note that disabling strictly essential security cookies may affect your browser’s ability to load pages securely.
         </p>
       </section>
-      <section id="updates" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">08 //</span>
-          Updates to This Policy
+
+      <section id="updates" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">07 //</span>
+          Policy Updates
         </h2>
-        <p>
-          We may update this Cookie Policy if we introduce new operational integrations, analytics instrumentation, or infrastructure changes. Any modifications will be posted to this page with an updated &ldquo;Last Updated&rdquo; date.
+        <p className="text-slate-600 leading-relaxed">
+          We may update this Cookie Policy periodically to reflect changes in our infrastructure or legal requirements. Any modifications will be posted directly to this page with an updated &ldquo;Last Updated&rdquo; date.
         </p>
       </section>
-      <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">09 //</span>
-          Inquiries & Contact Information
+
+      <section id="contact" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">08 //</span>
+          Contact Information
         </h2>
-        <p>
-          If you have questions regarding our cookie practices or zero-tracker architecture, please contact our technical governance team:
+        <p className="text-slate-600 leading-relaxed">
+          If you have any questions regarding our cookie practices, please contact us:
         </p>
 
-        <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
-          <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
-          <div><strong className="text-[#F5F2ED]">Technical Governance:</strong> Web Architecture & Security Team</div>
-          <div><strong className="text-[#F5F2ED]">Inquiries Email:</strong> bayleafxtechnologies@gmail.com</div>
-          <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
+        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-5 space-y-2.5 font-sans text-xs sm:text-sm text-slate-700">
+          <div><strong className="text-slate-900">Company:</strong> BayleafX Technologies</div>
+          <div><strong className="text-slate-900">Official Website:</strong> https://www.bayleafx.com</div>
+          <div><strong className="text-slate-900">Inquiries Email:</strong> bayleafxtechnologies@gmail.com</div>
         </div>
       </section>
     </LegalLayout>

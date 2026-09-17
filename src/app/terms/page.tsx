@@ -2,215 +2,234 @@ import type { Metadata } from 'next';
 import { LegalLayout } from '@/components/layout/legal-layout';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — BayleafX Atelier',
+  title: 'Terms of Service | BayleafX Technologies',
   description:
-    'Terms and Conditions governing the use of the BayleafX digital atelier and preliminary architectural engagement protocols.',
+    'Terms and Conditions governing the use of the BayleafX Technologies website and software engineering engagement agreements.',
   alternates: {
-    canonical: 'https://bayleafx.com/terms',
+    canonical: 'https://www.bayleafx.com/terms',
   },
 };
 
 const TOC_ITEMS = [
   { id: 'acceptance', label: '1. Acceptance & Eligibility' },
-  { id: 'informational-scope', label: '2. Informational Scope & Engagements' },
+  { id: 'services-scope', label: '2. Services & Project Scope' },
   { id: 'intellectual-property', label: '3. Intellectual Property Rights' },
-  { id: 'client-deliverables', label: '4. Client Deliverables & IP Assignment' },
-  { id: 'acceptable-use', label: '5. Acceptable Use & Prohibitions' },
-  { id: 'metrics-disclaimer', label: '6. Agency Metrics & Benchmarks' },
-  { id: 'digital-delivery', label: '7. Digital Delivery & Handover' },
-  { id: 'third-parties', label: '8. Third-Party Integrations' },
-  { id: 'disclaimer', label: '9. Warranty Disclaimers' },
+  { id: 'client-deliverables', label: '4. Client Ownership & Deliverables' },
+  { id: 'client-obligations', label: '5. Client Responsibilities' },
+  { id: 'payment-terms', label: '6. Fees & Payment Terms' },
+  { id: 'acceptable-use', label: '7. Acceptable Use Policy' },
+  { id: 'third-parties', label: '8. Third-Party Services & Hosting' },
+  { id: 'warranty', label: '9. Warranty & 30-Day Support' },
   { id: 'liability', label: '10. Limitation of Liability' },
-  { id: 'indemnity', label: '11. Indemnification' },
-  { id: 'governing-law', label: '12. Governing Law & Dispute Resolution' },
-  { id: 'modifications', label: '13. Modifications to Terms' },
-  { id: 'contact', label: '14. Inquiries & Contact' },
+  { id: 'termination', label: '11. Term & Termination' },
+  { id: 'governing-law', label: '12. Governing Law' },
+  { id: 'contact', label: '13. Contact Information' },
 ];
 
 export default function TermsOfServicePage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      subtitle="These Terms of Service govern your access to the BayleafX website, digital showcases, and communication channels."
-      lastUpdated="March 10, 2026"
+      subtitle="These Terms of Service govern your access to the BayleafX Technologies website, digital services, and project engagements."
+      lastUpdated="September 2026"
       activeRoute="/terms"
       tocItems={TOC_ITEMS}
     >
-      <div className="rounded-xl border border-white/10 bg-[#121212] p-5 text-xs sm:text-sm text-[#D0CDC8] space-y-2">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-[#52B788] font-bold">
-          Contractual Architecture Note
+      <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/50 p-5 text-xs sm:text-sm text-slate-700 space-y-1.5">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-[#1B4332] font-bold">
+          Agreement Overview
         </p>
         <p className="leading-relaxed">
-          These Terms govern access to our website and informational resources. All commercial software engineering, UI/UX design sprints, and strategic marketing deliverables are governed by customized, bilaterally executed Statements of Work (SOW) or Master Services Agreements (MSA).
+          These Terms govern your use of our website and outline our standard project engagement terms. All commercial software development, UI/UX design, and digital marketing projects are further detailed in individual proposals, Statements of Work (SOW), or invoices agreed upon between BayleafX Technologies and our clients.
         </p>
       </div>
-      <section id="acceptance" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">01 //</span>
-          Acceptance of Terms & Eligibility
+
+      <section id="acceptance" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">01 //</span>
+          Acceptance of Terms &amp; Eligibility
         </h2>
-        <p>
-          By accessing or browsing the digital presence of <strong>[COMPANY LEGAL NAME]</strong> (&ldquo;BayleafX&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) accessible via <code className="text-[#F5F2ED] bg-white/[0.06] px-1 font-mono text-xs">https://bayleafx.com</code>, you agree to be bound by these Terms of Service.
+        <p className="text-slate-600 leading-relaxed">
+          By accessing or using the website at <code className="text-[#1B4332] bg-emerald-50 border border-emerald-200/60 px-1.5 py-0.5 rounded font-mono text-xs">https://www.bayleafx.com</code> or by engaging <strong className="text-slate-900">BayleafX Technologies</strong> (&ldquo;BayleafX&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) for digital services, you agree to comply with and be bound by these Terms of Service.
         </p>
-        <p>
-          Our platform is exclusively intended for commercial entities, enterprise organizations, and professional individuals representing corporate clients. By using this website, you represent and warrant that you possess the full legal power and corporate authority to agree to these Terms.
+        <p className="text-slate-600 leading-relaxed">
+          If you are entering into this agreement on behalf of a company, organization, or other legal entity, you represent and warrant that you have the full legal authority to bind that entity to these Terms.
         </p>
       </section>
-      <section id="informational-scope" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">02 //</span>
-          Informational Scope & Initiation of Services
+
+      <section id="services-scope" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">02 //</span>
+          Services &amp; Project Scope
         </h2>
-        <p>
-          The materials, service descriptions, telemetry metrics, and architectural showcases on this website are published for informational, promotional, and preliminary evaluation purposes only.
+        <p className="text-slate-600 leading-relaxed">
+          BayleafX Technologies provides custom web development, web application engineering, WordPress development, UI/UX design systems, and digital marketing services.
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>No Binding Commitment via Website Alone:</strong> Submitting a project brief or contact inquiry through our direct inquiry interface does not create a client relationship or bind BayleafX to deliver custom engineering services.</li>
-          <li><strong>Execution of Formal SOW:</strong> A legally binding commercial engagement is formed only upon the mutual bilateral execution of a written Statement of Work (SOW), Master Services Agreement (MSA), or accepted written proposal, accompanied by the receipt of applicable project deposits.</li>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li>
+            <strong className="text-slate-900">Inquiry &amp; Proposals:</strong> Submitting an inquiry through our website contact form or email does not automatically create a binding contract. A binding engagement is established once a written proposal, estimate, or Statement of Work is agreed upon and initial deposit payment is received.
+          </li>
+          <li>
+            <strong className="text-slate-900">Scope Changes:</strong> Any request for work or features outside the mutually agreed project specifications will be quoted as a scope expansion or separate sprint milestone.
+          </li>
         </ul>
       </section>
-      <section id="intellectual-property" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">03 //</span>
+
+      <section id="intellectual-property" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">03 //</span>
           Intellectual Property of BayleafX
         </h2>
-        <p>
-          All content published on this website—including but not limited to typography layouts, user interface designs, custom CSS tokens, animation curves, 3D/cybernetic artwork, visual renders, copy, graphics, and the &ldquo;BayleafX&rdquo; trademark and logotype—is the sole and exclusive intellectual property of <strong>[COMPANY LEGAL NAME]</strong> and protected by international copyright, trademark, and unfair competition laws.
+        <p className="text-slate-600 leading-relaxed">
+          All materials published on this website—including but not limited to the brand identity, logo, typography, design assets, website layout, code components, and copywriting—are the exclusive intellectual property of BayleafX Technologies and are protected by applicable intellectual property and copyright laws.
         </p>
-        <p>
-          You may not scrape, reproduce, replicate, mirror, adapt, or distribute any proprietary design element, code component, or visual artwork from this website without explicit prior written authorization from BayleafX.
+        <p className="text-slate-600 leading-relaxed">
+          You may not copy, reproduce, scrape, modify, or distribute any proprietary design elements or content from our website without prior written authorization from BayleafX Technologies.
         </p>
       </section>
-      <section id="client-deliverables" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">04 //</span>
-          Client Deliverables & IP Assignment
+
+      <section id="client-deliverables" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">04 //</span>
+          Client Ownership &amp; Deliverables
         </h2>
-        <p>
-          For clients entering into formal project engagements with BayleafX:
+        <p className="text-slate-600 leading-relaxed">
+          For clients partnering with BayleafX on custom development and design engagements:
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Custom Deliverables:</strong> Upon full and final receipt of agreed milestone payments and fees specified in the applicable Statement of Work, BayleafX assigns to the client all right, title, and interest in and to the custom software code, bespoke Figma designs, and branded assets authored specifically for that client.</li>
-          <li><strong>BayleafX Pre-Existing IP:</strong> BayleafX retains all rights in its internal scaffolding libraries, design token generators, starter frameworks, open-source dependencies, and generalized engineering techniques developed prior to or independently of the client engagement. Clients receive a perpetual, irrevocable, worldwide, royalty-free license to utilize such pre-existing IP as integrated into the final deliverables.</li>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li>
+            <strong className="text-slate-900">Full Ownership Upon Final Payment:</strong> Upon full and final settlement of all agreed fees for a project or milestone, BayleafX transfers full ownership of custom-built source code, bespoke design files (e.g. Figma), and tailored branding assets to the client.
+          </li>
+          <li>
+            <strong className="text-slate-900">Pre-Existing Scaffolding &amp; Open Source:</strong> BayleafX retains ownership of general software libraries, starter scaffolding, and standard design utility tokens. Clients receive a perpetual, non-exclusive, royalty-free license to use, modify, and deploy these components within their custom product.
+          </li>
         </ul>
       </section>
-      <section id="acceptable-use" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">05 //</span>
-          Acceptable Use & Prohibited Conduct
+
+      <section id="client-obligations" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">05 //</span>
+          Client Responsibilities
         </h2>
-        <p>When accessing or interacting with our digital presence, you agree NOT to:</p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li>Conduct automated scraping, crawling, or systematic data extraction without our prior written consent.</li>
-          <li>Transmit unauthorized penetration testing, vulnerability scanning, or Denial of Service (DoS/DDoS) stress tests against our hosting infrastructure.</li>
-          <li>Submit malicious payloads, cross-site scripts, SQL injections, or falsified inquiry submissions through our contact forms.</li>
-          <li>Impersonate any individual, corporate officer, or representative of BayleafX or our partner network.</li>
-          <li>Circumvent or tamper with security mechanisms, edge firewalls, or routing headers deployed by our CDN providers.</li>
+        <p className="text-slate-600 leading-relaxed">
+          Smooth and rapid project execution requires collaborative communication. Clients agree to:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li>Provide necessary brand assets, text content, media, credentials, and API keys in a timely manner.</li>
+          <li>Designate an authorized point of contact for reviewing sprint deliverables and providing written feedback.</li>
+          <li>Review and approve project milestones within a reasonable timeframe (typically within 5 business days).</li>
         </ul>
       </section>
-      <section id="metrics-disclaimer" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">06 //</span>
-          Agency Metrics & Performance Benchmarks
+
+      <section id="payment-terms" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">06 //</span>
+          Fees &amp; Payment Terms
         </h2>
-        <p>
-          Performance metrics referenced across this website (such as &ldquo;+150 Projects Shipped&rdquo;, &ldquo;98% Client Retention Rate&rdquo;, &ldquo;3.2s Avg. Load Improvement&rdquo;, and &ldquo;40% Avg. Conversion Lift&rdquo;) represent verifiable historical benchmarks achieved across representative engineering and optimization sprints.
+        <p className="text-slate-600 leading-relaxed">
+          Payment structures are clearly documented in each project agreement:
         </p>
-        <p className="text-xs text-[#A8A5A0]">
-          Past performance does not constitute a legal guarantee or commercial warranty that every bespoke platform will achieve identical metric improvements. Engineering outcomes depend heavily on client stack constraints, third-party API dependencies, traffic volumes, and business domain variables.
-        </p>
-      </section>
-      <section id="digital-delivery" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">07 //</span>
-          Digital Delivery, Work Products & Handover
-        </h2>
-        <p>
-          BayleafX develops purely digital intellectual property, software platforms, and brand systems. We do not sell or ship physical merchandise.
-        </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[#A8A5A0]">
-          <li><strong>Delivery Mechanisms:</strong> Client project milestones are delivered exclusively via secure digital mechanisms, including private Git repositories (GitHub / GitLab), cloud container registries, Figma workspace transfers, and staging URL deployments.</li>
-          <li><strong>Review & Acceptance Windows:</strong> Formal acceptance criteria and technical punch-list inspection windows are governed by the applicable Statement of Work (typically fourteen (14) calendar days following milestone delivery notification).</li>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li>
+            <strong className="text-slate-900">Milestone Payments:</strong> Standard fixed-price projects typically follow an upfront deposit (e.g. 30% to 50%) followed by progress milestone payments upon milestone completion.
+          </li>
+          <li>
+            <strong className="text-slate-900">Invoices:</strong> Invoices are payable upon receipt or within the net terms specified on the invoice.
+          </li>
+          <li>
+            <strong className="text-slate-900">Late Payments:</strong> If payment is significantly overdue, BayleafX reserves the right to pause ongoing development sprints until balances are settled.
+          </li>
         </ul>
       </section>
-      <section id="third-parties" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">08 //</span>
-          Third-Party Integrations & External Links
+
+      <section id="acceptable-use" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">07 //</span>
+          Acceptable Use Policy
         </h2>
-        <p>
-          Our application and client platforms frequently integrate with third-party software tools, headless APIs, and cloud services (such as Next.js, Vercel, Stripe, AWS, and modern headless CMS engines). We do not control and assume no responsibility for the independent availability, uptime, pricing changes, or terms of third-party platforms.
+        <p className="text-slate-600 leading-relaxed">
+          You agree not to use our website or services for any unlawful, fraudulent, or harmful purpose. Specifically, you agree not to:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-slate-600">
+          <li>Transmit malicious code, viruses, automated web scraping bots, or denial-of-service attempts.</li>
+          <li>Attempt unauthorized access to our internal systems, servers, or client repositories.</li>
+          <li>Request the development of platforms that facilitate unlawful activities, fraud, or infringement of third-party rights.</li>
+        </ul>
+      </section>
+
+      <section id="third-parties" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">08 //</span>
+          Third-Party Services &amp; Hosting
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          Our solutions often integrate with third-party providers (such as Vercel, AWS, Stripe, Google Cloud, Shopify, WordPress plugins, or email delivery systems). BayleafX Technologies is not responsible for outages, policy updates, pricing changes, or service interruptions caused directly by external third-party service providers.
         </p>
       </section>
-      <section id="disclaimer" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">09 //</span>
-          Warranty Disclaimers
+
+      <section id="warranty" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">09 //</span>
+          Warranty &amp; 30-Day Support
         </h2>
-        <p className="uppercase text-xs font-mono tracking-wider text-[#A8A5A0]">
-          THIS WEBSITE AND ITS DEMONSTRATIVE CONTENTS ARE PROVIDED ON AN &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.
+        <p className="text-slate-600 leading-relaxed">
+          We stand behind the quality of our work. BayleafX provides a <strong className="text-slate-900">complimentary 30-day bug-fix warranty</strong> starting from the final delivery date of any custom software project.
         </p>
-        <p>
-          To the maximum extent permitted by applicable law, BayleafX disclaims all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, non-infringement, or that the website will operate uninterrupted, secure, or free from minor typographical or technical errors.
+        <p className="text-slate-600 leading-relaxed">
+          If any reproducible bug or deviation from the agreed specifications is discovered within 30 days of deployment, our engineering team will remediate the issue promptly at zero additional charge. This warranty does not cover modifications made by third parties or unexpected breaking changes introduced by third-party APIs after launch.
         </p>
       </section>
-      <section id="liability" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">10 //</span>
+
+      <section id="liability" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">10 //</span>
           Limitation of Liability
         </h2>
-        <p>
-          To the fullest extent permitted by law, in no event shall <strong>[COMPANY LEGAL NAME]</strong>, its officers, directors, software architects, employees, or contractors be liable for any indirect, incidental, special, consequential, or punitive damages—including loss of profits, data corruption, business interruption, or loss of goodwill—arising out of or in connection with your access to, or inability to access, this website.
+        <p className="text-slate-600 leading-relaxed">
+          To the maximum extent permitted by applicable law, BayleafX Technologies shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, business, or goodwill.
         </p>
-        <p>
-          For formal commercial engagements, monetary liability limitations, caps, and mutual indemnities are expressly defined in the applicable executed Master Services Agreement.
-        </p>
-      </section>
-      <section id="indemnity" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">11 //</span>
-          Indemnification
-        </h2>
-        <p>
-          You agree to defend, indemnify, and hold harmless <strong>[COMPANY LEGAL NAME]</strong> and its affiliates from and against any third-party claims, liabilities, damages, judgments, awards, losses, costs, or expenses (including reasonable attorneys’ fees) arising out of your violation of these Terms of Service or your unauthorized, malicious use of this website.
+        <p className="text-slate-600 leading-relaxed">
+          In no event shall our total aggregate liability arising out of or related to any project engagement exceed the total fees paid by the client to BayleafX Technologies for that specific project.
         </p>
       </section>
-      <section id="governing-law" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">12 //</span>
-          Governing Law & Dispute Resolution
+
+      <section id="termination" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">11 //</span>
+          Term &amp; Termination
         </h2>
-        <p>
-          These Terms of Service and any dispute arising out of or related to them shall be governed by and construed in accordance with the substantive laws of <strong>[GOVERNING JURISDICTION]</strong>, without regard to its conflict of law principles.
+        <p className="text-slate-600 leading-relaxed">
+          Either party may terminate an ongoing service engagement by providing written notice via email if the other party materially breaches any provision of these Terms or the applicable Statement of Work and fails to cure such breach within 14 days of written notice.
         </p>
-        <p>
-          Any legal action, suit, or proceeding arising under these Terms shall be instituted exclusively in the competent courts located in <strong>[GOVERNING JURISDICTION]</strong>, and each party irrevocably submits to the personal jurisdiction of such courts.
-        </p>
-      </section>
-      <section id="modifications" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">13 //</span>
-          Modifications to Terms
-        </h2>
-        <p>
-          We reserve the right to revise and update these Terms of Service at our sole discretion. Any changes become effective immediately upon posting to this page with an updated &ldquo;Last Updated&rdquo; timestamp. Your continued use of the website following the posting of revised Terms signifies your acceptance of the amendments.
+        <p className="text-slate-600 leading-relaxed">
+          Upon termination, the client is responsible for payment for all hours and milestones completed up to the date of termination, and BayleafX will release all completed project work.
         </p>
       </section>
-      <section id="contact" className="space-y-4 pt-4 border-t border-white/[0.06]">
-        <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F5F2ED] flex items-baseline gap-3">
-          <span className="font-mono text-sm text-[#52B788]">14 //</span>
-          Inquiries & Contact Information
+
+      <section id="governing-law" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">12 //</span>
+          Governing Law &amp; Dispute Resolution
         </h2>
-        <p>
-          For legal inquiries, contract verification, or terms clarification, please contact our legal counsel desk:
+        <p className="text-slate-600 leading-relaxed">
+          These Terms and any project engagements shall be governed by and construed in accordance with applicable laws. In the event of any disagreement or dispute, both parties agree to first attempt resolution through good-faith amicable negotiation.
+        </p>
+      </section>
+
+      <section id="contact" className="space-y-4 pt-6 border-t border-slate-200/80">
+        <h2 className="font-sans text-xl sm:text-2xl font-bold text-slate-900 flex items-baseline gap-3">
+          <span className="font-mono text-sm font-semibold text-[#1B4332]">13 //</span>
+          Contact Information
+        </h2>
+        <p className="text-slate-600 leading-relaxed">
+          If you have any questions or require clarification regarding these Terms of Service, please reach out to our team:
         </p>
 
-        <div className="rounded-xl border border-white/10 bg-[#121212] p-6 space-y-3 font-mono text-xs text-[#A8A5A0]">
-          <div><strong className="text-[#F5F2ED]">Legal Entity:</strong> [COMPANY LEGAL NAME]</div>
-          <div><strong className="text-[#F5F2ED]">Counsel Desk:</strong> Corporate Governance & Legal Operations</div>
-          <div><strong className="text-[#F5F2ED]">Contact Email:</strong> bayleafxtechnologies@gmail.com</div>
-          <div><strong className="text-[#F5F2ED]">Registered Address:</strong> [BUSINESS ADDRESS]</div>
-          <div><strong className="text-[#F5F2ED]">Jurisdiction:</strong> [GOVERNING JURISDICTION]</div>
+        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-5 space-y-2.5 font-sans text-xs sm:text-sm text-slate-700">
+          <div><strong className="text-slate-900">Legal Entity:</strong> BayleafX Technologies</div>
+          <div><strong className="text-slate-900">Official Website:</strong> https://www.bayleafx.com</div>
+          <div><strong className="text-slate-900">Support &amp; Inquiries Email:</strong> bayleafxtechnologies@gmail.com</div>
+          <div><strong className="text-slate-900">Services:</strong> Web Applications, Full-Stack Software, Custom WordPress, UI/UX Design, and Digital Marketing</div>
         </div>
       </section>
     </LegalLayout>

@@ -31,7 +31,7 @@ const LEGAL_TABS = [
 export const LegalLayout: React.FC<LegalLayoutProps> = ({
   title,
   subtitle,
-  lastUpdated = '[LAST UPDATED DATE]',
+  lastUpdated = 'September 2026',
   activeRoute,
   tocItems,
   children,
