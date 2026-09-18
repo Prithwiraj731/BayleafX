@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     'high-performance engineering',
   ],
   authors: [{ name: 'BayleafX' }],
-  metadataBase: new URL('https://bayleafx.com'),
+  metadataBase: new URL('https://www.bayleafx.com'),
   openGraph: {
     title: 'BayleafX — Enterprise Software & Digital Product Studio',
     description:
       'Independent design and engineering studio building high-performance web applications, scalable platforms, and bespoke digital experiences for modern enterprises.',
-    url: 'https://bayleafx.com',
+    url: 'https://www.bayleafx.com',
     siteName: 'BayleafX',
     locale: 'en_US',
     type: 'website',

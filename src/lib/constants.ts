@@ -215,3 +215,8 @@ export const DIFFERENTIATORS: DifferentiatorItem[] = [
     ours: 'Ongoing maintenance, security checks, and support as you scale',
   },
 ];
+
+export const WHATSAPP_PHONE = '917070072227';
+export const WHATSAPP_MESSAGE = 'Hey! I want to know more about BayleafX and discuss starting a project.';
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+

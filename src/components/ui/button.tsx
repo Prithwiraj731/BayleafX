@@ -11,6 +11,8 @@ export const Button: React.FC<ButtonProps> = ({
   icon,
   children,
   href,
+  target,
+  rel,
   className = '',
   disabled,
   onClick,
@@ -34,6 +36,10 @@ export const Button: React.FC<ButtonProps> = ({
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
 
   if (href) {
+    const isExternal = href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//');
+    const finalTarget = target || (isExternal ? '_blank' : undefined);
+    const finalRel = rel || (finalTarget === '_blank' ? 'noopener noreferrer' : undefined);
+
     return (
       <motion.div
         whileHover={{ y: -1 }}
@@ -42,6 +48,8 @@ export const Button: React.FC<ButtonProps> = ({
       >
         <Link
           href={href}
+          target={finalTarget}
+          rel={finalRel}
           className={combinedClasses}
           onClick={onClick as unknown as React.MouseEventHandler<HTMLAnchorElement>}
         >

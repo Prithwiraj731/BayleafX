@@ -6,7 +6,7 @@ import { ArrowRight, Menu, X } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
-import { NAV_LINKS } from '@/lib/constants';
+import { NAV_LINKS, WHATSAPP_URL } from '@/lib/constants';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -77,8 +77,9 @@ export const Navbar: React.FC = () => {
               <Button
                 variant="primary"
                 size="default"
-                href="#contact"
-                onClick={(e) => handleLinkClick(e, '#contact')}
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 icon={<ArrowRight className="h-3.5 w-3.5" />}
               >
                 Start a project
@@ -125,9 +126,11 @@ export const Navbar: React.FC = () => {
               <Button
                 variant="primary"
                 size="lg"
-                href="#contact"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full font-semibold"
-                onClick={(e) => handleLinkClick(e, '#contact')}
+                onClick={() => setMobileMenuOpen(false)}
                 icon={<ArrowRight className="h-4 w-4" />}
               >
                 Start a project

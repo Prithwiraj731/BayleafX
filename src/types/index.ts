@@ -63,6 +63,8 @@ export interface ButtonProps
   icon?: React.ReactNode;
   children: React.ReactNode;
   href?: string;
+  target?: string;
+  rel?: string;
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }

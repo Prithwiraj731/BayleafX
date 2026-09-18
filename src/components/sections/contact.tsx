@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Check, Mail, ShieldCheck, Clock, Users } from 'lucide-react';
+import { ArrowRight, Check, Mail, ShieldCheck, Clock, Users, MessageCircle } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { fadeInUp } from '@/lib/animations';
+import { WHATSAPP_URL } from '@/lib/constants';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -65,15 +66,29 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-100">
-              <p className="font-sans text-xs text-slate-500 mb-1">Direct inquiries:</p>
-              <a
-                href="mailto:bayleafxtechnologies@gmail.com"
-                className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4"
-              >
-                <Mail className="h-4 w-4" />
-                <span>bayleafxtechnologies@gmail.com</span>
-              </a>
+            <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+              <div>
+                <p className="font-sans text-xs text-slate-500 mb-1">Email inquiries:</p>
+                <a
+                  href="mailto:bayleafxtechnologies@gmail.com"
+                  className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4"
+                >
+                  <Mail className="h-4 w-4" />
+                  <span>bayleafxtechnologies@gmail.com</span>
+                </a>
+              </div>
+              <div>
+                <p className="font-sans text-xs text-slate-500 mb-1">WhatsApp chat:</p>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  <span>+91 70700 72227</span>
+                </a>
+              </div>
             </div>
           </motion.div>
 
