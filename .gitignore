@@ -40,4 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# markdown files (ignore all except README)
+*.md
+**/*.md
+!README.md
+!readme.md
+!**/README.md
+!**/readme.md
