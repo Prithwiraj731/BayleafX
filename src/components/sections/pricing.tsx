@@ -2,9 +2,14 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
+
+interface FeatureItem {
+  name: string;
+  included: boolean;
+}
 
 interface PricingPlan {
   id: string;
@@ -14,7 +19,7 @@ interface PricingPlan {
   yearlyPrice: string;
   period: string;
   description: string;
-  features: string[];
+  features: FeatureItem[];
   isPopular?: boolean;
   buttonText: string;
 }
@@ -23,58 +28,74 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'starter',
     badge: 'Starter Plan',
-    name: 'Free Consultation',
-    monthlyPrice: '$0',
-    yearlyPrice: '$0',
-    period: '/forever',
-    description: 'Perfect for exploring your ideas and getting an expert architecture roadmap.',
-    features: [
-      '30-min strategy & scoping call',
-      'Technical architecture audit',
-      'Custom project cost estimate',
-      'Technology stack recommendations',
-      'Basic security & speed checklist',
-    ],
+    name: 'Starter',
+    monthlyPrice: '₹10,000',
+    yearlyPrice: '₹8,000',
+    period: '/mo',
+    description: 'Essential high-speed digital foundation for local businesses, creators & consultants.',
     isPopular: false,
     buttonText: 'Get Started',
+    features: [
+      { name: 'Custom Responsive Website (Up to 5 Pages)', included: true },
+      { name: 'Modern UI/UX Design & Typography', included: true },
+      { name: 'Fast Google SEO & Speed Optimization', included: true },
+      { name: 'Domain, SSL & Edge Cloud Hosting Setup', included: true },
+      { name: 'WhatsApp Chat & Lead Contact Form', included: true },
+      { name: 'Two-Way Automated Email Notifications', included: true },
+      { name: 'Full-Stack Web App (React 19 & Next.js 15)', included: false },
+      { name: 'Customer Database & User Authentication', included: false },
+      { name: 'Payment Gateway (Stripe/Razorpay/UPI)', included: false },
+      { name: 'Google & Meta Paid Ads Campaign Funnel', included: false },
+      { name: '24/7 Dedicated Priority Engineering SLA', included: false },
+    ],
   },
   {
-    id: 'standard',
+    id: 'growth',
     badge: 'Standard Plan',
     name: 'Growth',
-    monthlyPrice: '$999',
-    yearlyPrice: '$799',
+    monthlyPrice: '₹25,000',
+    yearlyPrice: '₹20,000',
     period: '/mo',
-    description: 'Full-stack development, continuous feature builds, and dedicated speed optimization.',
-    features: [
-      'Full-stack Next.js web application',
-      'Custom responsive UI/UX design',
-      'Unlimited revisions during build',
-      'Priority email & Slack support',
-      'Search engine (SEO) optimization',
-      'Continuous performance tuning',
-    ],
+    description: 'Complete full-stack platform, customer accounts, payments, and conversion engineering.',
     isPopular: true,
     buttonText: 'Get Started',
+    features: [
+      { name: 'Custom Responsive Website (Unlimited Pages)', included: true },
+      { name: 'Modern UI/UX Design & Clickable Prototype', included: true },
+      { name: 'Fast Google SEO & Speed Optimization', included: true },
+      { name: 'Domain, SSL & Edge Cloud Hosting Setup', included: true },
+      { name: 'WhatsApp Chat & Lead Contact Form', included: true },
+      { name: 'Two-Way Automated Email Notifications', included: true },
+      { name: 'Full-Stack Web App (React 19 & Next.js 15)', included: true },
+      { name: 'Customer Database & User Authentication', included: true },
+      { name: 'Payment Gateway (Stripe/Razorpay/UPI)', included: true },
+      { name: 'Google & Meta Paid Ads Campaign Funnel', included: false },
+      { name: '24/7 Dedicated Priority Engineering SLA', included: false },
+    ],
   },
   {
-    id: 'pro',
-    badge: 'Pro / Enterprise',
-    name: 'Scale',
-    monthlyPrice: '$2,499',
-    yearlyPrice: '$1,999',
-    period: '/mo',
-    description: 'High-availability infrastructure, complex integrations, and dedicated engineering squad.',
-    features: [
-      'Multi-platform software architecture',
-      'Custom database & cloud DevOps',
-      '24/7 priority support & SLA',
-      'Enterprise authentication & billing',
-      'Dedicated lead developer & designer',
-      'Fortified security & compliance audit',
-    ],
+    id: 'custom',
+    badge: 'Enterprise Plan',
+    name: 'Custom',
+    monthlyPrice: 'Custom',
+    yearlyPrice: 'Custom',
+    period: '',
+    description: 'Dedicated engineering squad, bespoke cloud architecture, ads funnels, and enterprise SLA.',
     isPopular: false,
     buttonText: 'Get Started',
+    features: [
+      { name: 'Custom Responsive Website (Unlimited Pages)', included: true },
+      { name: 'Modern UI/UX Design & Complete Design System', included: true },
+      { name: 'Enterprise SEO Audit & Authority Growth', included: true },
+      { name: 'High-Availability Cloud Architecture & CI/CD', included: true },
+      { name: 'WhatsApp, Slack & CRM Webhook Sync', included: true },
+      { name: 'Two-Way Automated Email Notifications', included: true },
+      { name: 'Complex Full-Stack Software & API Integrations', included: true },
+      { name: 'Role-Based Authentication & Distributed DB', included: true },
+      { name: 'Multi-Currency Subscriptions & Invoicing Portal', included: true },
+      { name: 'Full Google & Meta Paid Ads Funnel Setup', included: true },
+      { name: '24/7 Dedicated Priority Engineering SLA & Call Line', included: true },
+    ],
   },
 ];
 
@@ -85,7 +106,6 @@ export const PricingSection: React.FC = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
-      // Pre-fill message or dispatch custom event if needed
       const messageInput = document.querySelector('textarea[name="message"], textarea') as HTMLTextAreaElement;
       if (messageInput) {
         messageInput.value = `Hi BayleafX team, I am interested in the ${planName} plan (${isYearly ? 'Yearly billing' : 'Monthly billing'}). Let's discuss getting started!`;
@@ -116,18 +136,41 @@ export const PricingSection: React.FC = () => {
 
       <Container className="relative z-10 max-w-6xl">
         {/* Section Title */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8">
           <h3 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
             Predictable plans. World-class delivery.
           </h3>
           <p className="mt-4 max-w-xl mx-auto font-body text-sm sm:text-base text-slate-400 leading-relaxed">
-            No hidden fees, no bloated agency markups. Transparent retainers and fixed-price packages designed to scale with you.
+            Transparent pricing tailored to scale with your business. Choose your plan below.
           </p>
+        </div>
+
+        {/* Toggle Switch placed UPON the pricing boxes */}
+        <div className="mb-12 sm:mb-14 flex items-center justify-center gap-3">
+          <button
+            onClick={() => setIsYearly(!isYearly)}
+            className="relative flex h-7 w-13 cursor-pointer items-center rounded-full bg-white/20 p-1 transition-colors hover:bg-white/30"
+            aria-label="Toggle billing frequency"
+          >
+            <div
+              className={`h-5 w-5 rounded-full bg-white shadow-md transition-transform duration-300 ${
+                isYearly ? 'translate-x-6 bg-emerald-400' : 'translate-x-0'
+              }`}
+            />
+          </button>
+          <span className="font-sans text-sm font-medium text-slate-300">
+            Billed Yearly
+          </span>
+          <span className="rounded-full bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">
+            Save 20%
+          </span>
         </div>
 
         {/* 3 Frosted Glassmorphic Cards matching Image 2 */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {PRICING_PLANS.map((plan) => {
+            const isCustom = plan.id === 'custom';
+
             return (
               <motion.div
                 key={plan.id}
@@ -154,27 +197,40 @@ export const PricingSection: React.FC = () => {
                   {/* Price */}
                   <div className="mt-4 flex items-baseline gap-1">
                     <span className="font-sans text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-                      {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                      {isCustom ? 'Custom' : isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                     </span>
-                    <span className="font-sans text-sm font-medium text-slate-400">
-                      {plan.period}
-                    </span>
+                    {plan.period && (
+                      <span className="font-sans text-sm font-medium text-slate-400">
+                        {plan.period}
+                      </span>
+                    )}
                   </div>
 
-                  <p className="mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed min-h-[40px]">
+                  <p className="mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed min-h-[38px]">
                     {plan.description}
                   </p>
 
                   <div className="my-6 border-b border-white/10" />
 
-                  {/* Feature Checklist */}
+                  {/* Feature Checklist with Ticks and Crosses */}
                   <ul className="space-y-3.5">
                     {plan.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/10 text-emerald-400 mt-0.5">
-                          <Check className="h-3 w-3 stroke-[3]" />
-                        </div>
-                        <span>{feature}</span>
+                      <li key={fIdx} className="flex items-start gap-3 text-xs sm:text-sm">
+                        {feature.included ? (
+                          <>
+                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400 mt-0.5">
+                              <Check className="h-3.5 w-3.5 stroke-[3]" />
+                            </div>
+                            <span className="text-slate-200 font-medium">{feature.name}</span>
+                          </>
+                        ) : (
+                          <>
+                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/5 text-slate-500 mt-0.5">
+                              <X className="h-3.5 w-3.5 stroke-[2.5]" />
+                            </div>
+                            <span className="text-slate-500/80">{feature.name}</span>
+                          </>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -203,34 +259,11 @@ export const PricingSection: React.FC = () => {
           })}
         </div>
 
-        {/* Toggle Switch at bottom matching Image 2 */}
-        <div className="mt-14 flex flex-col items-center justify-center gap-4">
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsYearly(!isYearly)}
-              className="relative flex h-7 w-13 cursor-pointer items-center rounded-full bg-white/20 p-1 transition-colors hover:bg-white/30"
-              aria-label="Toggle billing frequency"
-            >
-              <div
-                className={`h-5 w-5 rounded-full bg-white shadow-md transition-transform duration-300 ${
-                  isYearly ? 'translate-x-6 bg-emerald-400' : 'translate-x-0'
-                }`}
-              />
-            </button>
-            <span className="font-sans text-sm font-medium text-slate-300">
-              Billed Yearly
-            </span>
-            <span className="rounded-full bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 text-[11px] font-semibold text-emerald-400">
-              Save 20%
-            </span>
-          </div>
-
-          {/* Connected Tree branch pill label matching photo */}
-          <div className="mt-4 flex flex-col items-center">
-            <div className="h-6 w-px bg-white/20" />
-            <div className="rounded-full border border-white/15 bg-white/5 px-4 py-1 text-[11px] font-medium text-slate-400">
-              Plans
-            </div>
+        {/* Connected Tree branch pill label matching photo */}
+        <div className="mt-14 flex flex-col items-center">
+          <div className="h-6 w-px bg-white/20" />
+          <div className="rounded-full border border-white/15 bg-white/5 px-4 py-1 text-[11px] font-medium text-slate-400">
+            Plans
           </div>
         </div>
       </Container>
