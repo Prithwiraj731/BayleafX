@@ -14,6 +14,8 @@ export interface ServiceItem {
 
 export interface ServicePillar {
   name: string;
+  slug?: string;
+  description?: string;
   services: ServiceItem[];
 }
 

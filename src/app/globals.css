@@ -2,6 +2,25 @@
 
 @layer base {
   :root {
+    --background: #FFFFFF;
+    --foreground: #0F172A;
+
+    --primary: #1B4332;
+    --primary-foreground: #FFFFFF;
+
+    --secondary: #F1F5F9;
+    --secondary-foreground: #0F172A;
+
+    --muted: #F8FAF9;
+    --muted-foreground: #64748B;
+
+    --accent: #E8F5E9;
+    --accent-foreground: #1B4332;
+
+    --border: #E2E8F0;
+    --input: #E2E8F0;
+    --ring: #2D6A4F;
+
     --bl-bg-base: #FFFFFF;
     --bl-bg-subtle: #F8FAF9;
     --bl-bg-elevated: #FFFFFF;
@@ -28,6 +47,18 @@
 }
 
 @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+
   --color-bl-bg-base: var(--bl-bg-base);
   --color-bl-bg-subtle: var(--bl-bg-subtle);
   --color-bl-bg-elevated: var(--bl-bg-elevated);
@@ -98,6 +129,26 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,6 +10,7 @@ import {
 export const NAV_LINKS: NavLink[] = [
   { label: 'Services', href: '#services' },
   { label: 'Why Us', href: '#differentiators' },
+  { label: 'Pricing', href: '#pricing' },
   { label: 'Results', href: '#metrics' },
   { label: 'How It Works', href: '#process' },
   { label: 'Reviews', href: '#testimonials' },
@@ -19,6 +20,8 @@ export const NAV_LINKS: NavLink[] = [
 export const SERVICE_PILLARS: ServicePillar[] = [
   {
     name: 'Web & App Development',
+    slug: 'web-app-development',
+    description: 'High-performance web applications, scalable platforms, and seamless API integrations.',
     services: [
       {
         icon: 'Monitor',
@@ -52,6 +55,8 @@ export const SERVICE_PILLARS: ServicePillar[] = [
   },
   {
     name: 'Design & User Experience',
+    slug: 'design-user-experience',
+    description: 'Human-centered interfaces, clickable prototypes, and high-conversion brand design systems.',
     services: [
       {
         icon: 'Compass',
@@ -85,6 +90,8 @@ export const SERVICE_PILLARS: ServicePillar[] = [
   },
   {
     name: 'Marketing & Business Growth',
+    slug: 'marketing-growth',
+    description: 'Targeted Google/Meta ad funnels, high-ranking SEO content, and conversion optimization.',
     services: [
       {
         icon: 'TrendingUp',

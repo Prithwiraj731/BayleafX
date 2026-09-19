@@ -2,11 +2,13 @@ import React from 'react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { HeroSection } from '@/components/sections/hero';
+import { TechStackCarousel } from '@/components/sections/tech-stack-carousel';
 import { ServicesSection } from '@/components/sections/services';
 import { DifferentiatorsSection } from '@/components/sections/differentiators';
 import { MetricsSection } from '@/components/sections/metrics';
 import { ProcessSection } from '@/components/sections/process';
 import { TestimonialsSection } from '@/components/sections/testimonials';
+import { PricingSection } from '@/components/sections/pricing';
 import { ContactSection } from '@/components/sections/contact';
 
 export default function HomePage() {
@@ -21,11 +23,13 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content" className="flex flex-col">
         <HeroSection />
+        <TechStackCarousel />
         <ServicesSection />
         <DifferentiatorsSection />
         <MetricsSection />
         <ProcessSection />
         <TestimonialsSection />
+        <PricingSection />
         <ContactSection />
       </main>
       <Footer />

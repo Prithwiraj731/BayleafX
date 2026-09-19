@@ -13,7 +13,7 @@ const LEGAL_LINKS = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-slate-200/80 bg-[#F8FAF9] py-16 text-slate-600">
+    <footer className="border-t border-slate-200/80 bg-[#F8FAF9] pt-16 pb-0 overflow-hidden text-slate-600">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-5 space-y-4">
@@ -38,12 +38,12 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    href={link.href.startsWith('#') ? `/${link.href}` : link.href}
                     className="font-sans text-sm text-slate-600 transition-colors duration-200 hover:text-slate-900"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -85,6 +85,13 @@ export const Footer: React.FC = () => {
           </p>
         </div>
       </Container>
+
+      {/* Majestic Wide Bold Half-Faded BAYLEAF X Watermark matching Image 3 */}
+      <div className="relative w-full overflow-hidden pt-8 pb-0 select-none pointer-events-none text-center">
+        <div className="font-sans font-black uppercase tracking-[0.12em] sm:tracking-[0.18em] md:tracking-[0.24em] text-[12vw] sm:text-[13vw] md:text-[14vw] leading-[0.75] bg-gradient-to-b from-slate-900/18 via-slate-900/6 to-transparent bg-clip-text text-transparent whitespace-nowrap">
+          BAYLEAF X
+        </div>
+      </div>
     </footer>
   );
 };

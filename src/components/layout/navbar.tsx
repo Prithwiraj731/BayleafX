@@ -34,6 +34,10 @@ export const Navbar: React.FC = () => {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLElement>, href: string) => {
     if (href.startsWith('#')) {
+      if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+        // We are on a subpage, navigate to home with hash
+        return;
+      }
       e.preventDefault();
       setMobileMenuOpen(false);
       const targetElement = document.querySelector(href);
@@ -57,20 +61,27 @@ export const Navbar: React.FC = () => {
         <Container>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Logo href="#" />
+              <Logo href="/" />
             </div>
 
             <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleLinkClick(e, link.href)}
-                  className="font-sans text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const targetHref =
+                  typeof window !== 'undefined' && window.location.pathname !== '/' && link.href.startsWith('#')
+                    ? `/${link.href}`
+                    : link.href;
+
+                return (
+                  <a
+                    key={link.label}
+                    href={targetHref}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="font-sans text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </nav>
 
             <div className="hidden md:flex items-center">

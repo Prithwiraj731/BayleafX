@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Monitor, Palette, TrendingUp, ArrowUpRight, Check } from 'lucide-react';
 import { Container } from '@/components/layout/container';
@@ -73,10 +74,13 @@ export const ServicesSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#1B4332] group-hover:text-[#2D6A4F]">
+                <Link
+                  href={`/services/${pillar.slug || 'web-app-development'}`}
+                  className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#1B4332] group-hover:text-[#2D6A4F] transition-colors"
+                >
                   <span>Explore capabilities</span>
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
+                </Link>
               </motion.div>
             );
           })}

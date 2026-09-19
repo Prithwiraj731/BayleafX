@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Layers } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Zap, Layers } from 'lucide-react';
 import { Container } from '@/components/layout/container';
-import { Button } from '@/components/ui/button';
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 const TRUST_METRICS = [
@@ -71,26 +71,21 @@ export const HeroSection: React.FC = () => {
 
           <motion.div
             variants={fadeInUp}
-            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
           >
-            <Button
-              variant="primary"
-              size="lg"
+            <InteractiveHoverButton
+              text="Start Your Project"
+              variant="solid"
               onClick={scrollToContact}
-              className="w-full sm:w-auto font-semibold px-7 py-3.5"
-              icon={<ArrowRight className="h-4 w-4" />}
-            >
-              Start Your Project
-            </Button>
+              className="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base"
+            />
 
-            <Button
-              variant="ghost"
-              size="lg"
+            <InteractiveHoverButton
+              text="See Our Services"
+              variant="outline"
               onClick={scrollToServices}
-              className="w-full sm:w-auto font-semibold px-7 py-3.5"
-            >
-              See Our Services
-            </Button>
+              className="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base"
+            />
           </motion.div>
 
           <motion.div

@@ -2,26 +2,49 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Check, Mail, ShieldCheck, Clock, Users, MessageCircle } from 'lucide-react';
+import { Check, Mail, ShieldCheck, Clock, Users, MessageCircle, Loader2 } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
 import { fadeInUp } from '@/lib/animations';
 import { WHATSAPP_URL } from '@/lib/constants';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Failed to submit form.');
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const error = err as Error;
+      setErrorMessage(error.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -110,14 +133,31 @@ export const ContactSection: React.FC = () => {
                     <Check className="h-7 w-7" />
                   </div>
                   <h3 className="font-sans text-2xl font-bold text-slate-900">
-                    Message received.
+                    Inquiry received &amp; confirmation sent!
                   </h3>
                   <p className="font-sans text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Thank you, {formData.name}. We will review your project details and get in touch within 24 hours.
+                    Thank you, <span className="font-semibold text-slate-800">{formData.name}</span>. A confirmation copy of your message has been sent to <span className="font-semibold text-slate-800">{formData.email}</span>. Our team will review your project details and respond within 24 hours.
                   </p>
+                  <div className="pt-2">
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({ name: '', email: '', message: '' });
+                      }}
+                      className="text-xs font-semibold text-[#1B4332] hover:underline"
+                    >
+                      Send another message
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="bl-card p-6 sm:p-8 space-y-5">
+                  {errorMessage && (
+                    <div className="p-3 rounded-lg bg-rose-50 border border-rose-200 text-xs font-medium text-rose-700">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   <Input
                     label="Your Name"
                     required
@@ -145,14 +185,23 @@ export const ContactSection: React.FC = () => {
                   />
 
                   <div className="pt-2">
-                    <Button
-                      type="submit"
-                      variant="primary"
-                      className="w-full"
-                      icon={<ArrowRight className="h-4 w-4" />}
-                    >
-                      Send project inquiry
-                    </Button>
+                    {isSubmitting ? (
+                      <button
+                        type="button"
+                        disabled
+                        className="w-full flex items-center justify-center gap-2 rounded-full bg-[#1B4332]/80 text-white py-3 px-6 text-sm font-semibold cursor-not-allowed"
+                      >
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <span>Sending inquiry...</span>
+                      </button>
+                    ) : (
+                      <InteractiveHoverButton
+                        type="submit"
+                        text="Send project inquiry"
+                        variant="solid"
+                        className="w-full py-3 text-sm sm:text-base font-semibold"
+                      />
+                    )}
                   </div>
                 </form>
               )}
