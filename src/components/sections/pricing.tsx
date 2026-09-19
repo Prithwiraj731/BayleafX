@@ -102,17 +102,6 @@ const PRICING_PLANS: PricingPlan[] = [
 export const PricingSection: React.FC = () => {
   const [isYearly, setIsYearly] = useState(false);
 
-  const handleSelectPlan = (planName: string) => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-      const messageInput = document.querySelector('textarea[name="message"], textarea') as HTMLTextAreaElement;
-      if (messageInput) {
-        messageInput.value = `Hi BayleafX team, I am interested in the ${planName} plan (${isYearly ? 'Yearly billing' : 'Monthly billing'}). Let's discuss getting started!`;
-      }
-    }
-  };
-
   return (
     <section
       id="pricing"
@@ -242,14 +231,14 @@ export const PricingSection: React.FC = () => {
                     <InteractiveHoverButton
                       text={plan.buttonText}
                       variant="primary"
-                      onClick={() => handleSelectPlan(plan.name)}
+                      href={`/contact?plan=${plan.id}&billing=${isYearly ? 'yearly' : 'monthly'}`}
                       className="w-full py-3.5 text-sm font-bold bg-white text-slate-900 border-white hover:border-emerald-400 [&_.dot-bg]:bg-[#1B4332] [&_.hover-text]:text-white"
                     />
                   ) : (
                     <InteractiveHoverButton
                       text={plan.buttonText}
                       variant="dark"
-                      onClick={() => handleSelectPlan(plan.name)}
+                      href={`/contact?plan=${plan.id}&billing=${isYearly ? 'yearly' : 'monthly'}`}
                       className="w-full py-3 text-sm font-semibold"
                     />
                   )}
