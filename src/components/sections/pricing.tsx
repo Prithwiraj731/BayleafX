@@ -104,21 +104,6 @@ export const PricingSection: React.FC = () => {
         <div className="absolute right-10 bottom-10 h-[350px] w-[350px] rounded-full bg-[#1B4332]/20 blur-[110px]" />
       </div>
 
-      {/* Top Floating Pill Navigation Indicator matching photo */}
-      <div className="relative z-10 mx-auto mb-14 flex max-w-fit items-center gap-6 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 backdrop-blur-md shadow-xl text-xs font-medium text-slate-300">
-        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-white font-bold text-[10px]">✕</span>
-        <a href="#hero" className="hover:text-white transition-colors">Home</a>
-        <a href="#pricing" className="text-white font-semibold">Pricing</a>
-        <a href="#services" className="hover:text-white transition-colors">Capabilities</a>
-        <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-        <a
-          href="#contact"
-          className="rounded-full bg-white px-3.5 py-1 text-slate-900 font-semibold hover:bg-slate-100 transition-all text-xs"
-        >
-          Inquire
-        </a>
-      </div>
-
       {/* Giant Blurred Frosted Heading Backdrop matching Image 2 */}
       <div className="relative flex justify-center items-center">
         <h2
@@ -132,9 +117,6 @@ export const PricingSection: React.FC = () => {
       <Container className="relative z-10 max-w-6xl">
         {/* Section Title */}
         <div className="text-center mb-12 sm:mb-16">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-400 font-semibold mb-2">
-            Transparent Investment
-          </p>
           <h3 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
             Predictable plans. World-class delivery.
           </h3>
