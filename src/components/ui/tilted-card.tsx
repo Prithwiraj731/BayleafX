@@ -2,6 +2,7 @@
 
 import React, { forwardRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
 import { TiltedCardServiceItem } from '@/types';
 
@@ -401,6 +402,14 @@ const ServiceIllustration: React.FC<{ id: string }> = ({ id }) => {
 
 export const TiltedCard = forwardRef<HTMLDivElement, TiltedCardProps>(
   ({ service, index = 0, isCenter = false, onClick, onKeyDown, width }, ref) => {
+    const router = useRouter();
+
+    const handleExploreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.stopPropagation();
+      const href = service.ctaHref || '/services';
+      router.push(href);
+    };
+
     return (
       <div
         ref={ref}
@@ -463,10 +472,15 @@ export const TiltedCard = forwardRef<HTMLDivElement, TiltedCardProps>(
             {/* Modern Subtle Explore Link */}
             <Link
               href={service.ctaHref || '/services'}
-              onClick={(e) => {
+              data-interactive="true"
+              onPointerDown={(e) => {
                 e.stopPropagation();
               }}
-              className="mt-3.5 pt-2.5 border-t border-slate-100 w-full flex items-center justify-between px-1 group/link hover:opacity-80 transition-opacity"
+              onMouseDown={(e) => {
+                e.stopPropagation();
+              }}
+              onClick={handleExploreClick}
+              className="relative z-20 mt-3.5 pt-2.5 border-t border-slate-100 w-full flex items-center justify-between px-1 group/link hover:opacity-80 transition-opacity cursor-pointer"
             >
               <span className="text-[11px] font-semibold text-[#1B4332] group-hover/link:text-[#2D6A4F] transition-colors">
                 Explore service

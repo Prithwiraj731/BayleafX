@@ -29,6 +29,7 @@ export const TiltedCardCarousel: React.FC<TiltedCardCarouselProps> = ({
   const currentProgressRef = useRef(0);
   const activeIndexRef = useRef(0);
   const isDraggingRef = useRef(false);
+  const isPointerDownRef = useRef(false);
   const isHoveredRef = useRef(false);
   const dragStartXRef = useRef(0);
   const dragStartProgressRef = useRef(0);
@@ -197,59 +198,82 @@ export const TiltedCardCarousel: React.FC<TiltedCardCarouselProps> = ({
   // Pointer drag event handlers
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+    // Do NOT capture or start dragging if user clicked on an interactive link or button
+    const target = e.target as HTMLElement | null;
+    if (target?.closest('a, button, [data-interactive="true"]')) {
+      return;
+    }
+
     if (activeTweenRef.current) activeTweenRef.current.kill();
 
-    isDraggingRef.current = true;
-    setIsDragging(true);
-    lastInteractionTimeRef.current = Date.now();
+    isPointerDownRef.current = true;
+    isDraggingRef.current = false;
     dragStartXRef.current = e.clientX;
     dragStartProgressRef.current = currentProgressRef.current;
     dragDistanceRef.current = 0;
-
-    try {
-      e.currentTarget.setPointerCapture(e.pointerId);
-    } catch {
-      // Ignored
-    }
+    lastInteractionTimeRef.current = Date.now();
   };
 
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDraggingRef.current) return;
+    if (!isPointerDownRef.current) return;
 
     const deltaX = e.clientX - dragStartXRef.current;
-    dragDistanceRef.current += Math.abs(deltaX);
+    const distance = Math.abs(deltaX);
+    dragDistanceRef.current = distance;
     lastInteractionTimeRef.current = Date.now();
 
-    const progressDelta = deltaX / geometry.dragSensitivity;
-    currentProgressRef.current = dragStartProgressRef.current - progressDelta;
-    updateCards(currentProgressRef.current);
+    // Only engage drag mode if pointer moved noticeably (threshold: 6px)
+    if (distance > 6) {
+      if (!isDraggingRef.current) {
+        isDraggingRef.current = true;
+        setIsDragging(true);
+        try {
+          e.currentTarget.setPointerCapture(e.pointerId);
+        } catch {
+          // Ignored
+        }
+      }
 
-    const normalized = ((Math.round(currentProgressRef.current) % N) + N) % N;
-    if (normalized !== activeIndexRef.current) {
-      activeIndexRef.current = normalized;
-      setActiveIndex(normalized);
+      const progressDelta = deltaX / geometry.dragSensitivity;
+      currentProgressRef.current = dragStartProgressRef.current - progressDelta;
+      updateCards(currentProgressRef.current);
+
+      const normalized = ((Math.round(currentProgressRef.current) % N) + N) % N;
+      if (normalized !== activeIndexRef.current) {
+        activeIndexRef.current = normalized;
+        setActiveIndex(normalized);
+      }
     }
   };
 
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDraggingRef.current) return;
-    isDraggingRef.current = false;
+    if (!isPointerDownRef.current) return;
+    isPointerDownRef.current = false;
     lastInteractionTimeRef.current = Date.now();
 
-    try {
-      e.currentTarget.releasePointerCapture(e.pointerId);
-    } catch {
-      // Ignored
-    }
+    if (isDraggingRef.current) {
+      isDraggingRef.current = false;
+      try {
+        if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+          e.currentTarget.releasePointerCapture(e.pointerId);
+        }
+      } catch {
+        // Ignored
+      }
 
-    setTimeout(() => {
+      setTimeout(() => {
+        setIsDragging(false);
+        dragDistanceRef.current = 0;
+      }, 50);
+
+      // Snap to closest card
+      const targetProgress = Math.round(currentProgressRef.current);
+      animateToProgress(targetProgress);
+    } else {
       setIsDragging(false);
       dragDistanceRef.current = 0;
-    }, 50);
-
-    // Snap to the closest card
-    const targetProgress = Math.round(currentProgressRef.current);
-    animateToProgress(targetProgress);
+    }
   };
 
   // Click any card to rotate it directly to the center apex, or navigate if already active
