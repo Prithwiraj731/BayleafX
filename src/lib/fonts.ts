@@ -1,4 +1,4 @@
-import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono, Caveat } from 'next/font/google';
 
 export const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -20,3 +20,11 @@ export const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
   weight: ['400', '500'],
 });
+
+export const caveat = Caveat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-caveat',
+  weight: ['500', '600', '700'],
+});
+

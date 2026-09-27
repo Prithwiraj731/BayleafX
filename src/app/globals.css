@@ -78,6 +78,8 @@
   --font-display: var(--font-sans), system-ui, -apple-system, sans-serif;
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono), monospace;
+  --font-caveat: var(--font-caveat), 'Caveat', cursive;
+  --font-handwriting: var(--font-caveat), 'Caveat', cursive;
 }
 
 html {

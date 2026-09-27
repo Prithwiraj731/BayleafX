@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, X, ChevronDown } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
 
@@ -101,6 +101,16 @@ const PRICING_PLANS: PricingPlan[] = [
 
 export const PricingSection: React.FC = () => {
   const [isYearly, setIsYearly] = useState(false);
+  const [expandedPlans, setExpandedPlans] = useState<Record<string, boolean>>({});
+
+  const toggleExpand = (planId: string) => {
+    setExpandedPlans((prev) => ({
+      ...prev,
+      [planId]: !prev[planId],
+    }));
+  };
+
+  const INITIAL_VISIBLE_COUNT = 5;
 
   return (
     <section
@@ -156,13 +166,16 @@ export const PricingSection: React.FC = () => {
         </div>
 
         {/* 3 Frosted Glassmorphic Cards matching Image 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
           {PRICING_PLANS.map((plan) => {
             const isCustom = plan.id === 'custom';
+            const isExpanded = !!expandedPlans[plan.id];
+            const remainingCount = plan.features.length - INITIAL_VISIBLE_COUNT;
 
             return (
               <motion.div
                 key={plan.id}
+                layout="position"
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
                 className={`relative flex flex-col justify-between rounded-3xl p-7 sm:p-9 backdrop-blur-2xl transition-all duration-300 ${
@@ -201,9 +214,9 @@ export const PricingSection: React.FC = () => {
 
                   <div className="my-6 border-b border-white/10" />
 
-                  {/* Feature Checklist with Ticks and Crosses */}
+                  {/* Feature Checklist - Initial Visible Services */}
                   <ul className="space-y-3.5">
-                    {plan.features.map((feature, fIdx) => (
+                    {plan.features.slice(0, INITIAL_VISIBLE_COUNT).map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-3 text-xs sm:text-sm">
                         {feature.included ? (
                           <>
@@ -223,6 +236,64 @@ export const PricingSection: React.FC = () => {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Expandable Remaining Services */}
+                  <AnimatePresence initial={false}>
+                    {isExpanded && (
+                      <motion.ul
+                        key="expanded-features"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="space-y-3.5 pt-3.5 overflow-hidden"
+                      >
+                        {plan.features.slice(INITIAL_VISIBLE_COUNT).map((feature, fIdx) => (
+                          <li key={fIdx + INITIAL_VISIBLE_COUNT} className="flex items-start gap-3 text-xs sm:text-sm">
+                            {feature.included ? (
+                              <>
+                                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400 mt-0.5">
+                                  <Check className="h-3.5 w-3.5 stroke-[3]" />
+                                </div>
+                                <span className="text-slate-200 font-medium">{feature.name}</span>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/5 text-slate-500 mt-0.5">
+                                  <X className="h-3.5 w-3.5 stroke-[2.5]" />
+                                </div>
+                                <span className="text-slate-500/80">{feature.name}</span>
+                              </>
+                            )}
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Expand / Collapse Button with Arrow */}
+                  {remainingCount > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => toggleExpand(plan.id)}
+                      className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors py-1.5 px-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 cursor-pointer"
+                      aria-expanded={isExpanded}
+                      aria-label={
+                        isExpanded
+                          ? `Show fewer services for ${plan.name}`
+                          : `Show all ${plan.features.length} services for ${plan.name}`
+                      }
+                    >
+                      <span>
+                        {isExpanded ? 'Show fewer services' : `+${remainingCount} more services`}
+                      </span>
+                      <ChevronDown
+                        className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                          isExpanded ? 'rotate-180' : 'rotate-0'
+                        }`}
+                      />
+                    </button>
+                  )}
                 </div>
 
                 {/* Bottom Action Button */}

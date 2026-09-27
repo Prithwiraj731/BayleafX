@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { plusJakartaSans, inter, jetbrainsMono } from '@/lib/fonts';
+import { plusJakartaSans, inter, jetbrainsMono, caveat } from '@/lib/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${plusJakartaSans.variable} ${inter.variable} ${jetbrainsMono.variable} ${caveat.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-white text-[#0F172A] font-body antialiased selection:bg-[#2D6A4F]/15 selection:text-[#1B4332]">
         {children}

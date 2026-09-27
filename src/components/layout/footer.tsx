@@ -21,14 +21,6 @@ export const Footer: React.FC = () => {
             <p className="max-w-sm font-sans text-sm text-slate-600 leading-relaxed">
               We design and build fast websites, custom web applications, and digital marketing that helps your business grow.
             </p>
-            <div>
-              <a
-                href="mailto:bayleafxtechnologies@gmail.com"
-                className="font-mono text-xs text-emerald-700 hover:text-emerald-800 font-semibold transition-colors"
-              >
-                bayleafxtechnologies@gmail.com
-              </a>
-            </div>
           </div>
 
           <div className="md:col-span-3">

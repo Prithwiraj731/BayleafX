@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, X, Sparkles } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { SectionHeader } from '@/components/layout/section-header';
 import { DIFFERENTIATORS } from '@/lib/constants';
@@ -27,9 +27,8 @@ export const DifferentiatorsSection: React.FC = () => {
           <div className="hidden md:grid md:grid-cols-12 border-b border-slate-200 bg-slate-50/80 font-mono text-[11px] uppercase tracking-wider font-semibold">
             <div className="md:col-span-4 p-4 text-slate-500">What Matters</div>
             <div className="md:col-span-4 p-4 text-slate-400">Other Agencies</div>
-            <div className="md:col-span-4 p-4 bg-[#E8F5E9]/70 text-[#1B4332] flex items-center gap-1.5 border-l border-slate-200/80">
-              <Sparkles className="h-3.5 w-3.5 text-[#2D6A4F]" />
-              <span>The BayleafX Way</span>
+            <div className="md:col-span-4 p-4 bg-[#E8F5E9]/70 text-[#1B4332] border-l border-slate-200/80">
+              The BayleafX Way
             </div>
           </div>
 

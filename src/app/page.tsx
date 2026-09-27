@@ -9,6 +9,7 @@ import { MetricsSection } from '@/components/sections/metrics';
 import { ProcessSection } from '@/components/sections/process';
 import { TestimonialsSection } from '@/components/sections/testimonials';
 import { PricingSection } from '@/components/sections/pricing';
+import { SocialDockSection } from '@/components/sections/social-dock-section';
 import { ContactSection } from '@/components/sections/contact';
 
 export default function HomePage() {
@@ -30,6 +31,7 @@ export default function HomePage() {
         <ProcessSection />
         <TestimonialsSection />
         <PricingSection />
+        <SocialDockSection />
         <ContactSection />
       </main>
       <Footer />
