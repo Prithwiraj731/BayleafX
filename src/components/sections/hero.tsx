@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FileText, Users, Zap, Star, ArrowRight, Play, TrendingUp } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 
@@ -196,6 +196,55 @@ function DarkAppCard({ isMobile = false }: { isMobile?: boolean }) {
   );
 }
 
+const ROTATING_WORDS = [
+  'modern',
+  'powerful',
+  'scalable',
+  'impactful',
+  'beautiful',
+];
+
+function HeroRotatingWord() {
+  const [index, setIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [shouldReduceMotion]);
+
+  return (
+    <span
+      className="relative inline-flex items-center justify-center overflow-hidden align-baseline rounded-md sm:rounded-lg px-[0.22em] py-[0.02em] bg-[#1B4332]/[0.07] border border-[#1B4332]/10 text-[#1B4332] text-[0.88em] min-[400px]:text-[0.92em] sm:text-[1em] min-w-[4.6em] sm:min-w-[4.8em] transition-[width] duration-300"
+      style={{
+        verticalAlign: 'baseline',
+      }}
+    >
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.span
+          key={ROTATING_WORDS[index]}
+          initial={shouldReduceMotion ? { opacity: 0 } : { y: '100%', opacity: 0 }}
+          animate={shouldReduceMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
+          exit={shouldReduceMotion ? { opacity: 0 } : { y: '-120%', opacity: 0 }}
+          transition={{
+            type: 'spring',
+            damping: 30,
+            stiffness: 400,
+          }}
+          className="inline-flex items-center justify-center whitespace-nowrap text-[#1B4332]"
+        >
+          {ROTATING_WORDS[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
 export const HeroSection: React.FC = () => {
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -354,27 +403,33 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-6 sm:mt-8 font-sans text-[36px] sm:text-[42px] md:text-[48px] lg:text-[50px] xl:text-[56px] font-black text-slate-900 leading-[1.06] sm:leading-[1.08] tracking-[-0.035em]"
+              className="mt-6 sm:mt-8 font-sans text-[32px] min-[390px]:text-[36px] sm:text-[42px] md:text-[46px] lg:text-[50px] xl:text-[56px] font-black text-slate-900 leading-[1.12] sm:leading-[1.08] tracking-[-0.035em] lg:-mx-12 xl:-mx-20"
             >
-              We build <span className="sm:hidden"><br /></span>
-              <span className="text-[#1B4332] whitespace-nowrap">modern websites &amp;</span>
-              <br />
-              <span className="text-[#1B4332]">apps</span> that grow your
-              <br />
-              <span className="relative inline-block">
-                business.
-                {/* Curved green underline swoosh */}
-                <svg
-                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2.5 sm:h-3.5 pointer-events-none"
-                  viewBox="0 0 160 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 10C45 3 115 3 157 10C115 4.5 45 4.5 3 10Z"
-                    fill="#2D6A4F"
-                  />
-                </svg>
+              <span className="sr-only">
+                We build modern, powerful, scalable, impactful, and beautiful websites &amp; apps that grow your business.
+              </span>
+              <span aria-hidden="true" className="block">
+                <span>We build</span>
+                <br />
+                <HeroRotatingWord />{' '}
+                <span className="inline-block text-[#1B4332]">websites &amp; apps</span>
+                <br />
+                <span>that grow your </span>
+                <span className="relative inline-block">
+                  business.
+                  {/* Curved green underline swoosh */}
+                  <svg
+                    className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2.5 sm:h-3.5 pointer-events-none"
+                    viewBox="0 0 160 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 10C45 3 115 3 157 10C115 4.5 45 4.5 3 10Z"
+                      fill="#2D6A4F"
+                    />
+                  </svg>
+                </span>
               </span>
             </motion.h1>
 
