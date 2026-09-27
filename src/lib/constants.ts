@@ -8,12 +8,12 @@ import {
 } from '@/types';
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Services', href: '#services' },
   { label: 'Why Us', href: '#differentiators' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'Results', href: '#metrics' },
+  { label: 'Services', href: '#services' },
   { label: 'How It Works', href: '#process' },
   { label: 'Reviews', href: '#testimonials' },
+  { label: 'Pricing', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
 ];
 

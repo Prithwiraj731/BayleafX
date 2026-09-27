@@ -19,6 +19,21 @@ export interface ServicePillar {
   services: ServiceItem[];
 }
 
+export interface TiltedCardServiceItem {
+  id: string;
+  label: string;
+  title: string;
+  description: string;
+  ctaHref?: string;
+  tag?: string;
+  subtitle?: string;
+  features?: string[];
+  ctaText?: string;
+  badge?: string;
+  slug?: string;
+  pillarName?: string;
+}
+
 export interface MetricItem {
   value: number;
   suffix?: string;

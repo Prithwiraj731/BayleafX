@@ -26,10 +26,15 @@ export const Logo: React.FC<LogoProps> = ({
       <Image
         src="/logo-dark-text.svg"
         alt="BayleafX"
-        width={1482}
-        height={222}
+        width={220}
+        height={33}
         priority
         unoptimized
+        style={{
+          height: size === 'sm' ? '24px' : size === 'lg' ? '42px' : '32px',
+          width: 'auto',
+          maxHeight: size === 'sm' ? '24px' : size === 'lg' ? '42px' : '32px',
+        }}
         className={`object-contain transition-opacity duration-200 hover:opacity-90 ${sizeClasses[size]}`}
       />
       <span className="sr-only">BayleafX</span>

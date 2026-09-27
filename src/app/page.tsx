@@ -24,9 +24,9 @@ export default function HomePage() {
       <main id="main-content" className="flex flex-col">
         <HeroSection />
         <TechStackCarousel />
-        <ServicesSection />
         <DifferentiatorsSection />
         <MetricsSection />
+        <ServicesSection />
         <ProcessSection />
         <TestimonialsSection />
         <PricingSection />

@@ -47,20 +47,25 @@ const InteractiveHoverButton = React.forwardRef<
       )}
       {...props}
     >
-      <span className="inline-flex items-center gap-1.5 transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
-        {content}
-      </span>
-      <div className="hover-text absolute inset-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-        <span>{content}</span>
+      {/* Resting state: Dot + Text with generous, elegant spacing */}
+      <div className="flex items-center justify-center gap-2.5 sm:gap-3">
+        <div className="dot-bg h-2 w-2 rounded-full shrink-0 transition-transform duration-500 ease-out group-hover:scale-[100]" />
+        <span className="inline-block whitespace-nowrap transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
+          {content}
+        </span>
+      </div>
+
+      {/* Hover state: Content + Arrow sliding smoothly to center */}
+      <div className="hover-text absolute inset-0 z-20 flex h-full w-full translate-x-12 items-center justify-center gap-2.5 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+        <span className="whitespace-nowrap">{content}</span>
         <ArrowRight className="h-4 w-4" />
       </div>
-      <div className="dot-bg absolute left-[12%] top-[42%] h-2 w-2 scale-[1] rounded-full transition-all duration-400 ease-out group-hover:left-0 group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:scale-[2.2]" />
     </button>
   );
 
   if (href) {
     return (
-      <Link href={href} className="inline-block">
+      <Link href={href} className={cn("inline-block", className?.includes("w-full") && "w-full")}>
         {buttonElement}
       </Link>
     );

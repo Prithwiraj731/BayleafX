@@ -126,9 +126,9 @@ function ContactFormInner() {
             <p className="font-sans text-xs text-slate-500 mb-1 font-semibold">Direct Email:</p>
             <a
               href="mailto:bayleafxtechnologies@gmail.com"
-              className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4"
+              className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4 whitespace-nowrap"
             >
-              <Mail className="h-4 w-4" />
+              <Mail className="h-4 w-4 shrink-0" />
               <span>bayleafxtechnologies@gmail.com</span>
             </a>
           </div>
@@ -138,9 +138,9 @@ function ContactFormInner() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4"
+              className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors underline underline-offset-4 whitespace-nowrap"
             >
-              <MessageCircle className="h-4 w-4" />
+              <MessageCircle className="h-4 w-4 shrink-0" />
               <span>+91 70700 72227</span>
             </a>
           </div>

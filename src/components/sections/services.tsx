@@ -2,89 +2,53 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Monitor, Palette, TrendingUp, ArrowUpRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Container } from '@/components/layout/container';
 import { SectionHeader } from '@/components/layout/section-header';
-import { SERVICE_PILLARS } from '@/lib/constants';
-import { fadeInUp, staggerContainer } from '@/lib/animations';
-
-const PILLAR_ICONS = [Monitor, Palette, TrendingUp];
+import { TiltedCardCarousel } from '@/components/ui/tilted-card-carousel';
+import { SERVICES_CAROUSEL_DATA } from '@/lib/services-data';
 
 export const ServicesSection: React.FC = () => {
   return (
-    <section id="services" className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80">
+    <section
+      id="services"
+      className="py-16 md:py-24 bg-[#F8FAF9] border-t border-b border-slate-200/80 overflow-x-clip relative"
+    >
+      {/* Background ambient lighting accents */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-emerald-50/50 via-transparent to-transparent pointer-events-none -z-10" />
+
       <Container>
         <SectionHeader
           title="Everything you need to grow online."
-          description="From custom websites and web applications to modern design and marketing, we take care of it all under one roof."
+          description="From custom web applications and clickable product design to full-scale social media handling and paid advertising funnels, we build, scale, and manage it all under one roof."
         />
+      </Container>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8"
-        >
-          {SERVICE_PILLARS.map((pillar, pillarIdx) => {
-            const pillarNum = String(pillarIdx + 1).padStart(2, '0');
-            const Icon = PILLAR_ICONS[pillarIdx] || Monitor;
+      {/* True Half-Circle Curved Arc Carousel */}
+      <div className="mt-4 sm:mt-6">
+        <TiltedCardCarousel items={SERVICES_CAROUSEL_DATA} />
+      </div>
 
-            return (
-              <motion.div
-                key={pillar.name}
-                variants={fadeInUp}
-                className="bl-card p-7 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-[#2D6A4F]/40 transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E8F5E9] text-[#1B4332]">
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#1B4332]">
-                        {pillar.name}
-                      </span>
-                    </div>
+      {/* Bottom CTA & Support Note */}
+      <Container className="mt-12 md:mt-16">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs max-w-4xl mx-auto">
+          <div>
+            <h4 className="font-sans text-sm sm:text-base font-bold text-slate-900">
+              Need a custom scope or ongoing retainer?
+            </h4>
+            <p className="font-body text-xs sm:text-sm text-slate-500">
+              We craft tailored packages mixing development, UI/UX, and marketing.
+            </p>
+          </div>
 
-                    <span className="font-mono text-xs font-bold text-slate-400">
-                      {pillarNum}
-                    </span>
-                  </div>
-
-                  <div className="my-5 border-b border-slate-100" />
-
-                  <div className="space-y-5">
-                    {pillar.services.map((service) => (
-                      <div key={service.title} className="group/item">
-                        <div className="flex items-start gap-2.5">
-                          <Check className="h-4 w-4 text-[#2D6A4F] shrink-0 mt-0.5" />
-                          <div>
-                            <h3 className="font-body text-[15px] font-semibold text-slate-900 group-hover/item:text-[#1B4332] transition-colors">
-                              {service.title}
-                            </h3>
-                            <p className="mt-1 font-body text-xs sm:text-[13px] leading-relaxed text-slate-500">
-                              {service.subtitle}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <Link
-                  href={`/services/${pillar.slug || 'web-app-development'}`}
-                  className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#1B4332] group-hover:text-[#2D6A4F] transition-colors"
-                >
-                  <span>Explore capabilities</span>
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+          <Link
+            href="#contact"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1B4332] text-white text-xs sm:text-sm font-semibold hover:bg-[#2D6A4F] transition-all shadow-xs shrink-0"
+          >
+            <span>Discuss Your Project</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </Container>
     </section>
   );
