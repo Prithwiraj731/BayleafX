@@ -1,6 +1,7 @@
 'use client';
 
 import React, { forwardRef } from 'react';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { TiltedCardServiceItem } from '@/types';
 
@@ -460,12 +461,18 @@ export const TiltedCard = forwardRef<HTMLDivElement, TiltedCardProps>(
             </p>
 
             {/* Modern Subtle Explore Link */}
-            <div className="mt-3.5 pt-2.5 border-t border-slate-100 w-full flex items-center justify-between px-1">
-              <span className="text-[11px] font-semibold text-[#1B4332] group-hover:text-[#2D6A4F] transition-colors">
+            <Link
+              href={service.ctaHref || '/services'}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              className="mt-3.5 pt-2.5 border-t border-slate-100 w-full flex items-center justify-between px-1 group/link hover:opacity-80 transition-opacity"
+            >
+              <span className="text-[11px] font-semibold text-[#1B4332] group-hover/link:text-[#2D6A4F] transition-colors">
                 Explore service
               </span>
-              <ArrowUpRight className="h-3.5 w-3.5 text-[#1B4332] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </div>
+              <ArrowUpRight className="h-3.5 w-3.5 text-[#1B4332] transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+            </Link>
           </div>
         </div>
 

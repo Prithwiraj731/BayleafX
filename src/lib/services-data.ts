@@ -7,8 +7,8 @@ export const SERVICES_CAROUSEL_DATA: TiltedCardServiceItem[] = [
     title: 'E-commerce Development',
     description:
       'Develop secure, conversion-optimized online stores with payment integration, inventory management, and admin dashboards.',
-    ctaHref: '/services/web-app-development',
-    slug: 'web-app-development',
+    ctaHref: '/services/ecommerce-development',
+    slug: 'ecommerce-development',
   },
   {
     id: 'maintenance',
@@ -16,8 +16,8 @@ export const SERVICES_CAROUSEL_DATA: TiltedCardServiceItem[] = [
     title: 'Website Maintenance & Support',
     description:
       'Ongoing updates, security monitoring, bug fixes, and performance improvements to keep your site running smoothly.',
-    ctaHref: '/services/web-app-development',
-    slug: 'web-app-development',
+    ctaHref: '/services/website-maintenance',
+    slug: 'website-maintenance',
   },
   {
     id: 'uiux',
@@ -25,8 +25,8 @@ export const SERVICES_CAROUSEL_DATA: TiltedCardServiceItem[] = [
     title: 'UI/UX Design',
     description:
       'Create intuitive, visually engaging user experiences that improve usability, retention, and conversions.',
-    ctaHref: '/services/design-user-experience',
-    slug: 'design-user-experience',
+    ctaHref: '/services/ui-ux-design',
+    slug: 'ui-ux-design',
   },
   {
     id: 'webapp',
@@ -43,8 +43,8 @@ export const SERVICES_CAROUSEL_DATA: TiltedCardServiceItem[] = [
     title: 'Social Media Handling',
     description:
       'End-to-end content creation, daily posting, reels, and community engagement to grow your audience and brand trust.',
-    ctaHref: '/services/marketing-growth',
-    slug: 'marketing-growth',
+    ctaHref: '/services/social-media-management',
+    slug: 'social-media-management',
   },
   {
     id: 'paidads',
@@ -52,8 +52,8 @@ export const SERVICES_CAROUSEL_DATA: TiltedCardServiceItem[] = [
     title: 'Paid Ads (Google & Meta)',
     description:
       'Targeted Google and Meta ad campaigns engineered to acquire qualified customers and maximize return on ad spend.',
-    ctaHref: '/services/marketing-growth',
-    slug: 'marketing-growth',
+    ctaHref: '/services/paid-advertising',
+    slug: 'paid-advertising',
   },
   {
     id: 'seo',
@@ -61,7 +61,7 @@ export const SERVICES_CAROUSEL_DATA: TiltedCardServiceItem[] = [
     title: 'Google SEO & Growth',
     description:
       'Optimize search rankings and publish high-authority content that drives consistent organic visitors month after month.',
-    ctaHref: '/services/marketing-growth',
-    slug: 'marketing-growth',
+    ctaHref: '/services/seo-growth',
+    slug: 'seo-growth',
   },
 ];

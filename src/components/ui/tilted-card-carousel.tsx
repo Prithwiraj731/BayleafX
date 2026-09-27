@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+import { useRouter } from 'next/navigation';
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 import { TiltedCardServiceItem } from '@/types';
 import { TiltedCard } from '@/components/ui/tilted-card';
@@ -17,6 +18,7 @@ export const TiltedCardCarousel: React.FC<TiltedCardCarouselProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const router = useRouter();
   const N = items.length;
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -250,10 +252,18 @@ export const TiltedCardCarousel: React.FC<TiltedCardCarouselProps> = ({
     animateToProgress(targetProgress);
   };
 
-  // Click any card to rotate it directly to the center apex
+  // Click any card to rotate it directly to the center apex, or navigate if already active
   const handleCardClick = (itemIdx: number) => {
     if (dragDistanceRef.current > 8) return;
     lastInteractionTimeRef.current = Date.now();
+
+    // If card is already in the center apex, navigate directly to its dedicated page
+    if (itemIdx === activeIndexRef.current) {
+      if (items[itemIdx].ctaHref) {
+        router.push(items[itemIdx].ctaHref!);
+      }
+      return;
+    }
 
     let diff = (itemIdx - currentProgressRef.current) % N;
     if (diff > N / 2) diff -= N;
