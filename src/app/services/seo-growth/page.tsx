@@ -135,7 +135,7 @@ export default function SeoGrowthPage() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
       <Navbar />
 
-      <main className="pt-20 sm:pt-24 pb-20">
+      <main className="pt-16 pb-20">
         {/* Full-Width Background Image Carousel Hero Section */}
         <ServiceHero
           breadcrumbTitle="Google SEO & Growth"

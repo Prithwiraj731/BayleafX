@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
@@ -9,6 +10,10 @@ import { Button } from '@/components/ui/button';
 import { NAV_LINKS, WHATSAPP_URL } from '@/lib/constants';
 
 export const Navbar: React.FC = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === '/';
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -32,17 +37,36 @@ export const Navbar: React.FC = () => {
     };
   }, [mobileMenuOpen]);
 
+  // Handle auto-scroll when arriving at homepage with a hash (e.g. /#services)
+  useEffect(() => {
+    if (isHome && typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash;
+      const timer = setTimeout(() => {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isHome, pathname]);
+
   const handleLinkClick = (e: React.MouseEvent<HTMLElement>, href: string) => {
+    setMobileMenuOpen(false);
+
     if (href.startsWith('#')) {
-      if (typeof window !== 'undefined' && window.location.pathname !== '/') {
-        // We are on a subpage, navigate to home with hash
-        return;
-      }
-      e.preventDefault();
-      setMobileMenuOpen(false);
-      const targetElement = document.querySelector(href);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (isHome) {
+        e.preventDefault();
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.pushState(null, '', href);
+        }
+      } else {
+        // We are on a subpage (e.g., /services/web-app-development)
+        // Redirect directly to the homepage anchor
+        e.preventDefault();
+        router.push(`/${href}`);
       }
     }
   };
@@ -66,10 +90,7 @@ export const Navbar: React.FC = () => {
 
             <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
               {NAV_LINKS.map((link) => {
-                const targetHref =
-                  typeof window !== 'undefined' && window.location.pathname !== '/' && link.href.startsWith('#')
-                    ? `/${link.href}`
-                    : link.href;
+                const targetHref = isHome ? link.href : `/${link.href}`;
 
                 return (
                   <a
@@ -121,16 +142,19 @@ export const Navbar: React.FC = () => {
             style={{ backgroundColor: '#FFFFFF' }}
           >
             <nav className="flex flex-col items-center justify-center flex-1 gap-5 py-4">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleLinkClick(e, link.href)}
-                  className="font-sans text-xl font-bold tracking-tight text-slate-900 hover:text-emerald-700 transition-colors py-1.5"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const targetHref = isHome ? link.href : `/${link.href}`;
+                return (
+                  <a
+                    key={link.label}
+                    href={targetHref}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="font-sans text-xl font-bold tracking-tight text-slate-900 hover:text-emerald-700 transition-colors py-1.5"
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </nav>
 
             <div className="pb-8 pt-4 border-t border-slate-100">

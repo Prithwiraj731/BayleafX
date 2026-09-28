@@ -73,12 +73,12 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
           );
         })}
 
-        {/* Deep Dark Forest Multi-Stop Overlay for High-Contrast Text Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#040D0A]/95 via-[#06140F]/85 to-[#081B14]/65 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#040D0A] via-[#040D0A]/60 to-transparent z-10" />
+        {/* Multi-Stop Overlay Calibrated to Reveal Background Images While Keeping Text Crisp */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#040D0A]/85 via-[#040D0A]/55 to-[#040D0A]/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#05110D]/75 via-transparent to-[#05110D]/30 z-10" />
 
         {/* Subtle Ambient Brand Emerald Radial Glow */}
-        <div className="absolute top-0 right-1/4 w-[700px] h-[400px] bg-radial from-[#1B4332]/45 via-transparent to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 right-1/4 w-[700px] h-[400px] bg-radial from-[#1B4332]/30 via-transparent to-transparent pointer-events-none z-10" />
 
         {/* Subtle Grid Texture */}
         <div
@@ -93,31 +93,31 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
       {/* Content Container aligned with site grid */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 flex flex-col justify-between min-h-[460px] sm:min-h-[500px] md:min-h-[540px]">
         {/* Breadcrumb Navigation */}
-        <div className="flex items-center gap-2 text-xs font-semibold text-slate-300">
+        <div className="flex items-center gap-2 text-xs font-semibold text-slate-200 drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]">
           <Link
             href="/"
-            className="hover:text-white transition-colors text-slate-400"
+            className="hover:text-white transition-colors text-slate-300"
           >
             Home
           </Link>
-          <span className="text-slate-500">/</span>
+          <span className="text-slate-400">/</span>
           <Link
             href="/services"
-            className="hover:text-white transition-colors text-slate-400"
+            className="hover:text-white transition-colors text-slate-300"
           >
             Services
           </Link>
-          <span className="text-slate-500">/</span>
+          <span className="text-slate-400">/</span>
           <span className="text-emerald-300 font-bold">{breadcrumbTitle}</span>
         </div>
 
         {/* Main Heading & Description */}
         <div className="my-auto py-8 sm:py-10 max-w-3xl">
-          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-white tracking-tight leading-[1.08] drop-shadow-sm">
+          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-white tracking-tight leading-[1.08] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
             {title}
           </h1>
 
-          <p className="mt-4 sm:mt-5 font-body text-base sm:text-lg text-slate-200/90 leading-relaxed max-w-2xl">
+          <p className="mt-4 sm:mt-5 font-body text-base sm:text-lg text-slate-100 leading-relaxed max-w-2xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
             {description}
           </p>
 
