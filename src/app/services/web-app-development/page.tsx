@@ -102,25 +102,22 @@ export default function WebAppDevelopmentPage() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
       <Navbar />
 
-      <main className="pt-28 pb-20">
-        {/* Breadcrumb & Header */}
-        <Container>
-          {/* Background Image Carousel Hero Section */}
-          <ServiceHero
-            breadcrumbTitle="Web & App Development"
-            badgeText="Engineering Excellence"
-            badgeIconKey="webapp"
-            title="Web & Custom Application Development"
-            description="We design and engineer lightning-fast digital products that elevate your brand, load instantly, and turn visitors into loyal customers. No templates, no bloat—pure high-performance craftsmanship."
-            images={HERO_IMAGES}
-            ctaPrimaryText="Discuss Your Project"
-            ctaPrimaryHref="#contact"
-            ctaSecondaryText="Explore Deliverables"
-            ctaSecondaryHref="#capabilities"
-          />
+      <main className="pt-20 sm:pt-24 pb-20">
+        {/* Full-Width Background Image Carousel Hero Section */}
+        <ServiceHero
+          breadcrumbTitle="Web & App Development"
+          title="Web & Custom Application Development"
+          description="We design and engineer lightning-fast digital products that elevate your brand, load instantly, and turn visitors into loyal customers. No templates, no bloat—pure high-performance craftsmanship."
+          images={HERO_IMAGES}
+          ctaPrimaryText="Discuss Your Project"
+          ctaPrimaryHref="#contact"
+          ctaSecondaryText="Explore Deliverables"
+          ctaSecondaryHref="#capabilities"
+        />
 
+        <Container className="mt-10 sm:mt-12">
           {/* Tech stack badge row */}
-          <div className="mt-8 flex flex-wrap items-center gap-2 pt-6 border-t border-slate-100">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400 mr-2">Core Tech:</span>
             {TECH_BADGES.map((badge) => (
               <span

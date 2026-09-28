@@ -135,24 +135,22 @@ export default function UiUxDesignPage() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
       <Navbar />
 
-      <main className="pt-28 pb-20">
-        <Container>
-          {/* Background Image Carousel Hero Section */}
-          <ServiceHero
-            breadcrumbTitle="UI/UX Design"
-            badgeText="Product Design & Systems"
-            badgeIconKey="uiux"
-            title="Human-Centered UI/UX Design & Systems"
-            description="We design intuitive interfaces, clickable Figma prototypes, and complete design systems that make digital products effortless to use and impossible to forget. Every typography choice, spacing unit, and interaction serves your users."
-            images={HERO_IMAGES}
-            ctaPrimaryText="Discuss Your Project"
-            ctaPrimaryHref="#contact"
-            ctaSecondaryText="Explore Deliverables"
-            ctaSecondaryHref="#deliverables"
-          />
+      <main className="pt-20 sm:pt-24 pb-20">
+        {/* Full-Width Background Image Carousel Hero Section */}
+        <ServiceHero
+          breadcrumbTitle="UI/UX Design"
+          title="Human-Centered UI/UX Design & Systems"
+          description="We design intuitive interfaces, clickable Figma prototypes, and complete design systems that make digital products effortless to use and impossible to forget. Every typography choice, spacing unit, and interaction serves your users."
+          images={HERO_IMAGES}
+          ctaPrimaryText="Discuss Your Project"
+          ctaPrimaryHref="#contact"
+          ctaSecondaryText="Explore Deliverables"
+          ctaSecondaryHref="#deliverables"
+        />
 
+        <Container className="mt-12 sm:mt-16">
           {/* Key Metric Highlights */}
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
             <div>
               <span className="block font-sans text-2xl sm:text-3xl font-black text-slate-900">
                 100%

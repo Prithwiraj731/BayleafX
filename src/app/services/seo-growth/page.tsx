@@ -135,24 +135,22 @@ export default function SeoGrowthPage() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
       <Navbar />
 
-      <main className="pt-28 pb-20">
-        <Container>
-          {/* Background Image Carousel Hero Section */}
-          <ServiceHero
-            breadcrumbTitle="Google SEO & Growth"
-            badgeText="Compounding Organic Reach"
-            badgeIconKey="seo"
-            title="Google SEO & Organic Search Growth"
-            description="We engineer comprehensive search engine optimization strategies: technical Core Web Vitals fixes, high-intent programmatic keyword clustering, structured schema markup, and authoritative editorial content that compounds month over month."
-            images={HERO_IMAGES}
-            ctaPrimaryText="Discuss Your Project"
-            ctaPrimaryHref="#contact"
-            ctaSecondaryText="Explore Deliverables"
-            ctaSecondaryHref="#deliverables"
-          />
+      <main className="pt-20 sm:pt-24 pb-20">
+        {/* Full-Width Background Image Carousel Hero Section */}
+        <ServiceHero
+          breadcrumbTitle="Google SEO & Growth"
+          title="Google SEO & Organic Search Growth"
+          description="We engineer comprehensive search engine optimization strategies: technical Core Web Vitals fixes, high-intent programmatic keyword clustering, structured schema markup, and authoritative editorial content that compounds month over month."
+          images={HERO_IMAGES}
+          ctaPrimaryText="Discuss Your Project"
+          ctaPrimaryHref="#contact"
+          ctaSecondaryText="Explore Deliverables"
+          ctaSecondaryHref="#deliverables"
+        />
 
+        <Container className="mt-12 sm:mt-16">
           {/* Key Metric Highlights */}
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
             <div>
               <span className="block font-sans text-2xl sm:text-3xl font-black text-slate-900">
                 100%

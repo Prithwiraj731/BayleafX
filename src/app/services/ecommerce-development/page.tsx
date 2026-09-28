@@ -137,24 +137,22 @@ export default function EcommerceDevelopmentPage() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
       <Navbar />
 
-      <main className="pt-28 pb-20">
-        <Container>
-          {/* Background Image Carousel Hero Section */}
-          <ServiceHero
-            breadcrumbTitle="E-commerce Development"
-            badgeText="E-Commerce Architecture"
-            badgeIconKey="ecommerce"
-            title="E-commerce Development Built for Conversions & Scale"
-            description="We engineer fast, secure, and frictionless online stores designed to turn casual browsers into repeat buyers. From custom Shopify setups to headless Next.js commerce, we eliminate checkout drop-offs and scale with your inventory."
-            images={HERO_IMAGES}
-            ctaPrimaryText="Discuss Your Project"
-            ctaPrimaryHref="#contact"
-            ctaSecondaryText="Explore Deliverables"
-            ctaSecondaryHref="#deliverables"
-          />
+      <main className="pt-20 sm:pt-24 pb-20">
+        {/* Full-Width Background Image Carousel Hero Section */}
+        <ServiceHero
+          breadcrumbTitle="E-commerce Development"
+          title="E-commerce Development Built for Conversions & Scale"
+          description="We engineer fast, secure, and frictionless online stores designed to turn casual browsers into repeat buyers. From custom Shopify setups to headless Next.js commerce, we eliminate checkout drop-offs and scale with your inventory."
+          images={HERO_IMAGES}
+          ctaPrimaryText="Discuss Your Project"
+          ctaPrimaryHref="#contact"
+          ctaSecondaryText="Explore Deliverables"
+          ctaSecondaryHref="#deliverables"
+        />
 
+        <Container className="mt-12 sm:mt-16">
           {/* Key Metric Highlights */}
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
             <div>
               <span className="block font-sans text-2xl sm:text-3xl font-black text-slate-900">
                 &lt; 1.2s
