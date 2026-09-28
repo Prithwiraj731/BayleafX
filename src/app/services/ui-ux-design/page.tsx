@@ -7,12 +7,12 @@ import {
   Compass,
   MousePointerClick,
   Palette,
-  Sparkles,
   Smartphone,
 } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
+import { ServiceHero, ServiceHeroImage } from '@/components/sections/service-hero';
 
 export const metadata: Metadata = {
   title: 'UI/UX Design Services | BayleafX',
@@ -107,6 +107,29 @@ const FAQS = [
   },
 ];
 
+const HERO_IMAGES: ServiceHeroImage[] = [
+  {
+    url: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Product designer refining user interface flows on Apple workstation',
+    caption: 'Interactive Figma Prototypes & User Testing',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Creative design studio workspace with design system components',
+    caption: 'Comprehensive Multi-Platform Design Systems',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Design team collaborating on mobile wireframes and interaction flows',
+    caption: 'User Journey Mapping & Ergonomic Layouts',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Digital product presentation with token architecture',
+    caption: 'Clean Token Architecture & Developer Handoff',
+  },
+];
+
 export default function UiUxDesignPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
@@ -114,32 +137,19 @@ export default function UiUxDesignPage() {
 
       <main className="pt-28 pb-20">
         <Container>
-          {/* Breadcrumb Navigation */}
-          <div className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <Link href="/" className="hover:text-slate-900 transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-slate-900 transition-colors">
-              Services
-            </Link>
-            <span>/</span>
-            <span className="text-[#1B4332] font-bold">UI/UX Design</span>
-          </div>
-
-          {/* Hero Header */}
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1B4332] mb-4">
-              <Sparkles className="h-3.5 w-3.5" />
-              Product Design &amp; Systems
-            </div>
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
-              Human-Centered UI/UX Design &amp; Systems
-            </h1>
-            <p className="mt-5 font-body text-base sm:text-lg text-slate-600 leading-relaxed">
-              We design intuitive interfaces, clickable Figma prototypes, and complete design systems that make digital products effortless to use and impossible to forget. Every typography choice, spacing unit, and interaction serves your users.
-            </p>
-          </div>
+          {/* Background Image Carousel Hero Section */}
+          <ServiceHero
+            breadcrumbTitle="UI/UX Design"
+            badgeText="Product Design & Systems"
+            badgeIconKey="uiux"
+            title="Human-Centered UI/UX Design & Systems"
+            description="We design intuitive interfaces, clickable Figma prototypes, and complete design systems that make digital products effortless to use and impossible to forget. Every typography choice, spacing unit, and interaction serves your users."
+            images={HERO_IMAGES}
+            ctaPrimaryText="Discuss Your Project"
+            ctaPrimaryHref="#contact"
+            ctaSecondaryText="Explore Deliverables"
+            ctaSecondaryHref="#deliverables"
+          />
 
           {/* Key Metric Highlights */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
@@ -234,7 +244,7 @@ export default function UiUxDesignPage() {
           </div>
 
           {/* Deliverables Checklist */}
-          <div className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10">
+          <div id="deliverables" className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10 scroll-mt-28">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#1B4332] font-bold">
                 Deliverables Package

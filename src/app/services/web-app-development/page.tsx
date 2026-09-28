@@ -1,11 +1,12 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle2, Code2, Database, Globe, Layers, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Code2, Database, Globe, Layers, ShieldCheck } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
+import { ServiceHero, ServiceHeroImage } from '@/components/sections/service-hero';
 
 export const metadata: Metadata = {
   title: 'Web & App Development Services | BayleafX',
@@ -73,6 +74,29 @@ const TECH_BADGES = [
   'REST & GraphQL',
 ];
 
+const HERO_IMAGES: ServiceHeroImage[] = [
+  {
+    url: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Full-stack software developer writing production code on modern setup',
+    caption: 'Modern React & Next.js Architecture',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80',
+    alt: 'High-contrast code editor showing clean modular TypeScript architecture',
+    caption: 'Scalable Microservices & Cloud APIs',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Software engineers reviewing application performance before deployment',
+    caption: 'Enterprise Security & Strict QA Testing',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Dual-monitor engineering workspace with automated build pipeline',
+    caption: 'Instant Page Loads & Zero Layout Shift',
+  },
+];
+
 export default function WebAppDevelopmentPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
@@ -81,30 +105,19 @@ export default function WebAppDevelopmentPage() {
       <main className="pt-28 pb-20">
         {/* Breadcrumb & Header */}
         <Container>
-          <div className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <Link href="/" className="hover:text-slate-900 transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-slate-900 transition-colors">
-              Services
-            </Link>
-            <span>/</span>
-            <span className="text-[#1B4332] font-bold">Web &amp; App Development</span>
-          </div>
-
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1B4332] mb-4">
-              <Zap className="h-3.5 w-3.5" />
-              Engineering Excellence
-            </div>
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-              Web &amp; Custom Application Development
-            </h1>
-            <p className="mt-5 font-body text-base sm:text-lg text-slate-600 leading-relaxed">
-              We design and engineer lightning-fast digital products that elevate your brand, load instantly, and turn visitors into loyal customers. No templates, no bloat—pure high-performance craftsmanship.
-            </p>
-          </div>
+          {/* Background Image Carousel Hero Section */}
+          <ServiceHero
+            breadcrumbTitle="Web & App Development"
+            badgeText="Engineering Excellence"
+            badgeIconKey="webapp"
+            title="Web & Custom Application Development"
+            description="We design and engineer lightning-fast digital products that elevate your brand, load instantly, and turn visitors into loyal customers. No templates, no bloat—pure high-performance craftsmanship."
+            images={HERO_IMAGES}
+            ctaPrimaryText="Discuss Your Project"
+            ctaPrimaryHref="#contact"
+            ctaSecondaryText="Explore Deliverables"
+            ctaSecondaryHref="#capabilities"
+          />
 
           {/* Tech stack badge row */}
           <div className="mt-8 flex flex-wrap items-center gap-2 pt-6 border-t border-slate-100">
@@ -121,7 +134,7 @@ export default function WebAppDevelopmentPage() {
         </Container>
 
         {/* Detailed Capabilities Grid */}
-        <div className="mt-16 bg-[#F8FAF9] py-16 border-y border-slate-200/80">
+        <div id="capabilities" className="mt-16 bg-[#F8FAF9] py-16 border-y border-slate-200/80 scroll-mt-28">
           <Container>
             <div className="max-w-2xl mb-12">
               <h2 className="font-sans text-2xl sm:text-3xl font-bold text-slate-900">

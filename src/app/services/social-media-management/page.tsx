@@ -7,12 +7,12 @@ import {
   Clapperboard,
   MessageSquare,
   PenTool,
-  Share2,
   Sparkles,
 } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
+import { ServiceHero, ServiceHeroImage } from '@/components/sections/service-hero';
 
 export const metadata: Metadata = {
   title: 'Social Media Handling & Content Creation Services | BayleafX',
@@ -107,6 +107,29 @@ const FAQS = [
   },
 ];
 
+const HERO_IMAGES: ServiceHeroImage[] = [
+  {
+    url: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Smartphone with curated social media content feed',
+    caption: 'Strategic Content Architecture & Brand Identity',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Professional content creator studio camera and studio lighting',
+    caption: 'High-Retention Short-Form Reels & Video Production',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Creative social media marketing team planning monthly content calendar',
+    caption: 'Monthly Content Scheduling & Publishing',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Creative digital video editing workspace',
+    caption: 'Community Management & Engagement Workflows',
+  },
+];
+
 export default function SocialMediaManagementPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
@@ -114,32 +137,19 @@ export default function SocialMediaManagementPage() {
 
       <main className="pt-28 pb-20">
         <Container>
-          {/* Breadcrumb Navigation */}
-          <div className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <Link href="/" className="hover:text-slate-900 transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-slate-900 transition-colors">
-              Services
-            </Link>
-            <span>/</span>
-            <span className="text-[#1B4332] font-bold">Social Media Handling</span>
-          </div>
-
-          {/* Hero Header */}
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1B4332] mb-4">
-              <Share2 className="h-3.5 w-3.5" />
-              Organic Brand Authority
-            </div>
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
-              Strategic Social Media Handling &amp; Storytelling
-            </h1>
-            <p className="mt-5 font-body text-base sm:text-lg text-slate-600 leading-relaxed">
-              We handle your social media presence end-to-end: high-retention short-form reels, bespoke design assets, daily scheduling, and authentic community engagement that builds authority and drives organic inbound leads.
-            </p>
-          </div>
+          {/* Background Image Carousel Hero Section */}
+          <ServiceHero
+            breadcrumbTitle="Social Media Handling"
+            badgeText="Organic Brand Authority"
+            badgeIconKey="social"
+            title="Strategic Social Media Handling & Storytelling"
+            description="We handle your social media presence end-to-end: high-retention short-form reels, bespoke design assets, daily scheduling, and authentic community engagement that builds authority and drives organic inbound leads."
+            images={HERO_IMAGES}
+            ctaPrimaryText="Discuss Your Project"
+            ctaPrimaryHref="#contact"
+            ctaSecondaryText="Explore Deliverables"
+            ctaSecondaryHref="#deliverables"
+          />
 
           {/* Key Metric Highlights */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
@@ -234,7 +244,7 @@ export default function SocialMediaManagementPage() {
           </div>
 
           {/* Deliverables Checklist */}
-          <div className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10">
+          <div id="deliverables" className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10 scroll-mt-28">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#1B4332] font-bold">
                 Monthly Deliverables

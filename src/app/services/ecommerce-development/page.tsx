@@ -12,6 +12,7 @@ import {
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
+import { ServiceHero, ServiceHeroImage } from '@/components/sections/service-hero';
 
 export const metadata: Metadata = {
   title: 'E-commerce Development Services | BayleafX',
@@ -108,6 +109,29 @@ const FAQS = [
   },
 ];
 
+const HERO_IMAGES: ServiceHeroImage[] = [
+  {
+    url: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Bespoke modern storefront and luxury retail display',
+    caption: 'Custom Storefronts & Brand Experiences',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Frictionless contactless payments and digital checkout terminal',
+    caption: 'Frictionless 1-Click Payments & Checkout',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Automated fulfillment warehouse and logistics management',
+    caption: 'Real-Time Inventory & ERP Automation',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Minimalist designer product showroom display',
+    caption: 'High-Converting Product Architecture',
+  },
+];
+
 export default function EcommerceDevelopmentPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
@@ -115,32 +139,19 @@ export default function EcommerceDevelopmentPage() {
 
       <main className="pt-28 pb-20">
         <Container>
-          {/* Breadcrumb Navigation */}
-          <div className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <Link href="/" className="hover:text-slate-900 transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-slate-900 transition-colors">
-              Services
-            </Link>
-            <span>/</span>
-            <span className="text-[#1B4332] font-bold">E-commerce Development</span>
-          </div>
-
-          {/* Hero Header */}
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1B4332] mb-4">
-              <ShoppingBag className="h-3.5 w-3.5" />
-              E-Commerce Architecture
-            </div>
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
-              E-commerce Development Built for Conversions &amp; Scale
-            </h1>
-            <p className="mt-5 font-body text-base sm:text-lg text-slate-600 leading-relaxed">
-              We engineer fast, secure, and frictionless online stores designed to turn casual browsers into repeat buyers. From custom Shopify setups to headless Next.js commerce, we eliminate checkout drop-offs and scale with your inventory.
-            </p>
-          </div>
+          {/* Background Image Carousel Hero Section */}
+          <ServiceHero
+            breadcrumbTitle="E-commerce Development"
+            badgeText="E-Commerce Architecture"
+            badgeIconKey="ecommerce"
+            title="E-commerce Development Built for Conversions & Scale"
+            description="We engineer fast, secure, and frictionless online stores designed to turn casual browsers into repeat buyers. From custom Shopify setups to headless Next.js commerce, we eliminate checkout drop-offs and scale with your inventory."
+            images={HERO_IMAGES}
+            ctaPrimaryText="Discuss Your Project"
+            ctaPrimaryHref="#contact"
+            ctaSecondaryText="Explore Deliverables"
+            ctaSecondaryHref="#deliverables"
+          />
 
           {/* Key Metric Highlights */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
@@ -235,7 +246,7 @@ export default function EcommerceDevelopmentPage() {
           </div>
 
           {/* Deliverables Checklist */}
-          <div className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10">
+          <div id="deliverables" className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10 scroll-mt-28">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#1B4332] font-bold">
                 Tangible Outcomes

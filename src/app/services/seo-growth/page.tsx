@@ -8,11 +8,11 @@ import {
   FileCode2,
   Globe2,
   Target,
-  TrendingUp,
 } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
+import { ServiceHero, ServiceHeroImage } from '@/components/sections/service-hero';
 
 export const metadata: Metadata = {
   title: 'Google SEO & Growth Services | BayleafX',
@@ -107,6 +107,29 @@ const FAQS = [
   },
 ];
 
+const HERO_IMAGES: ServiceHeroImage[] = [
+  {
+    url: 'https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Google search analytics showing organic ranking improvements',
+    caption: 'Technical SEO Audits & Core Web Vitals',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Content marketing and keyword cluster research workstation',
+    caption: 'High-Intent Commercial Keyword Clustering',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Climbing architectural geometry symbolizing continuous upward ranking',
+    caption: 'High-Authority Content Engine & Pillar Silos',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Strategic digital team evaluating schema markup and AI search visibility',
+    caption: 'Schema.org JSON-LD & Generative Search (GEO)',
+  },
+];
+
 export default function SeoGrowthPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
@@ -114,32 +137,19 @@ export default function SeoGrowthPage() {
 
       <main className="pt-28 pb-20">
         <Container>
-          {/* Breadcrumb Navigation */}
-          <div className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <Link href="/" className="hover:text-slate-900 transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-slate-900 transition-colors">
-              Services
-            </Link>
-            <span>/</span>
-            <span className="text-[#1B4332] font-bold">Google SEO &amp; Growth</span>
-          </div>
-
-          {/* Hero Header */}
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1B4332] mb-4">
-              <TrendingUp className="h-3.5 w-3.5" />
-              Compounding Organic Reach
-            </div>
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
-              Google SEO &amp; Organic Search Growth
-            </h1>
-            <p className="mt-5 font-body text-base sm:text-lg text-slate-600 leading-relaxed">
-              We engineer comprehensive search engine optimization strategies: technical Core Web Vitals fixes, high-intent programmatic keyword clustering, structured schema markup, and authoritative editorial content that compounds month over month.
-            </p>
-          </div>
+          {/* Background Image Carousel Hero Section */}
+          <ServiceHero
+            breadcrumbTitle="Google SEO & Growth"
+            badgeText="Compounding Organic Reach"
+            badgeIconKey="seo"
+            title="Google SEO & Organic Search Growth"
+            description="We engineer comprehensive search engine optimization strategies: technical Core Web Vitals fixes, high-intent programmatic keyword clustering, structured schema markup, and authoritative editorial content that compounds month over month."
+            images={HERO_IMAGES}
+            ctaPrimaryText="Discuss Your Project"
+            ctaPrimaryHref="#contact"
+            ctaSecondaryText="Explore Deliverables"
+            ctaSecondaryHref="#deliverables"
+          />
 
           {/* Key Metric Highlights */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
@@ -234,7 +244,7 @@ export default function SeoGrowthPage() {
           </div>
 
           {/* Deliverables Checklist */}
-          <div className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10">
+          <div id="deliverables" className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10 scroll-mt-28">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#1B4332] font-bold">
                 Ongoing Deliverables

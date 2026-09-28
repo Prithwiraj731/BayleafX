@@ -7,12 +7,12 @@ import {
   CheckCircle2,
   Clock,
   RefreshCw,
-  Server,
   ShieldCheck,
 } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
+import { ServiceHero, ServiceHeroImage } from '@/components/sections/service-hero';
 
 export const metadata: Metadata = {
   title: 'Website Maintenance & Support Services | BayleafX',
@@ -107,6 +107,29 @@ const FAQS = [
   },
 ];
 
+const HERO_IMAGES: ServiceHeroImage[] = [
+  {
+    url: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80',
+    alt: 'High-availability cloud servers and modern data infrastructure',
+    caption: '99.9% Uptime & Infrastructure Monitoring',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Real-time performance analytics and system health metrics',
+    caption: 'Continuous Core Web Vitals & Speed Tuning',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Cybersecurity vulnerability scanner and hardened protocols',
+    caption: 'Automated Patching & Firewall Protection',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Global network connectivity and automated daily backups',
+    caption: 'Offsite Backups & Rapid Disaster Recovery',
+  },
+];
+
 export default function WebsiteMaintenancePage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#1B4332] selection:text-white">
@@ -114,32 +137,19 @@ export default function WebsiteMaintenancePage() {
 
       <main className="pt-28 pb-20">
         <Container>
-          {/* Breadcrumb Navigation */}
-          <div className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <Link href="/" className="hover:text-slate-900 transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-slate-900 transition-colors">
-              Services
-            </Link>
-            <span>/</span>
-            <span className="text-[#1B4332] font-bold">Website Maintenance &amp; Support</span>
-          </div>
-
-          {/* Hero Header */}
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1B4332] mb-4">
-              <Server className="h-3.5 w-3.5" />
-              Reliability &amp; Performance
-            </div>
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
-              Proactive Website Maintenance, Security &amp; Support
-            </h1>
-            <p className="mt-5 font-body text-base sm:text-lg text-slate-600 leading-relaxed">
-              We keep your website fast, secure, and continuously updated so you never have to worry about broken plugins, server downtime, malware, or outdated content. Think of us as your in-house web team on demand.
-            </p>
-          </div>
+          {/* Background Image Carousel Hero Section */}
+          <ServiceHero
+            breadcrumbTitle="Website Maintenance & Support"
+            badgeText="Reliability & Performance"
+            badgeIconKey="maintenance"
+            title="Proactive Website Maintenance, Security & Support"
+            description="We keep your website fast, secure, and continuously updated so you never have to worry about broken plugins, server downtime, malware, or outdated content. Think of us as your in-house web team on demand."
+            images={HERO_IMAGES}
+            ctaPrimaryText="Discuss Your Project"
+            ctaPrimaryHref="#contact"
+            ctaSecondaryText="Explore Deliverables"
+            ctaSecondaryHref="#deliverables"
+          />
 
           {/* Key Metric Highlights */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90">
@@ -234,7 +244,7 @@ export default function WebsiteMaintenancePage() {
           </div>
 
           {/* Deliverables Checklist */}
-          <div className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10">
+          <div id="deliverables" className="mt-16 sm:mt-20 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 p-6 sm:p-10 scroll-mt-28">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#1B4332] font-bold">
                 Standard Inclusions
